@@ -4,7 +4,7 @@ defaults,
 
 
 components,
-
+    in-dev-cover,
     side-nav,
     preview-switch,
     primary-menu,
@@ -514,13 +514,17 @@ table {
     --main-font: var(--main-font-weight) var(--main-font-size)/var(--main-line-height) var(--main-font-family);
 
 /*    --article-font-family: 'Verdana Pro Cond';*/
-/*    --article-font-family: 'Verdana Pro';*/
+    --article-font-family: 'Georgia';
+    --article-font-family: 'Verdana Pro';
     --article-font-family: 'Montserrat';
+/*    --article-font-size:   1.5rem;*/
     --article-font-size:   1.35rem;
     --article-line-height: 1.5;
     --article-font-weight: 400;
     --article-letter-spacing: -0.05ch;
+/*    --article-letter-spacing: auto;*/
     --article-word-spacing:    0.2ch;
+/*    --article-word-spacing:    auto;*/
     --article-font: var(--article-font-weight) var(--article-font-size)/var(--article-line-height) var(--article-font-family);
 
     --text-max-width: 75ch;
@@ -1845,3 +1849,41 @@ footer.primary-footer) {
 
 
 
+
+
+
+
+@layer in-dev-cover.base            { 
+
+
+
+
+#in-dev-cover {
+    display: grid;
+/*    display: none;*/
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background-color: #fff;
+
+-webkit-user-select:    none;  /* Chrome all / Safari all */
+   -moz-user-select:    none;  /* Firefox all */
+    -ms-user-select:    none;  /* IE 10+ */
+        user-select:    none;  /* Likely future */
+}
+    #in-dev-cover > div {
+        text-align: center;
+        align-self: center;
+        transform: rotate(-45deg);
+
+        font: 10rem 'Bebas Neue', cursive;
+        color: red;
+    }
+        #in-dev-cover > div > span {
+            background-color: #000;
+            color: #fff;
+        } }
