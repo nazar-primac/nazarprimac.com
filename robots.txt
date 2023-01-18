@@ -3,4 +3,3 @@ Disallow: /.
 Disallow: /_
 Disallow: /assets/decorative/
 Disallow: /notforsearch/
-Disallow: /
