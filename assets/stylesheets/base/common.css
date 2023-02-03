@@ -292,88 +292,6 @@ end;
                     url("/assets/fonts/IBM_Plex_Sans/IBMPlexSans-SemiBoldItalic.ttf") format("truetype"),
                     url("/assets/fonts/IBM_Plex_Sans/IBMPlexSans-BoldItalic.ttf") format("truetype");
 }*/
-
-
-
-@font-face {
-    /*font-family: "Foro Extra Bold";*/
-    font-family:    "Foro W03 ExtraBold";
-    font-display:   fallback;
-    /*src: url("/assets/fonts/b7a3e250c06495eeff3d8d9fb0714e65.eot");*/ /* IE9*/
-    src:
-                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.woff2") format("woff2"), /* chrome、firefox */
-                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.woff") format("woff"), /* chrome、firefox */
-                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.svg#Foro W03 ExtraBold") format("svg"); /* iOS 4.1- */
-    text-rendering: optimizeLegibility;
--webkit-font-smoothing: antialiased;
--webkit-text-stroke-width: 0.2px;
--moz-osx-font-smoothing: grayscale;
-}
-@font-face {
-    font-family:    'Bebas Neue';
-    font-display:   fallback;
-    src:            url("/assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
-}
-
-
-@font-face {
-    font-family:    'Rajdhani';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Rajdhani/Rajdhani-Light.ttf") format("truetype");
-    font-weight:    300;
-}
-@font-face {
-    font-family:    'Rajdhani';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Rajdhani/Rajdhani-Regular.ttf") format("truetype");
-    font-weight:    400;
-}
-@font-face {
-    font-family:    'Rajdhani';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
-    font-weight:    700;
-}
-/*@font-face {
-    font-family:    'Rajdhani';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Rajdhani/Rajdhani-Medium.ttf") format("truetype"),
-                    url("/assets/fonts/Rajdhani/Rajdhani-SemiBold.ttf") format("truetype"),
-}*/
-
-
-@font-face {
-    font-family:    'Alfa Slab One';
-    font-display:   fallback;
-    src:            url("/assets/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf") format("truetype");
-    font-weight:    400;
-}
-
-
-/*@font-face {
-    font-family:    'Roboto';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-Light.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-Black.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-ThinItalic.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-LightItalic.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-RegularItalic.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-MediumItalic.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-BoldItalic.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-BlackItalic.ttf") format("truetype");
-}*/
-
-
 @font-face {
     font-family:    'Courier Prime';
     font-display:   fallback;
@@ -404,6 +322,124 @@ end;
     font-weight:    700;
     font-style:     italic;
 }
+@font-face {
+    font-family:    'Rajdhani';
+    font-display:   fallback;
+    src:
+                    url("/assets/fonts/Rajdhani/Rajdhani-Light.ttf") format("truetype");
+    font-weight:    300;
+}
+@font-face {
+    font-family:    'Rajdhani';
+    font-display:   fallback;
+    src:
+                    url("/assets/fonts/Rajdhani/Rajdhani-Regular.ttf") format("truetype");
+    font-weight:    400;
+}
+@font-face {
+    font-family:    'Rajdhani';
+    font-display:   fallback;
+    src:
+                    url("/assets/fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
+    font-weight:    700;
+}
+/*@font-face {
+    font-family:    'Rajdhani';
+    font-display:   fallback;
+    src:
+                    url("/assets/fonts/Rajdhani/Rajdhani-Medium.ttf") format("truetype"),
+                    url("/assets/fonts/Rajdhani/Rajdhani-SemiBold.ttf") format("truetype"),
+}*/
+
+@font-face {
+    font-family:    'Charter';
+    font-display:   fallback;
+    src:
+                    url("/assets/fonts/charter/ttf/Charter-Regular.ttf") format("truetype");
+    font-weight:    400;
+    font-style:     normal;
+}
+@font-face {
+    font-family:    'Charter';
+    font-display:   fallback;
+    src:
+                    url("/assets/fonts/charter/ttf/Charter-Bold.ttf") format("truetype");
+    font-weight:    700;
+    font-style:     normal;
+}
+@font-face {
+    font-family:    'Charter';
+    font-display:   fallback;
+    src:
+                    url("/assets/fonts/charter/ttf/Charter-Regular-Italic.ttf") format("truetype");
+    font-weight:    400;
+    font-style:     italic;
+}
+@font-face {
+    font-family:    'Charter';
+    font-display:   fallback;
+    src:
+                    url("/assets/fonts/charter/ttf/Charter-Bold-Italic.ttf") format("truetype");
+    font-weight:    700;
+    font-style:     italic;
+}
+
+
+
+@font-face {
+    /*font-family: "Foro Extra Bold";*/
+    font-family:    "Foro W03 ExtraBold";
+    font-display:   fallback;
+    /*src: url("/assets/fonts/b7a3e250c06495eeff3d8d9fb0714e65.eot");*/ /* IE9*/
+    src:
+                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.woff2") format("woff2"), /* chrome、firefox */
+                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.woff") format("woff"), /* chrome、firefox */
+                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.svg#Foro W03 ExtraBold") format("svg"); /* iOS 4.1- */
+    text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+-webkit-text-stroke-width: 0.2px;
+-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+@font-face {
+    font-family:    'Bebas Neue';
+    font-display:   fallback;
+    src:            url("/assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
+}
+
+
+
+@font-face {
+    font-family:    'Alfa Slab One';
+    font-display:   fallback;
+    src:            url("/assets/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf") format("truetype");
+    font-weight:    400;
+}
+
+
+/*@font-face {
+    font-family:    'Roboto';
+    font-display:   fallback;
+    src:
+                    url("/assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-Light.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-Black.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-ThinItalic.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-LightItalic.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-RegularItalic.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-MediumItalic.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-BoldItalic.ttf") format("truetype"),
+                    url("/assets/fonts/Roboto/Roboto-BlackItalic.ttf") format("truetype");
+}*/
+
+
+
 
 @layer reset                    { /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
@@ -485,6 +521,7 @@ table {
 /*    --decorative-theme-color: 221, 100%, 44%;*/
 /*    --decorative-theme-color: 197, 31%, 75%;*/
     --decorative-theme-color: 207, 47%, 59%;
+    --decorative-theme-color: 0, 100%, 100%;
     --decorative-background-body-transparency: 0.3;
 
     --main-fontColor:    #000000;
@@ -514,15 +551,20 @@ table {
     --main-font: var(--main-font-weight) var(--main-font-size)/var(--main-line-height) var(--main-font-family);
 
 /*    --article-font-family: 'Verdana Pro Cond';*/
-    --article-font-family: 'Georgia';
-    --article-font-family: 'Verdana Pro';
-    --article-font-family: 'Montserrat';
-/*    --article-font-size:   1.5rem;*/
-    --article-font-size:   1.35rem;
-    --article-line-height: 1.5;
-    --article-font-weight: 400;
-    --article-letter-spacing: -0.05ch;
-/*    --article-letter-spacing: auto;*/
+    --article-font-family:     'Georgia';
+    --article-font-family:     'Verdana Pro';
+    --article-font-family:     'Charter';
+    --article-font-family:     'Georgia';
+    --article-font-family:     'Montserrat';
+/*    --article-font-size:       1.5rem;*/
+/*    --article-font-size:       1.35rem;*/
+/*    --article-font-size:       1.3rem;*/
+    --article-font-size:       1.4rem;
+/*    --article-font-size:       24px;*/
+    --article-line-height:     1.5;
+    --article-font-weight:     400;
+    --article-letter-spacing: -0.03ch;
+/*    --article-letter-spacing:  auto;*/
     --article-word-spacing:    0.2ch;
 /*    --article-word-spacing:    auto;*/
     --article-font: var(--article-font-weight) var(--article-font-size)/var(--article-line-height) var(--article-font-family);
@@ -656,23 +698,6 @@ img {
   Typography
   ----------------------------------------*/
 
-h1 {
-    font-size:      2.5em;
-    font-size:      2em;
-    font-weight:    700;
-
-    /*color: var(--orange);*/
-    /*color: var(--blue);*/
-    /*color: white;*/
-    /*color: hsl(167, 15%, 46%);*/
-    /*color: hsl(16, 100%, 66%);*/
-    color:          hsl(var(--decorative-theme-color));
-
-    /*font-family: 'Bebas Neue', cursive;*/
-    /*font-family: 'Alfa Slab One', cursive;*/
-    /*font-family: var(--sub-font-family);*/
-    font-family:    'Rajdhani', sans-serif;
-}
 h2 {
     text-align:     left;
 }
@@ -700,7 +725,8 @@ abbr[title], acronym[title] {
 
 a:link,
 p:has(> a[href$='#continuing']) {
-    color: hsl(246, 100%, 50%);
+    color:          hsl(246, 100%, 50%);
+    color:          hsl(212, 38%, 52%);
     text-decoration: none;
 }
 /*a:has(> :not(h1, h2, h3, h4, h5, h6)):hover,*/
@@ -712,7 +738,8 @@ a:has(h1, h2, h3, h4, h5, h6):hover {
 }
 
 a:visited {
-    color: hsl(271, 68%, 32%);
+    color:          hsl(271, 68%, 32%);
+/*    color:          hsl(212, 38%, 52%);*/
 } }
 
 
@@ -820,12 +847,13 @@ menu.primary-menu {
 
 }
 nav.primary-nav {
-    background-color: hsl(0, 0%, 5%, 0.8);
+/*    background-color: hsla(0, 0%, 5%, .8);*/
     background-color: hsl(0, 0%, 25%);
 }
 
 nav.primary-nav > ul {
-    max-width:      calc(var(--max-width) - 2px);
+/*    max-width:      calc(var(--max-width) - 10px + (20px * 2));*/
+    max-width:      var(--max-width);
     margin:         0 auto;
 
     display:        flex;
@@ -857,8 +885,8 @@ nav.primary-nav .zippy:hover > .zippy-head {
 
 nav.primary-nav .zippy .zippy-overflow {
     position:       absolute    !important;
-    left:           -1px        !important;
-    right:          -1px        !important;
+    left:           0        !important;
+    right:          0        !important;
 }
 
 
@@ -866,18 +894,23 @@ nav.primary-nav .zippy .zippy-content {
     padding-right:  0           !important;
     padding-left:   0           !important;
 
-    background-color: hsl(0, 0%, 100%, 0.97) !important;
+    background-color: hsl(0, 0%, 100%, .97) !important;
 /*    transition-timing-function: cubic-bezier(0.28, 0.45, 0.14, 0.52) !important;*/
 
-    border-left:    1px solid hsl(0, 0%, 80%);
-    border-right:   1px solid hsl(0, 0%, 80%);
+/*    border-left:    1px solid;*/
+/*    border-right:   1px solid;*/
     border-bottom:  1px solid hsl(0, 0%, 80%);
+/*    border-color:   hsl(0, 0%, 80%);*/
+/*    border-color:   hsl(0, 0%, 5%);*/
+
 /*    box-shadow:      0   10px 15px -5px hsl(0, 0%, 50%);*/
 /*    box-shadow:      0    5px 10px      hsl(0, 0%, 50%);*/
 /*    box-shadow:      0    0px 15px      hsl(0, 0%, 50%);*/
     box-shadow:      0    0   10px      hsl(0, 0%, 50%);
 
-    margin-bottom: 20px;
+/*    margin-left:    5px;*/
+/*    margin-right:   5px;*/
+    margin-bottom:  20px;
 }
 
 
@@ -896,9 +929,7 @@ nav.primary-nav .zippy .zippy-content ul.end-options > li > a > div {
     padding-left:   var(--text-content-margin-left);
     padding-right:  var(--text-content-margin-right);
 
-    font-size:      var(--article-font-size);
-    font-family:    var(--article-font-family);
-    font-weight:    var(--article-font-weight);
+    font:           var(--article-font);
     letter-spacing: var(--article-letter-spacing);
 }
 
@@ -1214,23 +1245,20 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 
     border: 1px solid;
     border-radius: 3px;
-}
 
-
-/*----------------------------------------
-  Decorative
-  ----------------------------------------*/
-
-
-.burger > button {
     cursor: pointer;
 
-    border-color:  #0003;
+/*    border-color:  #0003;*/
+/*    border-color:  #00000033;*/
+/*    border-color:  hsla(0, 0%, 0%, .2);*/
+/*    border-color:  hsla(0, 0%, 80%, 1);*/
+    border-color:  hsla(0, 0%, 80%, 1);
+    border-color:  hsla(0, 0%, 40%, 1);
     background-color: transparent;
 }
 
 .burger > button:hover {
-    background-color: hsl(0, 0%, 0%, 0.1);
+    background-color: hsl(0, 0%, 100%, 0.2);
 } }
 @layer roll-paper.base          { 
 
@@ -1285,8 +1313,6 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 
 
 .aheader a.meta.author {
-    align-self:     center;
-
     font-size:      1.2em;
 /*    letter-spacing: 0.1em;*/
     letter-spacing: 0.05em;
@@ -1302,6 +1328,9 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 .aheader span.meta.tags {
     display: inline-flex;
     flex-wrap: wrap;
+
+/*    justify-content: center;*/
+
     column-gap: 1ch;
     row-gap: 0.1em;
 
@@ -1377,7 +1406,9 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 
 .article { display: grid; }
 
-.article > :is(p, ul, ol) {
+
+/*.article > :is(h2, h3, h4, h5, h6),*/
+.article > :is(p, ul, ol, hr) {
         width:      100%;
     max-width:      calc(var(--text-content-max-width));
 
@@ -1421,10 +1452,15 @@ main > section:has(> article.article.description) + section:has(> nav > ul.alist
 
 
 
+.article a:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.2em;
+}
 
 .article a:visited,
 p:has(> a[href$='#continuing']:visited) {
-    color: hsl(271, 68%, 32%);
+    color:          hsl(271, 68%, 32%);
+    color:          hsl(212, 38%, 52%);
 }
 
 
@@ -1435,47 +1471,6 @@ p:has(> a[href$='#continuing']:visited) {
     color:              hsl(0, 0%, 0%);
 }
 
-
-.article :is(h2, h3, h4, h5, h6) {
-
-    /*--font-color-headers: #648880;*/
-    --font-color-headers: hsl(0, 0%, 0%);
-    --font-color-headers: hsl(167, 15%, 70%);
-    --font-color-headers: hsl(167, 15%, 46%);
-
-
-
-    margin-top:         1.5em;
-    margin-bottom:      1.5em;
-
-    /*line-height: 2;*/
-    /*line-height: 1;*/
-
-/*    font-family:        var(--sub-font-family);*/
-    font-family:        cursive;
-    font-weight:        600;
-    letter-spacing:     0.4em;
-
-    color:              var(--font-color-headers);
-
-
-    padding-left:       0.5em;
-    border-left-style:  solid;
-    border-left-color:  var(--orange);
-}
-
-
-
-
-.article h2 {
-    /*letter-spacing: 0.5em;*/
-    margin-left:        0;
-    margin-right:       0;
-
-    border-left-width:  10px;
-
-    text-transform:     uppercase;
-}
 
 
 
@@ -1493,11 +1488,11 @@ p:has(> a[href$='#continuing']:visited) {
 )*/
 /*ul.categories h3,*/
 .article
-:not(
+:where(:not(
     div:is(#continuing, :has( > img)),
     img,
     div[class^='language'][class*='highlighter'] *
-) {
+)) {
     margin-top:         0.5em;
     margin-bottom:      0.5em;
 }
@@ -1509,6 +1504,58 @@ p:has(> a[href$='#continuing']:visited) {
     padding-bottom:     0.5em;
 
 }*/
+
+
+
+.article :is(h2, h3, h4, h5, h6) {
+
+    /*--font-color-headers: #648880;*/
+    --font-color-headers: hsl(167, 15%, 70%);
+    --font-color-headers: hsl(167, 15%, 46%);
+    --font-color-headers: hsl(0, 0%, 0%);
+
+    margin-top:     1.5em;
+
+    /*line-height: 2;*/
+    /*line-height: 1;*/
+
+    font-weight:    700;
+    font-size:      1.2em;
+
+/*    font-family:    'Alfa Slab One';*/
+/*    font-family:    'Rajdhani';*/
+/*    font-family:    'Courier Prime';*/
+/*    font-family:    'Bebas Neue';*/
+/*    font-family:    'Courier Prime';*/
+
+/*    font-family:    'Montserrat';*/
+/*    font-family:    'Comfortaa', cursive;*/
+/*    font-family:    serif;*/
+    font-family:    cursive;
+
+    letter-spacing: 0.2em;
+
+    color:          var(--font-color-headers);
+
+    text-align:     left;
+    padding-left:    0.5em;
+    border-left-style: solid;
+    border-left-color: var(--orange);
+}
+
+
+
+
+.article h2 {
+    /*letter-spacing: 0.5em;*/
+    margin-left:        -2px;
+/*    margin-right:       0;*/
+
+    border-left-width:  10px;
+
+/*    text-transform:     uppercase;*/
+}
+
 
 
 
@@ -1539,11 +1586,11 @@ p:has(> a[href$='#continuing']:visited) {
 
 .article :is(
     a[href$='#continuing'],
-    pre,
     p > code
 ) {
     font-family:    var(--main-font-family);
 }
+
 
 .article pre {
     padding-top:        0.65em;
@@ -1554,12 +1601,13 @@ p:has(> a[href$='#continuing']:visited) {
     padding-right:      var(--text-content-margin-right);
 
 
-    line-height:        1.1;
 
-    background-color:   hsl(0, 0%, 5%);
+    background-color: hsl(0, 0%, 5%);
     color: hsl(0, 0%, 95%);
 
-    font-size: 0.9em;
+/*    font-size: 0.9em;*/
+    font-family:    Consolas, monospace;
+    line-height:        1.2;
 
     overflow:           auto;
 }
@@ -1610,8 +1658,7 @@ p:has(> a[href$='#continuing']:visited) {
 .article > :is(ul, ol) > li > *:first-child {
     font-weight:        500;
     font-family:        var(--sub-font-family);
-
-    color:              hsl(var(--decorative-theme-color));
+/*    color:              hsl(var(--decorative-theme-color));*/
 }
 
 
@@ -1643,7 +1690,15 @@ p:has(> a[href$='#continuing']:visited) {
 /*.article > *:last-child {
     margin-bottom: 1em;
 }
-*/ }
+*/
+
+.article hr {
+    width: 100%;
+    margin: 0;
+
+    border-width:   0;
+    border-top: 1px solid hsl(0, 0%, 80%);
+} }
 @layer primary-footer.base      { 
 
 
@@ -1674,11 +1729,13 @@ footer.primary-footer > .copyright {
     padding-left: 0.1rem;
     padding-right: 0.1rem;
 
+/*    width: max-content;*/
     width: min-content;
 
     background-color: hsl(0, 0%, 100%);
     color: hsl(0, 0%, 50%);
 
+/*    font-size:      1.2em;*/
     font-family: 'Rajdhani', sans-serif;
 }
 
@@ -1860,7 +1917,7 @@ footer.primary-footer) {
 
 #in-dev-cover {
     display: grid;
-/*    display: none;*/
+    display: none;
     position: fixed;
 
     left: 0;

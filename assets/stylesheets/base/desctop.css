@@ -8,7 +8,7 @@
 
 
 :root {
-    --max-width:    calc((var(--text-content-max-width)) * 1.3);
+    --max-width:    calc((var(--text-content-max-width)) * (75 / 75) * 1.3);
 
 /*    --menu-head-hight: 48px;*/
     --menu-head-hight: calc(var(--main-font-size) * 3.25);
@@ -35,18 +35,27 @@
 
 
 html {
-    background-color: hsl(var(--decorative-theme-color), var(--decorative-background-body-transparency));
+    background-color: hsla(var(--decorative-theme-color), var(--decorative-background-body-transparency));
+    background-color: hsla(0, 0%, 0%, 1);
 
-    /*background-image: url(/assets/decorative/services/spanner-3013129_3840-original_85-lightness.jpg);*/
+
+    background-image: -webkit-image-set(
+        url(/assets/decorative/body_background/paul-volkmer-qVotvbsuM_c-unsplash_small.jpg) 1x,
+        url(/assets/decorative/body_background/paul-volkmer-qVotvbsuM_c-unsplash_medium.jpg) 3x,
+        url(/assets/decorative/body_background/paul-volkmer-qVotvbsuM_c-unsplash_large.jpg) 3.75x
+    );
+
+/*    background-image: url(/assets/decorative/services/spanner-3013129_3840-original_85-lightness.jpg);*/
 /*    background-image: url(/assets/decorative/unsplash-Leon_Overweel_+50-lightness.jpg);*/
-    background-image: url("/assets/decorative/body_background/unsplash-Christian Joudrey.jpg");
-    background-image: url("/assets/decorative/body_background/moroccan-flower.png");
-    background-image: url("/assets/decorative/body_background/unsplash-Diana Parkhouse.jpg");
-    background-image: url("/assets/decorative/body_background/unsplash-Leon Overweel.jpg");
-    background-image: url("/assets/decorative/body_background/i981.jpg");
-    background-image: url("/assets/decorative/body_background/food.webp");
-    background-image: url("/assets/decorative/body_background/unsplash-Jacalyn Beales.jpg");
-    background-image: url("/assets/decorative/body_background/unsplash-Thomas Peham.jpg");
+
+/*    background-image: url("/assets/decorative/body_background/moroccan-flower.png");*/
+/*    background-image: url("/assets/decorative/body_background/unsplash-Leon Overweel.jpg");*/
+/*    background-image: url("/assets/decorative/body_background/i981.jpg");*/
+/*    background-image: url("/assets/decorative/body_background/food.webp");*/
+/*    background-image: url("/assets/decorative/body_background/unsplash-Jacalyn Beales.jpg");*/
+/*    background-image: url("/assets/decorative/body_background/unsplash-Diana Parkhouse.jpg");*/
+/*    background-image: url("/assets/decorative/body_background/unsplash-Thomas Peham.jpg");*/
+/*    background-image: url("/assets/decorative/body_background/unsplash-Christian Joudrey.jpg");*/
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,7 +66,6 @@ html {
     background-attachment: fixed;
     background-clip: border-box;
     background-origin: border-box;
-
 }
 
 
@@ -75,6 +83,16 @@ html::-webkit-scrollbar {
     background-color: hsl(0, 0%, 6%);
     width: var(--scrollbar-width);
     height: 0;
+
+}
+
+
+.container {
+    backdrop-filter: grayscale(100%);
+
+/*    filter: chrome(100%);*/
+/*    backdrop-filter: blur(10px);*/
+    backdrop-filter: blur(0.2em);
 
 } }
 
@@ -124,18 +142,20 @@ nav.primary-nav .zippy .zippy-content {
 
 
 .burger {
-    left: 0;
+    left:           0;
 
 /*    padding-bottom: 100px;*/
 }
-.burger > button::before {
-    display: block;
-    content: "Esc";
-}
 .burger > button {
-    font-size: 2.5rem;
-    font-weight: 100;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-size:      2.5rem;
+    font-weight:    100;
+    font-family:    'IBM Plex Sans', sans-serif;
+    color:          hsl(0, 0%, 80%);
+    color:          hsl(0, 0%, 50%);
+}
+.burger > button::before {
+    display:        block;
+    content:        "Esc";
 }
  }
 @layer roll-paper.base          { 
@@ -157,9 +177,6 @@ body {
 
 .container {
     background-color: hsl(var(--decorative-background-container), var(--decorative-background-container-transparency));
-
-    border-left: 1px solid hsl(0, 0%, 80%);
-    border-right: 1px solid hsl(0, 0%, 80%);
 }
 
 

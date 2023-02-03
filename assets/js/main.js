@@ -1,7 +1,4 @@
 "use strict";
-
-let _ = {};
-
 (function () {
 
     EventTarget.prototype.on = EventTarget.prototype.addEventListener;
@@ -90,7 +87,7 @@ let _ = {};
 
                 return focusPREVIEW;
             }
-            // _.getFocusPREVIEW = getFocusPREVIEW;
+            // window.getFocusPREVIEW = getFocusPREVIEW;
 
 
 
@@ -99,31 +96,23 @@ let _ = {};
             var viewUpdate = function (focusPREVIEW, previewSwitch_STATE, onShow) {
                 console.log(`viewUpdate() <- onShow: ${onShow}`);
 
-                if (previewSwitch_STATE) {
-                    if (previewSwitch_STATE == 'true')
-                         previewSwitch.checked = true;
-                    else previewSwitch.checked = false;
-                }
+                if (previewSwitch_STATE)
+                    previewSwitch.checked = (previewSwitch_STATE === 'true')
+                                            ? true : false
 
                 // has side effect of unpredictable scrolling
-
-                if (previewSwitch.checked)
-                     articlesPreviews.classList.add('preview-mode');
-                else articlesPreviews.classList.remove('preview-mode');
-
+                ;(previewSwitch.checked)
+                    ? articlesPreviews.classList.add('preview-mode')
+                    : articlesPreviews.classList.remove('preview-mode')
 
                 // scrolling back to the Article Preview
-
-                if (focusPREVIEW) {
-                    if (focusPREVIEW == articlesPreviews.children[0]) {
-                        document.body.scrollTo(0,0);            console.log('scroll to the Top');
-                    }
-                    else {
-                        focusPREVIEW.scrollIntoView();      console.log('scroll into focusPREVIEW');
-                    }
-                }
+                ;(focusPREVIEW &&
+                  focusPREVIEW == articlesPreviews.firstElementChild)
+                    ? document.body.scrollTo(0,0)
+                    : focusPREVIEW.scrollIntoView()
+                    // console.log('scrolled to the Top');
+                    // console.log('scrolled into focusPREVIEW');
             }
-
 
 
 
