@@ -521,7 +521,7 @@ table {
 /*    --decorative-theme-color: 221, 100%, 44%;*/
 /*    --decorative-theme-color: 197, 31%, 75%;*/
     --decorative-theme-color: 207, 47%, 59%;
-    --decorative-theme-color: 0, 100%, 100%;
+    --decorative-theme-color: 0, 0%, 0%;
     --decorative-background-body-transparency: 0.3;
 
     --main-fontColor:    #000000;
@@ -556,6 +556,7 @@ table {
     --article-font-family:     'Charter';
     --article-font-family:     'Georgia';
     --article-font-family:     'Montserrat';
+/*    --article-font-family:     'Charter';*/
 /*    --article-font-size:       1.5rem;*/
 /*    --article-font-size:       1.35rem;*/
 /*    --article-font-size:       1.3rem;*/
@@ -708,7 +709,7 @@ nav li {
     list-style:     none !important;
 }
 strong, b {
-    font-weight:    bold;
+    font-weight:    700;
 }
 em {
     font-style:     italic;
@@ -1465,7 +1466,7 @@ p:has(> a[href$='#continuing']:visited) {
 
 
 .article pre > code > span::selection,
-.article p > code::selection {
+.article code::selection {
 
     background-color:   hsl(0, 0%, 100%);
     color:              hsl(0, 0%, 0%);
@@ -1533,7 +1534,7 @@ p:has(> a[href$='#continuing']:visited) {
 /*    font-family:    serif;*/
     font-family:    cursive;
 
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
 
     color:          var(--font-color-headers);
 
@@ -1586,7 +1587,8 @@ p:has(> a[href$='#continuing']:visited) {
 
 .article :is(
     a[href$='#continuing'],
-    p > code
+    p > code,
+    :is(ul, ol) code
 ) {
     font-family:    var(--main-font-family);
 }
@@ -1613,7 +1615,10 @@ p:has(> a[href$='#continuing']:visited) {
 }
 
 
-.article p > code {
+.article :is(
+    p > code,
+    :is(ul, ol) code
+) {
     border-radius:      2px;
 
     padding-top:        3px;
@@ -1635,18 +1640,26 @@ p:has(> a[href$='#continuing']:visited) {
 
 
 
-
 .article li {
-    /*list-style-type: disc;*/
-    /*list-style: '-\ ' outside;*/
-    list-style:         disc inside;
-
     font-weight:        var(--article-font-weight);
     font-family:        var(--article-font-family);
     color:              var(--main-fontColor);
 }
 
-.article li::before {
+.article ol > li {
+    list-style-type: decimal;
+}
+
+.article ul > li {
+    list-style:     disc outside;
+/*    list-style:     '-\ ' outside;*/
+/*    list-style-type: disc;*/
+}
+    .article ul ul > li {
+        list-style-type: circle;
+    }
+
+.article ul > li::before {
     /*display: inline;*/
     /*content: '\2022\ ';*/
     /*content: '•\ ';*/
@@ -1654,26 +1667,24 @@ p:has(> a[href$='#continuing']:visited) {
 
 
 
+article.article .next-li-no-style + ul > li {
+    /*list-style-type: '✅\ ';*/
+    list-style-type:    none;
+}
 
-.article > :is(ul, ol) > li > *:first-child {
+/*.article > ul > li > span:first-child:has( + :is(ul, ol)) {
     font-weight:        500;
     font-family:        var(--sub-font-family);
-/*    color:              hsl(var(--decorative-theme-color));*/
-}
+    color:              hsl(var(--decorative-theme-color));
+}*/
 
 
-.article li li li {
-    list-style-type:    circle !important;
-}
 
 
 
 .article blockquote {
     color: hsl(0, 0%, 50%);
 }
-
-
-
 
 .article > :first-child {
     margin-top:         0 !important;

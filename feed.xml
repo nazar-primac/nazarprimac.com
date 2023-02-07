@@ -1,4 +1,226 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://pryjmak.local/feed.xml" rel="self" type="application/atom+xml" /><link href="http://pryjmak.local/" rel="alternate" type="text/html" /><updated>2023-02-04T19:18:35+02:00</updated><id>http://pryjmak.local/feed.xml</id><title type="html">Nazar Pryjmak’s Blog</title><author><name>Nazar Primac</name></author><entry><title type="html">Більше Про Планування – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/more-on-planning/" rel="alternate" type="text/html" title="Більше Про Планування – Стів Павліна" /><published>2023-01-31T00:12:00+02:00</published><updated>2023-01-31T00:12:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/more-on-planning</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/more-on-planning/"><![CDATA[<p>Я отримав кілька запитань (як публічно, так і приватно) щодо запису про планування від 11 жовтня, тож я думаю, що для того, щоб відповісти на них, слід доповнюватись…</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://pryjmak.local/feed.xml" rel="self" type="application/atom+xml" /><link href="http://pryjmak.local/" rel="alternate" type="text/html" /><updated>2023-02-07T03:04:24+02:00</updated><id>http://pryjmak.local/feed.xml</id><title type="html">Nazar Pryjmak’s Blog</title><author><name>Nazar Primac</name></author><entry><title type="html">SEO – Developer Content Creation Workflow with Git | Git in Context of Search Engine Optimization | Use of Git in SEO | Nazar Primac</title><link href="http://pryjmak.local/seo/" rel="alternate" type="text/html" title="SEO – Developer Content Creation Workflow with Git | Git in Context of Search Engine Optimization | Use of Git in SEO | Nazar Primac" /><published>2023-02-07T03:04:24+02:00</published><updated>2023-02-07T03:04:24+02:00</updated><id>http://pryjmak.local/seo</id><content type="html" xml:base="http://pryjmak.local/seo/"><![CDATA[<p>This tutorial explains how to use git for effective collaboration between SEO specialist (particularly, the person, who is optimizing content for search engines by making suggestive changes to the content, such as links placements, etc.) and Web developer (the person, who is reviewing, implementing and deploying these changes). The last one often is CMS operator (content manager), rather than developer, depending on site’s implementation.</p>
+
+<p>In other words this tutorial is going to be useful if the roles described are executed by different people.</p>
+
+<!--more-->
+<div id="continuing"></div>
+<p>The tutorial gives a look at the exact steps each side has to take in order for the effective collaboration to work out as well as giving broader explanation of these actions.</p>
+
+<p>Obviously, in order to make this work, you need a repository of a text based (simple text, not html) version of the content of your site. Your SEO is unlikely to do an effective and productive work working with the source code itself.</p>
+
+<p>Markdown is a special language that was invented for exactly that – representing content of a web page in a simple text format. There are CLI tools, extension for text editors and online converters for converting Html into Markdown. SEO can simply add Markdown version of a page to a repository, before they are going to optimized it. Simply commit created file, so that git can start tracking it, then use another commit for your optimization changes.</p>
+
+<p>There should be at least two branches. You can call them whatever you want; I’m going to be using <code class="language-plaintext highlighter-rouge">live</code> and <code class="language-plaintext highlighter-rouge">pre-live</code> branches. <code class="language-plaintext highlighter-rouge">live</code> branch serves for representing the actually live state of site’s content. <code class="language-plaintext highlighter-rouge">pre-live</code> is the branch, SEO commits changes to and pushes to remote for developer’s further use.</p>
+
+<p>Further go instructions for developers (content managers).</p>
+
+<p>Developer should start by fetching the origin (<code class="language-plaintext highlighter-rouge">git fetch origin</code>, rather than <code class="language-plaintext highlighter-rouge">git pull</code>). If there ware optimization changes made by SEO, <code class="language-plaintext highlighter-rouge">pre-live</code> remote tracking branch will appear with new commits, further referred as <em>needed commits</em>.</p>
+
+<h2 id="1-review-and-deployment-of-changes-into-websites-source-code-by-developer">1. Review and Deployment of Changes into Website’s Source Code by Developer</h2>
+
+<p>Before you <strong>integrate</strong> <em>needed commits</em> into <code class="language-plaintext highlighter-rouge">live</code> branch, you should <strong>review</strong> and <strong>deploy</strong> the commits’ cumulative changes into website’s actual code, possibly with needed corrections from your standpoint.</p>
+
+<p>Here are suggested steps on how to do that and reduce the chance of missing changes:</p>
+
+<ol>
+  <li>Make sure you’re checked to the last commit of <em>needed commits</em>.</li>
+  <li>Do mixed reset to commit that goes before <em>needed commits</em>, you’ll get all changes of <em>needed commits</em> as modifications in your working directory. Command: <code class="language-plaintext highlighter-rouge">git reset &lt;commit hash&gt;</code>.</li>
+  <li>For each modified file/modification <strong>review</strong> modifications and if needed, make corrective changes from your standpoint; <strong>deploy modifications</strong>, then  <strong>stage</strong> them. Claster modifications to do these steps on, in order of your convenience.</li>
+  <li>Make a commit with an appropriate message on the corrective changes you’ve made. If you haven’t made any corrective changes at the previous step, you can either make a commit with any message (the commit will be ‘dropped’ after rebase from the next step). Or you can just checkout the commit where you ware after the first step and skip the next step. Command: <code class="language-plaintext highlighter-rouge">git checkout &lt;commit hash&gt;</code>; you can lookup the hash using <code class="language-plaintext highlighter-rouge">git reflog</code> command.</li>
+  <li>Rebase the commit on <em>needed commits</em> (after rebase, this commit becomes one of  <em>needed commits</em>). If you’ve made the corrective changes, more than likely, you’ll have to resolve merge conflict; resolve the conflict keeping changes from the commit you’re rebasing; you can do that by running <code class="language-plaintext highlighter-rouge">git checkout --theirs &lt;list of conflicting files&gt;</code>; stage resolved modifications and continue rebase.</li>
+</ol>
+
+<p>Now you can <strong>integrate</strong> all those changes into <code class="language-plaintext highlighter-rouge">live</code> branch.</p>
+
+<h2 id="2-integration-of-changes-into-live-branch">2. Integration of Changes into <code class="language-plaintext highlighter-rouge">live</code> branch</h2>
+
+<p>If there <strong>are no new</strong> commits on <code class="language-plaintext highlighter-rouge">live</code> after common predecessor commit of <code class="language-plaintext highlighter-rouge">live</code> and <code class="language-plaintext highlighter-rouge">origin/pre-live</code>, just update the <code class="language-plaintext highlighter-rouge">live</code> branch pointer to the last commit of <em>needed commits</em> (the same as performing fast-forward <strong>merge</strong> of these commits to <code class="language-plaintext highlighter-rouge">live</code>).</p>
+
+<p>If there <strong>are    new</strong> commits on <code class="language-plaintext highlighter-rouge">live</code> after common predecessor commit of <code class="language-plaintext highlighter-rouge">live</code> and <code class="language-plaintext highlighter-rouge">origin/pre-live</code>, use either <strong>merge</strong>, or <strong>rebase</strong> with updating the <code class="language-plaintext highlighter-rouge">live</code> branch pointer:</p>
+
+<!-- <div class="next-li-no-style"></div> -->
+<ul>
+  <li><span>Merge</span>:
+    <ul>
+      <li>In case of merge conflict don’t forget to <strong>deploy</strong> resolved modifications before you <strong>stage</strong> them for commit.</li>
+    </ul>
+  </li>
+  <li><span>Rebase</span>:
+    <ul>
+      <li>Use <strong>only</strong> in case of <strong>no conflicts</strong> with originally fetched <em>needed commits</em> from <code class="language-plaintext highlighter-rouge">origin/pre-live</code>, because it will be very hard to go back later and tell what exactly the original proposed changes ware where.  You can try to rebase and abort (<code class="language-plaintext highlighter-rouge">git rebase --abort</code>) in case of a conflict with these commits. If conflicts, do <strong>merge</strong> instead.</li>
+      <li>In case of a merge conflict with the <em>last commit</em> of <em>needed commits</em> (one, you possibly created earlier) don’t forget to <strong>deploy</strong> resolved modifications before you <strong>stage</strong> them for commit.</li>
+      <li>You can do <strong>review</strong> and <strong>deployment</strong> after <strong>rebase</strong>, if you wish so; the <code class="language-plaintext highlighter-rouge">live</code> branch pointer should be updated to the last commit at last (when changes are <strong>reviewed</strong> and <strong>deployed</strong>) anyway.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="review-deployment-and-integration-of-changes-into-live-branch-handled-together">Review, Deployment and Integration of changes into live branch handled together</h2>
+
+<p>You can do it with help of this command: <code class="language-plaintext highlighter-rouge">git merge --no-ff --no-commit origin/pre-live</code>; It ultimately creates merge commit even if fast-forward merge is possible, but it doesn’t actually commit yet, just stages files for commit, except for files with merge conflicts, they are presented in form of modifications as usual.</p>
+
+<p>Here is what you do after the command above:</p>
+
+<ol>
+  <li>Unstage all files that are being staged.</li>
+  <li>For each modified file/modification: <strong>review</strong> modification(s), resolve merge conflicts and if needed, make corrective changes from your standpoint; <strong>deploy modifications</strong>, then  <strong>stage</strong> them.</li>
+  <li>Make a commit with appropriate message on what corrective changes you did, if you haven’t done any corrective changes at previous step, leave default message.</li>
+</ol>
+
+<p>After you <strong>reviewed</strong>, <strong>deployed</strong> and <strong>integrated</strong> changes into <code class="language-plaintext highlighter-rouge">live</code>, push live branch to remote.</p>
+
+<h2 id="additional-notes">Additional notes</h2>
+
+<p>As you probably noticed, you should always <strong>stage</strong> each file/modification, <strong>only after</strong> you <strong>reviewed</strong> and <strong>deployed</strong> them; that way, you’re less likely to miss <strong>deploying</strong> some changes. Same thing with updating <code class="language-plaintext highlighter-rouge">live</code> branch pointer or performing final <strong>merge</strong> (creating commit, rather than staging for the commit): <strong>only after</strong> all changes from <em>needed commits</em> <strong>are live</strong>.</p>]]></content><author><name>Nazar Primac</name></author><category term="search-engine-optimization" /><category term="blog" /><summary type="html"><![CDATA[This tutorial explains how to use git for effective collaboration between SEO specialist (particularly, the person, who is optimizing content for search engines by making suggestive changes to the content, such as links placements, etc.) and Web developer (the person, who is reviewing, implementing and deploying these changes). The last one often is CMS operator (content manager), rather than developer, depending on site’s implementation. In other words this tutorial is going to be useful if the roles described are executed by different people.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://pryjmak.local/placeholder-name/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2023-02-07T02:00:25+02:00</published><updated>2023-02-07T02:00:25+02:00</updated><id>http://pryjmak.local/placeholder-name</id><content type="html" xml:base="http://pryjmak.local/placeholder-name/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>Jekyll requires blog post files to be named according to the following format:</p>
+
+<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<!--more-->
+<div id="continuing"></div>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<h2 id="stretched-items">Stretched items</h2>
+
+<div><img src="" alt="" style="height: 100px !important" /></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
+</code></pre></div></div>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+
+<p>This is a sample document so you can preview the color schemes.</p>
+
+<h2 id="text-formatting">Text Formatting</h2>
+
+<p>Markdown supports <em>italics</em>, <strong>bold</strong>, and <strong><em>bold italics</em></strong> style using underscores.</p>
+
+<p>Markdown supports <em>italics</em>, <strong>bold</strong>, and <strong><em>bold italics</em></strong> style using asterisks.</p>
+
+<p>There are also inline styles like <code class="language-plaintext highlighter-rouge">inline code in monospace font</code> and <del>strikethrough style</del>.</p>
+
+<p><strong>There may be <del>strikethroughed text</del> or <code class="language-plaintext highlighter-rouge">code text</code> inside bold text.</strong></p>
+
+<p><em>And There may be <del>strikethroughed text</del> or <code class="language-plaintext highlighter-rouge">code text</code> inside italic text.</em></p>
+
+<blockquote>
+  <p><strong>Here is some quotation</strong>. Lorem <del>ipsum</del> dolor sit amet, consectetur<br />
+adipisicing elit, <em>sed</em> do eiusmod tempor incididunt ut labore et
+dolore magna aliqua. Ut enim <b>ad</b> minim <kbd>veniam</kbd>, quis nostrud exercitation.</p>
+
+  <p><code>
+  code block
+</code></p>
+</blockquote>
+
+<p>Inline <kbd>key</kbd> or <del><kbd>key</kbd></del> other <b>bold html</b> tags.</p>
+
+<table align="center">
+    <tr width="85%">
+        <td>column&nbsp;text</td>
+    </tr>
+</table>
+
+<h2 id="links-and-references">Links and References</h2>
+
+<p>To reference something from a URL, <a href="https://example.com/index.html">Named Links</a>,
+<a href="https://example.com/index.html" title="Description">Inline links</a> and direct link like <a href="https://example.com/">https://example.com/</a>
+are of great help. Sometimes <img src="https://example.com/sample.png" alt="A picture" /> is worth a thousand words.</p>
+
+<hr />
+
+<p>This [[SamplePage]] is a wiki link.</p>
+
+<h2 id="lists">Lists</h2>
+
+<p>There are two types of lists, ordered and unordered.</p>
+
+<ol>
+  <li>Item 1 
+<kbd>key</kbd></li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ol>
+
+<p>1) Item 1
+2) Item 2
+3) Item 3</p>
+
+<ul>
+  <li>Item A
+    <ul>
+      <li>Sub list
+        <ul>
+          <li>Sub sub list</li>
+          <li>Sub sub list 2</li>
+        </ul>
+      </li>
+      <li>Sub list 2</li>
+    </ul>
+  </li>
+  <li>Item B</li>
+  <li>Item C</li>
+</ul>
+
+<h2 id="tables">Tables</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Col 1</th>
+      <th>Col 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">what</td>
+      <td>else</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="code-blocks">Code Blocks</h2>
+
+<p>Anything indented more than 3 characters is treated as raw code block.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function fibo(n) {
+    fibo.mem = fibo.mem || []; // I am some comment
+    return fibo.mem[n] || fibo.mem[n] = n &lt;= 1 ? 1 : fibo(n - 1) + fibo(n - 2);
+</code></pre></div></div>
+
+<p>Fenced code blocks support syntax highlighting and are wrapped in triple backticks.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fibo</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">fibo</span><span class="p">.</span><span class="nx">mem</span> <span class="o">=</span> <span class="nx">fibo</span><span class="p">.</span><span class="nx">mem</span> <span class="o">||</span> <span class="p">[];</span> <span class="c1">// I am some comment</span>
+    <span class="k">return</span> <span class="nx">fibo</span><span class="p">.</span><span class="nx">mem</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">||</span> <span class="nx">fibo</span><span class="p">.</span><span class="nx">mem</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="nx">fibo</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">fibo</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">diff --git a/schemes/Preview.md b/schemes/Preview.md
+index 3d4b1fe..a85a22a 100644
+</span><span class="gd">--- a/schemes/Preview.md
+</span><span class="gi">+++ b/schemes/Preview.md
+</span><span class="p">@@ -89,6 +89,12 @@</span> function fibo(n) {
+ 
+<span class="gd">-## Deleted
+</span><span class="gi">+## Inserted
+</span></code></pre></div></div>
+
+<h2 id="criticmarkup">CriticMarkup</h2>
+
+<p>This is {++ inserted ++} and {– deleted –} or {== highlighted ==}{» comment «} text.</p>
+
+<p>We can also {~~ substitute ~&gt; something ~~}.</p>
+
+<!-- ## Reference Definitions -->]]></content><author><name>Nazar Primac</name></author><category term="physiology" /><category term="blog" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated. Jekyll requires blog post files to be named according to the following format: YEAR-MONTH-DAY-title.MARKUP Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and MARKUP is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.]]></summary></entry><entry><title type="html">Більше Про Планування – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/more-on-planning/" rel="alternate" type="text/html" title="Більше Про Планування – Стів Павліна" /><published>2023-01-31T00:12:00+02:00</published><updated>2023-01-31T00:12:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/more-on-planning</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/more-on-planning/"><![CDATA[<p>Я отримав кілька запитань (як публічно, так і приватно) щодо запису про планування від 11 жовтня, тож я думаю, що для того, щоб відповісти на них, слід доповнюватись…</p>
 
 <!--more-->
 <div id="continuing"></div>
@@ -480,344 +702,4 @@
 </ul>
 
 <p><br /><br />
-<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-discover-your-purpose/">The Meaning of Life: Discover Your Purpose</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="blog" /><category term="translation" /><summary type="html"><![CDATA[Чи є у вас заздалегідь закодована мета? Здається, у багатьох книгах, які я читав, припускається, що ми або генетично, або божественно закодовані з якоюсь вбудованою метою, і все, що нам потрібно зробити, це знайти час, щоб відкрити це через приватну інтроспекцію. Ви просто сідаєте одного разу, пишете заяву про місію та вірите, що те, що вийде з вас, буде керівною силою на все ваше життя. Можливо, кожні 6-12 місяців ви оновлюєте його.]]></summary></entry><entry><title type="html">Сенс життя: як нам жити? – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/how-shall-we-live/" rel="alternate" type="text/html" title="Сенс життя: як нам жити? – Стів Павліна" /><published>2023-01-24T00:00:00+02:00</published><updated>2023-01-24T00:00:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/how-shall-we-live</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/how-shall-we-live/"><![CDATA[<p>Як будемо жити? Для чого нам жити, якщо взагалі? Як ми можемо відрізнити правильне від неправильного? Чи є якийсь розумний спосіб відповісти на ці запитання, який не вимагає від нас сліпої віри?</p>
-
-<!--more-->
-<div id="continuing"></div>
-
-<h2 id="давайте-запитаємо-старих-греків">Давайте запитаємо старих греків</h2>
-<p>Відповісти на ці питання люди шукали буквально тисячі років. Це спробував Сократ (469-399 рр. до н. е.). Одним із його найпотужніших проривів стала ідея ретельного вивчення своїх переконань за допомогою типу перехресного допиту, який став відомий як діалектика. Це включало запитання та відповіді на пробні запитання, щоб дійти до чогось, що можна вважати істинним. По суті, він грав роль адвоката диявола і закликав людей виправдати те, що вони стверджували, що знають.</p>
-
-<p>Наприклад, є історія про те, як Сократ зустрів юнака, який збирався до суду звинуватити свого батька в безбожництві. Коли Сократ дізнався про це, він визнав цього чоловіка передбачуваним знавцем благочестя, заявивши, що потрібно бути знавцем благочестя, щоб звинувачувати власного батька в нечестності. Тоді Сократ смиренно попросив чоловіка дати йому визначення благочестя, поняття якого, за словами Сократа, він не знає. Чоловік неодноразово марно намагався дати йому визначення, а Сократ запропонував просте й незаперечне пояснення, чому кожна запропонована відповідь не може бути дійсною. Легко зрозуміти, що Сократ зрештою розсердив істеблішмент і отримав би смертний вирок. Він міг би втекти, але вирішив залишитися в Афінах і прийняти отруту. Сократ надзвичайно поважав закон, навіть коли це означало пожертвувати життям, щоб залишитися вірним своїм принципам. Коли я читав про його життя, я не міг не розвинути величезну повагу до нього та його життєвої філософії.</p>
-
-<p>Іншим філософом, який зробив значний прорив у питанні про те, як жити, був Арістотель (384-322 до н. е.), який навчався у Платона (Платон навчався у Сократа). Молодий Арістотель розширив ідеї Платона щодо природи реальності (світу форм), але з часом Арістотель почав рухатися в новому напрямку і вирішив проблему того, як потрібно жити.</p>
-
-<p>Найкращою відповіддю Аристотеля на те, як слід жити, була концепція евдемонії. На жаль, це слово було важко перекласти англійською, тому я знаю два улюблені переклади. Перше — «щастя», а друге — «людський розквіт». Більшість інших перекладів, які я бачив, є варіаціями одного з них. Особисто я міг би перекласти цей термін як «виконання», хоча це теж не зовсім точно. Евдемонія — це процес доброчесного життя, а не фіксований стан буття. Насправді це не така емоція, як «щастя». Аристотель придумав цю відповідь, оскільки він виявив, що евдемонія була єдиною потенційною метою життя, яку можна вважати самоціллю, а не засобом для досягнення іншої мети. Я думаю, що це причина того, що щастя є, мабуть, найпопулярнішим перекладом, оскільки щастя є самоціллю, а не засобом для чогось іншого.</p>
-
-<p>Аристотеля цікавив пошук правильного способу життя, якщо можна сказати, що такий існує. Його відповідь на евдемонію складається з двох основних компонентів: доброчесної дії та споглядання. Головна проблема полягає в тому, що спосіб виявити чесноти полягав у тому, щоб поглянути на людей, які, здавалося, процвітали і жили доброчесно, і звернути увагу на те, як вони жили. Як виявилося, такі люди, як правило, поводилися б із певним ступенем чесності, честі, мужності, чесності, раціональності, справедливості тощо. Це не просто внутрішнє спостереження, яке людина оцінює в собі — такі цінності можна спостерігати ззовні в , тож Аристотель досягає тут певного прогресу у спробі створити напівоб’єктивний стандарт правильного життя. Як і Сократ, Арістотель також був засуджений до страти, але він вирішив втекти з Афін і жити у вигнанні. (Я кажу вам, що я безмежно вдячний за те, що живу в суспільстві, де філософствування зараз не тягне за собою смертну кару.)</p>
-
-<p>Основна проблема, яку я бачу в проникливій спробі Арістотеля відповісти на це питання, полягає в тому, що його рішення є дещо круговим. Щоб жити добре, нам потрібно жити доброчесно і витрачати час на саморефлексію та навчання, але як ми знаємо, які критерії використовувати при виборі чеснот або у виборі того, що вивчати? По суті, ми повинні знайти людей, які, здається, живуть добре і процвітають — або за часів Аристотеля було запропоновано, що ми також можемо прагнути наслідувати богів, оскільки вони, безперечно, здавалося, що добре. Це мало чим відрізняється від деяких релігій сьогодні, які пропонують взірець чесноти для наслідування. Аристотель не дає відповіді на одне ключове питання: яке найкраще життя, яке можна прожити? Евдемонія пропонує спосіб знайти відповідь на це запитання, але це все ще залишає деякі прогалини.</p>
-
-<p>Після Аристотеля багато інших зверталися до питання про те, як жити. Кожна релігія має свою відповідь. Деякі люди кажуть, що відповіді немає, що відповідь не має значення, що відповідь неможлива для нас тепер, або що відповідь є суто питанням особистого вибору. Але найгіршою відповіддю з усіх є те, що робить більшість людей — повністю ігнорувати запитання.</p>
-
-<h2 id="вибір-власного-контексту">Вибір власного контексту</h2>
-<p>Для чого треба жити? Багатство? Потужність? Служба? довголіття? причина? любов? Віра? Сім’я? Бог? Чеснота? щастя? Виконання? Комфорт? Задоволення? Цілісність? Подивіться на цей список значень. Є сотні на вибір.</p>
-
-<p>Важливо зробити глобальний вибір щодо того, як жити нашим життям, оскільки це рішення визначає контекст для всього іншого, що ми робимо. Якщо ви не виберете свій контекст, ви отримаєте стандартний/середній контекст, що означає, що ви фактично дозволяєте іншим диктувати ваш контекст. Якщо зробити грубе узагальнення, то в США це переважно комерційний/матеріалістичний контекст. Там сказано: влаштуватися на роботу, створити сім’ю, відкладати трохи грошей і вийти на пенсію. Будьте хорошим громадянином і не впадайте в зайві проблеми. Але це також не має значення. Будь хорошим гвинтиком. Інші культури мають власні контексти за замовчуванням. Більшість людей просто підписуються на стандартний контекст своєї культури з незначними індивідуальними варіаціями.</p>
-
-<p>Дотримуватися стандартного контексту вашої культури — один із найгірших варіантів. Давайте розглянемо прості випадки демократії проти диктатури. У демократії ніхто насправді не відповідає за культурний контекст у цілому, тому найпоширеніші контексти в кінцевому підсумку перетворюються на мішанину шматочків і частинок, яким бракує загальної конгруентності. Загалом це призведе до плутанини та посередності. Таке суспільство забезпечить лише дуже розпливчасте уявлення про те, як ви повинні жити, наприклад, отримати роботу, мати сім’ю, триматися подалі від проблем і спокійно вийти на пенсію. Запитайте американця, що означає жити найкращим із можливих, і ви отримаєте багато різних відповідей, і більшість із них будуть досить нечіткими та нецілеспрямованими — такими відповідями, якими Сократ застрелив би повні діри.</p>
-
-<p>Тепер, якщо ви живете в культурі, де контекст свідомо керується, вам доведеться турбуватися про те, хто ним керує, які їхні мотиви та чи можете ви їм довіряти чи ні. Там, де ви знаходите сильну диктатуру, ви зазвичай бачите більш зосереджений контекст, ніж у демократії. Якби ви запитали когось із нацистської Німеччини, що означає жити найкращим із можливих, відповіді були б більш однорідними та зосередженими. Але проблема, звісно, полягає в тому, що такі контексти часто розроблені для того, щоб підтримувати контекст у владі. Існує більше тиску, щоб відповідати такому контексту. У довгостроковій перспективі такий тип контексту зазвичай призводить до розчарування, заціпеніння або фанатизму.</p>
-
-<p>Отже, якщо ви дозволите суспільству диктувати ваш контекст (а саме те, що відбувається за замовчуванням за відсутності свідомого вибору), ви, швидше за все, отримаєте дуже нечіткий і несфокусований контекст або такий, який зосереджений не на тому місці. Не чудовий вибір у будь-якому випадку. Звичайно, не оптимальний вибір. Такий контекст не дасть вам достатньо вказівок, як правильно жити. Ви витратите багато часу на те, щоб здогадуватися про свій шлях у житті, або робити багато помилок, які повертатимуться, щоб переслідувати вас пізніше.</p>
-
-<p>Зрештою, якщо ви хочете наблизитися до «найкращого можливого життя» для вас, ви повинні вибрати власний контекст. Ви не можете просто успадкувати стандартний контекст вашого суспільства та жити відповідно до того, що очікують від вас інші. Якщо ви намагаєтеся відповідати, ви змарнуєте своє життя порівняно з тим, що ви могли б зробити, якби вибрали кращий контекст.</p>
-
-<p>Тож як, чорт візьми, ми маємо зрозуміти, як жити? Чи ми просто гадаємо і сподіваємося на краще? Чи є якийсь раціональний, розумний спосіб прийняти таке важке рішення?</p>
-
-<p>Я не можу прийняти це рішення за вас, але я можу пояснити, як я прийняв це рішення для себе, що зрештою дало мені відповідь, яка мене дуже задовольнила. Я вважаю, що частина моєї відповіді є особистою, але я також бачу частину її універсальною для всіх нас.</p>
-
-<h2 id="життя-чеснотами">Життя чеснотами</h2>
-<p>Коли я досяг повноліття і почав серйозно замислюватися над питанням про те, як жити, першою важливою точкою зупинки було, по суті, місце, де зупинився Аристотель. Коли мені було близько 20 років, я витрачав багато часу на те, щоб жити доброчесно. Я сприймав найкраще можливе життя як те, щоб стати людиною чесноти: жити з честю, цілісністю, мужністю, співчуттям тощо. Я перерахував чесноти, яких хотів досягти, і навіть почав винаходити вправи, щоб допомогти собі їх розвинути. Бенджамін Франклін робив щось дуже подібне, як я читав у його автобіографії, і щотижня він вирішував зосередитися на одній конкретній чесноті, щоб розвивати свій характер.</p>
-
-<p>Як не дивно, була особлива комп’ютерна гра, в яку я просто закохався за цей час — Ultima IV. На сьогоднішній день я б сказав, що це моя улюблена гра всіх часів. У цій рольовій грі ви — Аватар, шукач правди, і ваша мета — не знищити якогось ворога, а скоріше досягти того, що називається Кодексом Найвищої Мудрості. Щоб досягти цієї мети, ви повинні розвинути свій характер у восьми чеснотах. Усі ці переваги випливають із восьми можливих комбінацій правди, любові та мужності:</p>
-
-<p>Правда = <em>Чесність</em><br />
-Любов = <em>Співчуття</em><br />
-Мужність = <em>Доблесть</em><br />
-Правда + Любов = <em>Справедливість</em><br />
-Правда + Мужність = <em>Честь</em><br />
-Любов + Мужність = <em>Жертовність</em><br />
-Правда + Любов + Мужність = <em>Духовність</em><br />
-Відсутність Істини, Любові та Мужності - це Гордість, протилежністю якої є <em>Смирення</em>.</p>
-
-<p>Я вважаю цю систему чеснот абсолютно блискучою, особливо в грі. Через багато років, коли я нарешті зустрів Річарда Гарріотта, дизайнера серії Ultima, на виставці Electronics Entertainment Expo (E3), я запитав його, як він придумав цю систему і як він зрештою вибрав ці переваги. Він сказав мені, що це почалося з мозкового штурму довгого списку та помічання моделей у тому, як чесноти співвідносяться одна з одною.</p>
-
-<p>Хоч як дивно, що я отримав ці ідеї в грі, я все ще думаю про доброчесне життя майже так само сьогодні, де ці вісім чеснот з’являються через перекриваючі набори правди, любові та мужності. Щодо поєднання всіх трьох чеснот, я вважаю, що «цілісність» краще підходить, ніж «духовність». Ultima V продовжила досліджувати протилежність цим, пороки, які можуть бути отримані від брехні, ненависті та боягузтва. На жаль, я відчуваю, що з тих пір серія Ultima дійсно пішла на спад і повністю втратила свою душу — я хотів би побачити, як ідея чесноти просувається ще далі.</p>
-
-<p>Коли я створював Dexterity Software у 1994 році, я багато думав про це. Я робив усе можливе, щоб зберегти ці чесноти та інтегрував їх у компанію, наскільки міг. Наприклад, приблизно за шість років, протягом яких Dexterity надсилає щомісячні виплати роялті (загалом багато сотень платежів), жодного разу жоден чек не вийшов із запізненням, навіть із запізненням на день. Я не знаю жодного іншого видавця ігор, який би міг претендувати на те саме, звичайно, з жодним, з яким я працював. Зобов’язання зробити це було для мене справою особистої честі, і моє особисте уявлення про чесноти було інтегровано в те, як я керував бізнесом. Честь завжди була для мене важливішою за прибуток… і досі є.</p>
-
-<p>Недоліком спроб жити доброчесно було те, що мене часто підкидали люди, які явно не жили доброчесно. На жаль, ігрова індустрія рясніє такими людьми, особливо коли йдеться про великі суми грошей. Я був добре підготовлений мати справу з іншими людьми, які високо цінували честь, але мені було прикро, що я мав можливість мати справу з такою небагатьма людьми. Дуже багато людей ставили гроші вищою цінністю, ніж особиста честь. Тож я плив проти течії. Незважаючи на це, я все одно віддаю перевагу цьому вибору порівняно з альтернативою.</p>
-
-<p>Я також почав мати багато внутрішніх конфліктів, намагаючись жити доброчесно. Хоча я не звинувачую в цьому чесноти, а радше свою обмежену здатність жити в повній відповідності з ними. Я жив своїм повсякденним життям досить доброчесно, але як щодо загальної картини? А як щодо самого поняття ведення ігрової компанії з метою розваги людей? Чи це було достатньо доброчесно? Я почав змушувати себе робити більше, прагнути до вищого ідеалу. Я добровільно став офіцером Асоціації професіоналів умовно-безкоштовного програмного забезпечення протягом двох років (нульова оплата). Я написав багато статей безкоштовно. Я давав багато порад і навчав багатьох людей безкоштовно. Я виступав на конференціях безкоштовно. Я змушував себе жертвувати більшим заради інших. Я обійшов деякі можливості заробити більше грошей і натомість шукав можливості надавати більше послуг.</p>
-
-<p>Я відчував, що це покращення для мене, але все одно цього було недостатньо. Я все ще не відчував себе близьким до оптимального з точки зору моєї здатності жити доброчесно. Спочатку я подумав, що це просто природа життя, що це буде боротьба протягом усього життя. Але незабаром я почав відчувати неспокій, розуміючи, що щось не так. Роками я не міг зрозуміти, що це таке, тож за замовчуванням залишився з тим, що знав. Я зіткнувся з тим самим блокпостом, з яким, можливо, зіткнувся Арістотель, тим, що завадило йому дійти до моменту відповіді на запитання: «Яке найкраще життя?» Я знав, що це десь інше, ніж я, але не знав, де шукати.</p>
-
-<h2 id="яке-найкраще-можливе-життя">Яке найкраще можливе життя?</h2>
-<p>Згодом я знайшов інший спосіб підходу до цієї проблеми, як жити. Я запитав себе: чому це таке складне запитання? Що в цьому такого важкого? Це спонукало мене по-новому задуматися, яке незабаром привело мене до запитання: що потрібно змінити, щоб на це запитання було легше відповісти?</p>
-
-<p>Бінго.</p>
-
-<p>Раптом стало зрозуміло, чому на це питання так важко відповісти. Щоб відповісти на нього точно, я мав би знати все. Я мав би бути Богом.</p>
-
-<p>Давайте дивитися правді в очі. Наш людський інтелект обмежений. Наша технологія тому підтвердження. Мій комп’ютер кращий за мене в арифметиці. Цей крихітний ЦП може виконувати різноманітні завдання, які мій набагато більший мозок не може. Мій жорсткий диск містить більше даних, ніж я міг запам’ятати за все життя. Звичайно, мій мозок випереджає процесор у багатьох областях, але наголошується на тому, що існують чіткі інтелектуальні обмеження того, що може робити наш squishware.</p>
-
-<p>Я поставив собі багато цікавих запитань, щоб спробувати отримати новий погляд на це. Чи може розум осягнути власні межі? Що, якби надрозумний інопланетний вид прийшов на землю — які б вони бачили межі людського інтелекту і де б вони бачили наші кордони? Чого мій мозок явно НЕ може робити?</p>
-
-<p>Що якби я був розумнішим, ніж зараз? Як я можу жити інакше? Які частини мого життя більш розумна істота вважала б дурними, непотрібними чи шкідливими? Якби більш розумна істота спробувала оптимізувати моє життя, маючи можливість чітко усвідомити мої інтелектуальні межі, що б це змінило? Як би я оптимізував життя горили чи миші, якби міг з ними спілкуватися? Що я сприймаю як їхні інтелектуальні межі? Яким було б найкраще життя для інших видів?</p>
-
-<p>І ще багато-багато запитань такого характеру.</p>
-
-<p>Згодом мій контекст змінився. Уперше я відчув, що насправді виходжу з меж власного інтелекту. Я міг почати сприймати, де були стіни. Деякі з цих обмежень були очевидними, як-от обмеження моєї здатності до обчислення цифр, пам’яті та швидкості. Але я почав тестувати й інші обмеження. Скільки різних понять я можу тримати в голові одночасно? Наскільки точно я можу сприймати час, температуру чи вагу без вимірювального приладу? Скільки технік вирішення проблем я справді знаю, і які їхні сильні та слабкі сторони?</p>
-
-<p>Я почав вивчати мозок трохи детальніше та порівнювати свої розумові межі з тим, що було відомо про фізичну структуру мозку. Найновіші дослідження в цій галузі абсолютно захоплюючі. Вводячи наркотики в мозок, можна позбавити когось свідомості. Електрично стимулюючи кластер нейронів, ви можете викликати досвід, який суб’єкт описав би як духовний (духовність кнопок?). Ви можете хірургічним шляхом позбавити людину здатності грати на піаніно.</p>
-
-<p>Розвиваючи глибше розуміння людського інтелекту, я зрозумів, що найбільша проблема з питанням про те, як жити, полягає в тому, що для відповіді на нього потрібен вищий інтелект, ніж ми маємо зараз. Щоб знати, яке найкраще можливе життя, що математично є проблемою оптимізації, ви повинні знати, які всі можливі життя. А для цього потрібна кількість даних, якою ми зараз не можемо керувати.</p>
-
-<p>Уявіть собі, що існує лише мільйон різних варіантів того, як ви можете прожити своє життя. Для того, щоб вибрати найкращий, ви повинні переглянути всі мільйони, застосувати якісь критерії для їх оцінки, а потім вибрати той, який має найвищий бал. З цим є три великі проблеми. Перша проблема полягає в тому, що є надто багато варіантів, щоб розумно розглянути їх. Друга проблема полягає в тому, що ви повинні мати можливість точно передбачити майбутнє, щоб знати, як складеться кожне життя. І третя проблема полягає в тому, що ви повинні придумати критерії оцінки. Перші два зараз явно неможливі, а як щодо третього?</p>
-
-<p>Третя проблема — це, по суті, те, з чим намагався розв’язати Аристотель — критерії оцінки. Жити доброчесно — одна з можливих відповідей, але вона все ще трохи розпливчаста.</p>
-
-<p>Отже, у нас тут серйозні проблеми. По-перше, у нас є простір пошуку можливих рішень, який занадто великий, щоб повністю дослідити його. Це настільки велике, що ми навіть не можемо зрозуміти все це. А по-друге, нам потрібно визначити критерії оцінки, щоб розумно порівнювати один варіант з іншим, критерії, які не надто сильно залежать від непізнаного майбутнього.</p>
-
-<h2 id="пошук">Пошук…</h2>
-<p>Давайте розберемося з першою проблемою — гігантським простором пошуку. По-перше, знайти доведено оптимальне рішення неможливо. Тож найправдивішою відповіддю на питання про найкращий спосіб життя є те, що він непізнаваний. Ми ще недостатньо розумні, щоб зрозуміти це. Це не дуже тішить, але насправді трохи допомагає. Тепер у нас залишилося таке запитання: як ми можемо наблизитися до оптимального рішення?</p>
-
-<p>На щастя, у математики є відповідь на це питання: евристика. Евристика — це правило для дослідження простору пошуку, яке може допомогти вам наблизитися до оптимального рішення, коли ви не можете дослідити весь простір пошуку. Прикладом евристики може бути підйом на пагорб. Уявіть, що у вас є велика тривимірна карта для дослідження, і ви хочете знайти найвищу точку. З підйомом на пагорб ви починаєте з випадкової точки на карті та просто переконаєтеся, що кожен крок, який ви робите, йде в гору. Коли ви більше не можете йти в гору, ви досягли вершини — локального максимуму. Не досліджуючи більше частини карти, ви не можете бути впевнені, що ваш останній пагорб був найвищим на карті, тож ви можете продовжувати дослідження, починаючи з інших точок на карті та використовуючи ту саму евристику сходження на пагорб. Якщо ви не дослідите всю карту, ви ніколи не зможете бути впевнені, що знайшли глобальний максимум, але чим більше ви досліджуєте, тим більшу впевненість ви отримуєте.</p>
-
-<p>То що ж це означає для життя людини? Це натякає на альпіністський підхід до життя. Деякий час ви пробуєте один спосіб життя, а потім продовжуєте намагатися вдосконалити його, беручи його «в гору». Ви налаштовуєте деякі параметри, щоб зробити його кращим. Наприклад, ви можете спробувати схуднути, заробити більше грошей або покращити стосунки — будь-яке або все це можна вважати кроком у гору. І ви просто продовжуєте підніматися в гору, поки не зможете піднятися вище.</p>
-
-<p>Звичайно, проблема з цим підходом пов’язана з природою евристики — ви можете застрягти в локальному максимумі, який набагато нижчий за можливий глобальний максимум. Вершина, якої ви прагнете досягти, може бути лише кротовим горбом у великій схемі речей. Інша проблема полягає в тому, що вам може знадобитися більше, ніж усе життя, щоб піднятися на один пагорб. Ви можете померти, не досягнувши такого підходу.</p>
-
-<p>Ах, але ми, як люди, маємо на своєму боці потужну перевагу, яка робить цю проблему трохи легшою — це уява. Нам не потрібно перевіряти ці перестановки фізично. Ми можемо перевірити їх у своєму розумі. Але це буде працювати добре, лише якщо наша ментальна карта реальності є близьким наближенням до реальної реальності. Іншими словами, наше моделювання має бути дуже близьким до реального, інакше наші наближення будуть далекими, а наші результати будуть марними. Пам’ятайте про самодисципліну: прийняття? Для того, щоб мати шанс досягти успіху в цьому, ми повинні прийняти реальність такою, якою вона є насправді, незалежно від того, з чим ми повинні зіткнутися в собі і наскільки ми не хочемо з цим зіткнутися. Інакше наша симуляція буде повна збоїв. Те, що, здається, працює в нашій уяві, не працюватиме в реальному світі.</p>
-
-<p>Чим точніша ваша ментальна модель реальності, тим більша ваша здатність розумно оцінювати можливі способи життя. Це означає, що ви повинні пізнати себе у всій вашій наготі, і в хорошому, і в поганому, і в потворному. Ви повинні розвинути глибоке розуміння власної природи, якою ви є насправді. Це стосується вчорашнього допису про приведення ваших переконань у відповідність зі своїми діями. Ви повинні бути внутрішньо конгруентними, інакше ваші симуляції викинуть лише сміття, якому ви не зможете довіряти.</p>
-
-<p>Я не впевнений, що всі здатні робити це дуже добре. Це вимагає високого рівня інтелекту та зосередженості, щоб уявити, як би було жити іншим життям, і об’єктивно оцінити його. Але це все, з чим ми повинні мати справу. Ми можемо зробити все можливе.</p>
-
-<p>Я вважаю, що оптимальним рішенням буде розглянути різні способи життя, яскраво уявити кожен з них у своїй уяві, оцінити його сильні та слабкі сторони. Після того, як ви охопили певну кількість із них (і я не знаю, скільки достатньо — чим більше, тим краще), ви вибираєте одне й починаєте жити таким чином. Тим часом ви продовжуєте залишатися відкритими для уявлення про інші можливості, і якщо ви коли-небудь відчуєте ту, яка є кращою за ваш поточний спосіб життя, ви переходите до нового «вищого» життя.</p>
-
-<h2 id="як-порівняти-одне-життя-з-іншим">Як порівняти одне життя з іншим?</h2>
-<p>Тепер ми маємо розглянути критерії оцінювання. Що таке гора? Як ми порівнюємо одне життя з іншим?</p>
-
-<p>Багато людей намагалися дати відповідь на це питання. Однією з найпопулярніших відповідей у питаннях самодопомоги сьогодні є щастя. Нам кажуть робити те, що робить нас найбільше щасливими. Шукайте задоволення. Уникайте болю. Майже все, що я читав про особистий розвиток, використовує певний варіант щастя як кінцеву мету життя.</p>
-
-<p>Але я вважаю, що щастя — це відповідь, що не відповідає. Щастя - це лише емоція. І ставити все своє життя на службу досягненню та підтримці певного емоційного стану явно неоптимально. По-перше, я дуже емоційно стійкий, і не потрібно багато, щоб зробити мене щасливим і задоволеним. Щастя та благополуччя можна підтримувати в основному за допомогою дуже здорової дієти та великої кількості фізичних вправ. Я вже добре вмію керувати своїми емоціями та бути щасливим, тому я впевнений, що зможу зробити це краще.</p>
-
-<p>Навіть якщо ми розповсюджуємо щастя на сферу задоволення чи процвітання, це все одно шкода. Даючи таку відповідь на питання, як жити, ми лише перекладаємо це питання на свій емоційний інтелект. Ми говоримо, що відповідь на те, як жити, полягає в тому, що говорять наші емоції. Припущення полягає в тому, що якщо ми відчуваємо себе заповненими, ми повинні жити оптимально. Я не бачу логічної причини, чому ця відповідь була б правильною, враховуючи те, що я знаю про те, як працюють емоції. Недостатньо добре.</p>
-
-<p>З цих причин я відкидав будь-які відповіді, які припускали, що оптимальний спосіб життя слід шукати в якомусь емоційному стані чи почутті. Я можу свідомо вибрати відчувати все, що хочу, просто змінивши свою увагу. Немає жодного конкретного способу дій, який би викликав у мене відчуття, якого я не зможу досягти, просто керуючи своєю уявою. Я можу самоемоції. 🙂</p>
-
-<p>Крім того, у нас є ціла низка інших гуру самодопомоги, які, здається, визначають мету життя в термінах досягнення успіху, заможності, повноцінних стосунків тощо.</p>
-
-<p>Як ви мабуть підозрюєте, це просто маркетинговий пух без жодної реальної суті. Більшість цих книг спрямовані на те, щоб показати вам, як досягти оптимальних результатів у існуючому соціальному контексті, але, як ми вже бачили, навіть якщо вам вдасться досягти передбачуваної вершини, ви все одно будете жити неоптимально. Ви лише витратите все своє життя, намагаючись піднятися на кротову гору, і залишите більшу частину своєї потенційної величі невикористаною.</p>
-
-<p>Спосіб вирішення цього питання — поглянути на своє життя в контексті загальної картини мого найчіткішого розуміння реальності. Це означало поглянути на історію життя, наскільки ми її розуміємо, на можливе майбутнє життя та куди воно може привести, а також на теперішній стан життя. Я відчув, що розгляд найкращого можливого людського життя слід помістити в рамки всього життя, минулого, теперішнього та прогнозованого майбутнього. Коли я дивлюся на те, як розвивалося життя на землі, я бачу цю силу еволюції як щось набагато більше, ніж моє особисте існування. Я бачу, що життя продовжує вдосконалювати свою складність, свій інтелект і свої загальні шанси на виживання. Коли я ставлю себе в цей контекст, я бачу, що маю три основні варіанти. Я можу працювати, щоб співпрацювати з еволюцією, я можу працювати проти неї, або я можу ігнорувати її. Моя людська свідомість дає мені можливість зробити цей вибір свідомо.</p>
-
-<h2 id="як-найближче-до-оптимуму">Як найближче до оптимуму</h2>
-<p>Я вирішив, що найкраще можливе життя має лежати в межах співпраці з еволюцією, а не проти неї. Тож для мене це означає дві речі: 1) працювати над тим, щоб розвиватися як особистість у найвищому можливому ступені, і 2) працювати над тим, щоб допомогти самому життю розвиватися до найвищого можливого ступеня. Виявляється, ці цілі дуже сумісні, оскільки існує позитивний зворотний зв’язок між саморозвитком і розвитком вашого оточення. Якщо ви працюєте лише над собою, ваше оточення зрештою стримає вас. Ти будеш як Тарзан, що живе серед мавп. І якщо ви працюєте лише для того, щоб допомагати іншим, це також буде неоптимальним, оскільки ви зможете навчити їх лише тому, що знаєте зараз, але ви ніколи не покращите свої знання та не розвинете свою здатність навчати. Тому потрібен баланс обох.</p>
-
-<p>Для мене це зводиться до роботи над власним особистим зростанням і допомоги іншим розвиватися. Це стало моїм способом оцінити найкраще можливе життя, на яке я міг сподіватися.</p>
-
-<p>Отже, що означає рости? Для мене це означає постійно прагнути вдосконалювати свої найпотужніші еволюційні активи, які я сприймаю як мій інтелект, мою свідомість і моє знання реальності. І щоб допомогти іншим розвиватися, я повинен продовжувати вдосконалювати свої навички спілкування.</p>
-
-<p>Головною метою свого життя я бачу служіння процесу еволюції. Це важливіше для мене, ніж усе інше. Усе інше в моєму житті є другорядним порівняно з цим і повинно виправдати свою придатність для цього порядку денного. Хто дбає про те, щоб отримати роботу та заробляти гроші, коли у вас є можливість свідомо брати участь в еволюції самого життя? Для мене всі інші потенційні способи життя — не що інше, як бліді тіні порівняно з цим.</p>
-
-<p>Давайте знову зв’яжемо це з концепцією евристики. Це дає наступну загальну стратегію:</p>
-
-<ol>
-  <li>Спробуйте уявити собі найкраще можливе життя, яке ви можете прожити, керуючись критеріями оцінки служіння самому процесу еволюції.</li>
-  <li>Живи — відчуй.</li>
-  <li>Щоразу, коли ви переконаєтеся, що для вас є кращий спосіб служити процесу еволюції, ніж те, що ви робите зараз, переходьте до нього.</li>
-</ol>
-
-<p>Це моя відповідь на питання про те, як жити: вкладати більшу частину свого життя в гонитву за зростанням. Для мене це має сенс. Якщо ми не можемо зрозуміти, як жити оптимально, тоді найкращим рішенням буде розвинути більшу здатність робити це. Якщо ваш комп’ютер не в змозі робити те, що вам потрібно, вам слід витратити час на оновлення комп’ютера.</p>
-
-<p>Я вважаю, що ця відповідь також добре поєднується з концепцією чесноти Арістотеля. Розум підказує напрямок, а чеснота допомагає формувати шлях. Я вважаю, що обидва важливі для найкращого життя. Однак я вважаю, що розум є сильнішим із цих двох, оскільки самі чесноти походять від нашого людського інтелекту. Один із способів уявлення про чесноти — як про інтелектуальні скорочення. Якщо даних забагато, щоб прийняти справді розумне рішення, ви можете повернутися до переваг і повірити, що вони принаймні навряд чи будуть дурними. Якщо сумніваєтеся, будьте чесними, чесними, сміливими.</p>
-
-<h2 id="squishware-20">Squishware 2.0</h2>
-<p>Якщо ви раптом виявите, що живете як мавпа, ви можете прийняти життя мавпи і присвятити себе харчуванню бананами цілий день і спробувати бути хорошою мавпою, або ви можете спробувати стати чимось більшим, ніж мавпа, і еволюціонувати в людину. Як тільки ви це зробите, усі ваші мавпячі цілі та досягнення здадуться абсолютно безглуздими порівняно з вашими новими людськими можливостями. Наскільки безглуздими будуть такі цілі, як створення бізнесу, чи стати хорошим у маркетингу здаються більш розвиненим видам?</p>
-
-<p>На еволюційній драбині ми зараз просто зграя мавп. Але якщо ми продовжимо рости, незабаром нас стане набагато більше. Цілком імовірно, що комп’ютерні технології тісніше з’єднаються з нашим власним squishware, щоб зробити нас ще розумнішими та здібнішими. Але навіть до того, як це станеться, ми можемо продовжувати вивчати наше програмне забезпечення для squish і розширити його можливості. Давайте перестанемо жити на 3% наших розумових можливостей і наблизимо їх до 100%.</p>
-
-<p>Існує багато способів свідомо сприяти процесу еволюції, і наша здатність робити це зараз, звичайно, обмежена (хоча з кожним роком ці межі руйнуються все більше). Я вважаю, що протягом усього життя одна людина, яка живе сьогодні, яка присвятить своє життя допомозі в еволюції нашого виду, може мати драматичний ефект. Ми все ще пам’ятаємо Аристотеля за його внесок. Що ще ми могли б досягти, якби тисячі з нас, які живуть сьогодні, присвятили своє життя подібній меті?</p>
-
-<p>У мене немає способу вам це довести, але, здається, я відкриваю, що чим більше я працюю, щоб узгодити своє життя з процесом еволюції, тим більше моє життя тече майже без зусиль, ніби мене тягне за собою магніт. Минулий рік моє життя складалося надзвичайно добре, і я відчуваю, що можу мислити чіткіше, ніж будь-коли. Це було нещодавнє перемикання контексту для мене, лише протягом минулого року, але я відчуваю, ніби воно стає сильнішим з кожним місяцем. Це відчуття ясності, що це саме те, що я маю робити у своєму житті. Самодисципліна все ще потрібна, але я сильніший і можу застосовувати її постійно. Я думаю, причина в тому, що я нарешті відчуваю, що справді живу найкращим життям, на яке я здатний, враховуючи те, що я знаю прямо зараз. Коли я намагаюся уявити щось краще, це лише збільшення моєї здатності робити те саме, а не зміна суті того, що я роблю. Однак дійти до цього моменту було нелегко, і я впевнений, що попереду ще більше змін. Така природа зростання — старі цілі постійно застарівають.</p>
-
-<p>Завтра ми дослідимо, як перетворити це високопоставлене уявлення про те, як жити, на особисту мету, яка насправді досяжна. А наступного дня ми розповімо, як розбити цю мету на цілі, проекти та дії та рухатися до неї.</p>
-
-<p><em>Цей пост є другою частиною серії із шести частин про сенс життя:</em></p>
-
-<ul>
-  <li><a href="../intro/"><em>Частина 1: Вступ</em></a></li>
-  <li><a href="./"><em>Частина 2: Як нам жити?</em></a></li>
-  <li><a href="../discover-your-purpose/"><em>Частина 3: Розкрийте свою мету</em></a></li>
-  <li><a href="../from-purpose-to-action/"><em>Частина 4: Від мети до дії</em></a></li>
-  <li><a href="../transitioning/"><em>Частина 5: Перехід</em></a></li>
-  <li><a href="../conscious-evolution/"><em>Частина 6: Свідома еволюція</em></a></li>
-</ul>
-
-<p><br /><br />
-<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-how-shall-we-live/">The Meaning of Life: How Shall We Live?</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="blog" /><category term="translation" /><summary type="html"><![CDATA[Як будемо жити? Для чого нам жити, якщо взагалі? Як ми можемо відрізнити правильне від неправильного? Чи є якийсь розумний спосіб відповісти на ці запитання, який не вимагає від нас сліпої віри?]]></summary></entry><entry><title type="html">Сенс життя: Вступ - Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/intro/" rel="alternate" type="text/html" title="Сенс життя: Вступ - Стів Павліна" /><published>2023-01-23T00:00:00+02:00</published><updated>2023-01-23T00:00:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/intro</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/intro/"><![CDATA[<p>У чому сенс життя? Чому ми тут? Є Бог чи його немає, і якщо Бог є, то яка його природа? Яка з усіх релігій світу є найбільш правильною? Чи існує загробне життя? Ми переважно фізичні чи духовні істоти?</p>
-
-<p>Люди тисячоліттями намагалися вирішити ці питання. Через них точилися війни. Але незважаючи на те, що ці питання змушують людей втрачати голову (іноді в переносному значенні, іноді в прямому сенсі), суть полягає в тому, що це дуже практичні запитання.</p>
-
-<!--more-->
-<div id="continuing"></div>
-
-<h2 id="за-кермом">За Кермом</h2>
-<p>Те, як ми відповімо на ці запитання, забезпечить остаточний контекст для всього іншого, що ми робимо з нашим життям. Якщо ми взагалі цінуємо наше життя, ми повинні трохи подумати над цими питаннями.</p>
-
-<p>Скажімо, ваше життя організовано навколо цілей, проектів і дій. Ви ставите перед собою мету, як-от відкрити новий інтернет-бізнес. Ви розбиваєте це на проекти, як-от написання бізнес-плану та запуск веб-сайту. А потім ви розбиваєте ці проекти на такі дії, як піти в банк, щоб відкрити бізнес-рахунок і зареєструвати своє доменне ім’я. Досить справедливо.</p>
-
-<p>Але навіщо взагалі починати бізнес? У чому справа? Навіщо вибирати цю ціль порівняно з будь-якою іншою? Навіщо взагалі ставити цілі?</p>
-
-<p>Що визначає цілі, які ви ставите (або не ставите), це ваш контекст. Ваш контекст - це ваша колекція переконань і цінностей. Отже, якщо цінності грошей і свободи є частиною вашого контексту, ви можете поставити собі за мету розпочати новий бізнес. Але з різними видами цінностей — іншим контекстом — ви можете взагалі не мати бажання ставити цілі.</p>
-
-<p>Найважливішою частиною вашого контексту є ваша колекція переконань про природу реальності, яка включає ваші релігійні, духовні та філософські переконання. Ваші загальні переконання щодо Всесвіту значною мірою визначатимуть ваші результати. Контекст диктує цілі. Цілі диктують проекти. Проекти диктують дії. Дії визначають результати.</p>
-
-<p>У певному контексті вам буде практично неможливо досягти певних результатів, тому що ви ніколи не поставите необхідні цілі, які призведуть до цих результатів.</p>
-
-<p>Ваш контекст працює як фільтр. Коли ви перебуваєте в певному контексті, ви втрачаєте доступ до потенційних цілей, проектів і дій, які знаходяться поза цим контекстом. Наприклад, якщо ваш контекст включає переконання, що злочинна поведінка є дуже поганою, то ви навряд чи працюватимете над тим, щоб стати майбутнім лідером організованої злочинності.</p>
-
-<h2 id="walking-in-my-shoes">Walking in My Shoes</h2>
-<p>Це довга особиста історія, але я думаю, що вона вам буде цікава. Якщо ви знайдете час, щоб прочитати це, я хочу, щоб ви помітили, як мої переконання (мій контекст) змінилися з часом і як різко вони змінили мої результати.</p>
-
-<p>Половину свого життя я шукав контекст, який би дав мені найкраще життя. Звичайно, це дивна гонитва, оскільки вона вимагає пошуку контексту, водночас завжди застрягаючи всередині нього. Іншими словами, визначення «найкраще можливе життя» також є частиною будь-якого контексту, тому я маю знайти контекст, який одночасно визначає цей термін І дає засоби для його виконання.</p>
-
-<p>Ця гонитва почалася для мене майже випадково, але згодом я почав займатися нею свідомо.</p>
-
-<h2 id="ореол">Ореол</h2>
-<p>Першу половину свого життя, до 17 років, я був католиком/християнином, охрещений і конфірмований. Я пройшов вісім років католицької гімназії, а потім чотири роки католицької середньої школи. Я був бойскаутом кілька років і отримав нагороду Ad Altare Dei. Я молився щодня і приймав усе, чого мене навчали, як істину. Щонеділі я ходив до церкви зі своєю сім’єю. Усі мої друзі та родина були християнами, тому я нічого не знав про інші системи вірувань. Мій батько був вівтарником, коли був молодим, а його брат (мій дядько) є католицьким священиком. Один із моїх двоюрідних братів є членом Campus Crusade for Christ. У середній школі я ходив на факультативні релігійні реколекції та виконував громадські роботи як у реабілітації, так і в дошкільному закладі для дітей з обмеженими можливостями. Я сподівався бути католиком усе життя.</p>
-
-<h2 id="блюзнірські-чутки">Блюзнірські чутки</h2>
-<p>Але ближче до кінця мого молодшого курсу середньої школи я пережив досвід, який я б мав описати як пробудження. Це було так, наче нова частина мого мозку раптово увімкнулася, підштовхнувши мене до вищого стану свідомості. Можливо, це був лише побічний ефект процесу дозрівання. Я почав відкрито ставити під сумнів переконання, які були закладені в мене з дитинства. Мені вже було недостатньо сліпого прийняття того, чого мене вчили. Я хотів зайти за лаштунки, викорінити будь-які невідповідності та побачити, чи справді ці переконання мали для мене сенс. Я почав піднімати багато питань, але виявив, що мало людей чесно їх обговорюють. Більшість просто відкинули мене або захищалися. Але мені було дуже цікаво, а не вороже. Моя родина була закрита для обговорення всього цього, але я знайшов кількох відкритих вчителів.</p>
-
-<p>Але я був розчарований. Я виявив, що, незважаючи на їхню освіту та значно більший життєвий досвід, дуже небагато з моїх друзів і вчителів ніколи не намагалися відкрито поставити під сумнів свої вірування. І це викликало у мене величезні сумніви. Я подумав: «Якщо всі просто приймають усе це сліпо, і ніхто навіть не сумнівається, чому я маю цьому вірити?» За кілька місяців сумніви лише посилилися, і я переніс більше своєї віри з католицького виховання на власний інтелект і почуття. Згодом я просто відмовився від усього контексту, і за відсутності будь-яких інших життєздатних контекстів на вибір я став атеїстом.</p>
-
-<p>Я вступив до останнього курсу католицької середньої школи як 17-річний атеїст. О, іронія. Спочатку я не був впевнений, чого очікувати, але незабаром я виявив, що контекст атеїзму неймовірно дає мені сили. Відкинувши всі свої старі переконання, я відчув, ніби мій мозок покращив інтелект. Я міг мислити набагато чіткіше, і мій розум, здавалося, працював набагато краще. Я також відчув, що більше контролюю своє життя, ніж будь-коли раніше. Не вірячи в Бога, я взяв на себе повну відповідальність за свої результати в житті. У школі мені було легше, ніж будь-коли, хоча я відвідував усі найскладніші шкільні заняття, більшість з яких були курси AP. Я настільки добре знав обчислення, що мій учитель дав мені спеціальний тест, який відрізнявся від решти класу. І одного разу мій учитель фізики прийшов до мене перед школою, щоб я показав йому, як розв’язати складну задачу з фізики. Зокрема, уроки математики та природничих наук були такими легкими для мене, що я почав шукати нові способи випробувати себе. Тож я намагався виконати все своє домашнє завдання на аркуші паперу розміром 1″ на 1″, або я робив це олівцем на зворотному боці коробки з пластівцями, або я розфарбовував свої полярні графіки кольоровими олівець і перетворити його на твір мистецтва. Люди вважали мене диваком, але я в основному робив це, щоб було цікаво, тому що проблеми самі по собі не становили труднощів. Ви не жили по-справжньому, поки не зробили обчислення олівцем. або я б зробив це олівцем на зворотному боці кришки коробки зі злаками, або я б розфарбував свої полярні графіки кольоровим олівцем і перетворив це на твір мистецтва. Люди вважали мене диваком, але я в основному робив це, щоб було цікаво, тому що проблеми самі по собі не становили труднощів. Ви не жили по-справжньому, поки не зробили обчислення олівцем. або я б зробив це олівцем на зворотному боці кришки коробки зі злаками, або я б розфарбував свої полярні графіки кольоровим олівцем і перетворив це на твір мистецтва. Люди вважали мене диваком, але я в основному робив це, щоб було цікаво, тому що проблеми самі по собі не становили труднощів. Ви не жили по-справжньому, поки не зробили обчислення олівцем.🙂</p>
-
-<p>Я не приховував, що був атеїстом, тож під час уроків релігії я вигадував усі необроблені дані, необхідні для складання тесту, але щоразу, коли виникали відкриті запитання для есе, я ставив їх із атеїстична перспектива. Я вдячний, що єзуїти були такими ж ліберальними, як і вони, і терпіли мою поведінку. Я повинен віддати їм велику заслугу в цьому.</p>
-
-<p>Моя сім’я була не в захваті від усього цього, особливо коли моя підписка на журнал «Американський атеїст» почала приходити поштою (я навчився перехоплювати пошту рано). Але я так добре навчався в школі, що їм було важко скаржитися, і вони не хотіли відкрито відповідати на жодне з моїх запитань, хоча я був би радий це зробити. Але вони змушували мене продовжувати ходити до церкви, і я деякий час терпів це, бо знав, що все одно через рік поїду. Але згодом я почав сидіти в іншій частині церкви, викрадався позаду, йшов на прогулянку й повертався перед тим, як вона закінчилася. Але одного разу меса закінчилася раніше, ніж очікувалося, і я повернувся надто пізно. Моя родина вже була біля машини і побачила, як я йшов вулицею. Ой! Вони поїхали без мене. Але замість того, щоб йти дві милі додому, Я пробув цілий день і не повернувся до півночі. Крім весіль і похоронів, я востаннє ходив до церкви.</p>
-
-<p>Незважаючи на ці конфлікти, мій останній рік у середній школі був, безумовно, найкращим за всю історію. Я успішно провів усі заняття та був прийнятий до шести коледжів на спеціальність комп’ютерних наук: Каліфорнійського технічного університету, Каліфорнійського університету в Лос-Анджелесі (часткова стипендія), Каліфорнійського університету в Сан-Дієго (повна стипендія), Каліфорнійського університету в Берклі, Карнегі-Меллона та Харві Мадда.</p>
-
-<p>Я вирішив вступити до Каліфорнійського університету в Берклі, оскільки на той час його програма з інформатики мала найвищий рейтинг у країні. Я був дуже щасливий, що виїхав і нарешті залишився сам. Восени 1989 року я переїхав до Берклі й жив у гуртожитку для першокурсників.</p>
-
-<p>Тоді все стало дивним.</p>
-
-<h2 id="юда">Юда</h2>
-<p>Під час навчання в Берклі мій контекст атеїзму ще більше сформувався. Уже не серед католиків, я познайомився з багатьма цікавими людьми з різноманітними системами вірувань. Я швидко знайшов багато нових друзів, які були дуже розумними, а деякі були відкритими для обговорення природи реальності. Я вважаю, що моє католицьке виховання було схоже на гвинтову пружину — щойно я залишив позаду середовище, яке підтримувало цю пружину, я одразу перекинувся на інший кінець спектру. Але я зайшов занадто далеко з цим. Я не тільки позбувся своїх старих релігійних переконань, але разом з ними пішло й усе моє уявлення про мораль. Я був схожий на хлопця з оповідання Марка Твена «Факти про недавній карнавал злочинності в Коннектикуті», історії про хлопця, який вбиває свою совість.</p>
-
-<p>Я почав сприймати все те, що в основному було протилежним моєму вихованню. Я повністю втратив інтерес до школи і майже ніколи не ходив на уроки. Я справді зовсім не піклувався про отримання диплома. Я ходив на вечірки майже щотижня і багато пив, одного разу випив 14 напоїв поспіль і прокинувся, не пам’ятаючи, як ліг спати. Мені довелося попросити друзів зібрати шматочки минулої ночі. До цього дня я впевнений, що вживав більше алкоголю до 21 року, ніж після (а зараз мені 34).</p>
-
-<p>Я також почав красти в магазинах — багато. Першого разу я зробив це просто тому, що я ніколи раніше не робив це, чого я ніколи не міг зробити як католик. Це було як завдання, яке потрібно викреслити з контрольного списку. Але незабаром я став залежним від цього емоційного підйому, і продовжував робити це все більше і більше, зрештою дійшов до того, що став робити це кілька разів на день.</p>
-
-<p>Я практично ніколи не крав речі, щоб зберегти їх. Більшу частину вкраденого я віддав би іншим людям або просто викинув би потім у смітник. Приблизно через місяць першого семестру мене заарештували. 4 місяці умовно. Я взяв приблизно тиждень перерви і відразу повернувся до нього, хоча став трохи обережнішим у цьому. Через тиждень після закінчення випробувального терміну мене знову заарештували, і в підсумку я отримав 40 годин громадських робіт. Я зробив послугу і незабаром знову почав красти. Але я ще більше вдосконалив свої методи, тому мені було набагато важче бути спійманим. Кілька близьких розмов лише додали мені впевненості.</p>
-
-<p>Я настільки звик до такої поведінки, що міг красти без забиття серця. Без страху. Тому мені довелося продовжувати збільшувати дозу. Спочатку я почав ставити перед собою невеликі цілі, як-от побачити, скільки великих батончиків я міг би одночасно помістити в кишеню (13), або спробувати вкрасти кожну пляшку білого в студентському магазині за один день (понад 50 пляшок). Тоді я просто роздав усі цукерки та біле однокурсникам.</p>
-
-<p>Я погано вчився в школі, і мене також відправили на академічний випробувальний термін. Вони роблять це, коли ти не з’являється на уроках. Хоча я не можу сказати, що я дуже піклувався.</p>
-
-<p>Але все пішло від поганого до гіршого, коли я зустрів іншого студента, який був приблизно таким же морально розбещеним, як і я, і ми швидко подружилися. Я перестав займатися (ризикованою) крадіжкою в магазині, і ми разом спланували та здійснили крадіжку з участю двох осіб, де шанси бути спійманими були дуже низькими. Це спрацювало знову і знову, і ми обидва почали заробляти на цьому реальні гроші. Щоб бути безпечним і не наражатися на одні й ті самі місця знову і знову, ми розширили наше коло, вийшовши далеко за межі Берклі до майже 100-мильного радіусу, від Сан-Франциско до Сакраменто та Фресно. Приблизно протягом року ми поступово підвищували кожну крадіжку до суми в доларах, яка тепер перевищувала діапазон великих крадіжок (у той час будь-яка крадіжка перевищувала 400 доларів США). Я думаю, що наш рекорд у вихідні склав приблизно 2400 доларів.</p>
-
-<h2 id="не-слід-було-цього-робити">Не слід було цього робити</h2>
-<p>Зрештою мене знову спіймали, цього разу за велику крадіжку. Не добре. До цього арешту я зрозумів, що через мої попередні роки мені загрожує близько двох років ув’язнення, якщо мене визнають винним у великій крадіжці. Зовсім не добре.</p>
-
-<p>І що ще гірше, мене заарештували в Сакраменто, приблизно за 2 години їзди від Берклі. Але мій напарник не міг чекати й викривати себе, тому він поїхав назад. Я сидів у окружній в’язниці, щоб отримати посвідчення особи. Я ніколи не крав із собою, і я назвав поліцейським одне зі своїх фальшивих імен, але вони, звісно, ​​не повірили мені на слово, тож мені довелося чекати в камері, поки вони перевіряли мої відбитки пальців, намагаючись зрозуміти ким я був.</p>
-
-<p>І ось мені було… 19 років, я сидів у в’язниці в неділю Суперкубка 1991 року. Очікував, що я скоро втрачу свободу на наступні два роки.</p>
-
-<p>ДУМАЙ!</p>
-
-<p>Це був звук реальності, що розбивалася навколо мене. Перші кілька годин я був у шоці, не міг правильно мислити. Можливо, це був помаранчевий одяг. Але мені не залишалося нічого робити, окрім як сидіти й думати протягом невизначеного періоду часу, і я знову почав задавати всі важливі запитання. Якого біса я тут робив? Це був справді я?</p>
-
-<p>Але тепер мої відповіді були зовсім іншими. Я зрозумів, що цей контекст був неправильним. Я змирився з тим фактом, що мені доведеться провести наступні пару років у в’язниці, але я також знав, що я назавжди змінився і що цей спосіб життя тепер закінчився. Два роки в’язниці… це був би болючий урок. Але принаймні я цього навчився. У мене ще не було повного контексту заміни, але я почав закладати його насіння. Це насіння було усвідомленням того, що якими б поганими не здавалися речі, у майбутньому вони можуть стати кращими. Я знав, що врешті-решт одужаю і відіб’юся. Може пройти кілька років, перш ніж я знову встану на ноги, але я точно знав, що зможу це пережити. Хоча тоді я б не назвав це так, це був момент, коли в мені зародилася ідея особистісного зростання. Це була ідея, що якими б поганими не були справи зараз, у мене все ще є здатність розвиватися через них і займати кращу позицію в майбутньому. Ця ідея — це все, що я мав, але цього було достатньо, щоб я впорався.</p>
-
-<p>Через три дні мене відпустили. Їм вдалося мене ідентифікувати. Мені призначили дату суду, і мене відправили в дорогу зі звинуваченням у великому злочині. Це було біля заходу сонця. Спочатку я гуляв навколо будівлі Капітолію та саду в Сакраменто, просто насолоджуючись свіжим повітрям і щасливий, що принаймні матиму ще кілька місяців свободи. В’язниця надзвичайно нудна, і я просто був у в’язниці округу, а не у в’язниці. На жаль, у мене виникла більш нагальна проблема. У мене не було посвідчення особи, лише 18 доларів готівкою, і я мусив знайти спосіб пройти 120 миль, щоб повернутися додому. Як пощастило, я зміг сісти на нічний автобус до Окленда всього за 16 доларів, а звідти мій (колишній) партнер підвіз мене додому.</p>
-
-<p>Повернувшись до своєї квартири, я знайшов на пошті листа з Каліфорнійського університету в Берклі, в якому говорилося, що мене виключили. Вони роблять це, коли ваш середній бал починається з десяткової коми.</p>
-
-<h2 id="зламана-рама">Зламана рама</h2>
-<p>Протягом наступних кількох місяців, чекаючи дати суду, я був у невеликому розпачі. Я взагалі нічого не робив. Я багато спав, довго гуляв і грав у відеоігри. Важко ставити цілі, коли очікуєш, що на деякий час потрапиш у в’язницю.</p>
-
-<p>Зрештою я знайшов адвоката і зустрівся з ним, щоб обговорити свою справу. Перш ніж я встиг відкрити рота, він сказав: «Ну, я розглянув вашу справу, і оскільки це ваше перше правопорушення, я майже впевнений, що ми можемо звести його до дрібної крадіжки, щоб ви отримали лише деякі громадські роботи, якщо ми не заперечуємо. У мене чудові стосунки з прокуратурою, тому я майже впевнений, що він піде на це. Я наполегливо не раджу йти до суду, оскільки докази проти вас величезні, оскільки вас спіймали на гарячому». Перше порушення? га? Відразу мій мозок наповнився думками на кшталт: «Чому він вважає, що це моя перша провина? Хіба він не знає про мої попередні? І якщо він вважає, що це перший злочин, чи решта суду також вважатиме, що це перший злочин? Чи повинен я виправити свого адвоката через цю помилку?» Поміркувавши над цим кілька секунд, Я вирішив, що краще тримати язика за зубами. Це могло мати негативні наслідки для мене, але був шанс, що це могло б мати і передні результати. Я подумав, що в найгіршому випадку мені доведеться мати справу з розлюченим адвокатом. Але найкращий випадок був надто добрим, щоб пропустити його. Велика крадіжка була злочином; дрібна крадіжка була лише проступком. Довелося ризикнути. Звичайно, ризикувати було для мене чимось надто звичним.</p>
-
-<p>Через кілька тижнів ми звернулися до суду. Мій план полягав у тому, щоб якомога більше тримати язика за зубами і говорити лише абсолютний мінімум. Поза залою суду я ознайомився з основною інформацією суду про справу. Вони справді пов’язали мене з моєю справжньою особистістю, але вони також вказали моє вигадане ім’я. Жодних попередніх не було вказано. Моє найкраще припущення полягає в тому, що хтось облажався і шукав попередніх на основі мого фальшивого імені замість мого справжнього імені, хоча справа передавалася до суду під моїм справжнім іменем. Людська помилка? Помилка комп’ютера? Хто знає? Але одна велика помилка в будь-якому випадку.</p>
-
-<p>Звичайно, коли ми потрапили в зал суду (місце, яке ставало все більш знайомим), суд залишився на припущенні, що це було перше правопорушення, і розглядав його як таке. Я не оскаржував пом’якшеного обвинувачення у дрібній крадіжці та отримав 60 годин громадських робіт. Я працював ці 60 годин так, ніби це була робота мрії, знаючи, що це могло бути 17 520 годин.</p>
-
-<p>Голова йшла обертом. Що щойно сталося? Наступні два роки знову були моїми.</p>
-
-<h2 id="знову-час-будівництва">Знову час будівництва</h2>
-<p>Невдовзі я повернувся до Лос-Анджелеса і влаштувався на роботу роздрібного продавця за 6 доларів за годину, а також відвідав кілька курсів з нічого. У мене було цілком достатньо хвилювання за останні пару років, і я просто хотів деякий час насолоджуватися тихим нормальним життям… провести деякий час поза радаром. Я знову спілкувався зі старими шкільними друзями, які збиралися навчатися в Каліфорнійському університеті в Лос-Анджелесі, і час від часу проводив час у їхньому братстві, але зазвичай тримався подалі від вечірок. Я багато грав у фрізбі-гольф, теніс і комп’ютерні ігри (особливо в пригодницькі ігри Sierra, які були популярні на початку 90-х). Я намагався жити дуже просто. Я провів багато часу, аналізуючи свій досвід у Берклі, маючи потребу зрозуміти його, щоб бути в змозі запобігти тому, щоб ніколи більше не піти цим шляхом. Але я тримав свої думки про все це при собі.</p>
-
-<p>Я знав, що мені належить багато особистого відновлення, але я також знав, що я не можу повернутися назад. Мораль і переконання, якими я був вихований, були зламані, але жити без почуття совісті явно не було виходу. Чи потрібна була віра в Бога, щоб жити згідно з кодексом етики?</p>
-
-<p>Я зрозумів, що незважаючи на те, наскільки негативним здавався мій досвід, він назавжди змінив мене в хорошу сторону. Пройшовши через цей досвід, я відкрив доступ до частини себе, яка раніше спала, — моєї мужності. Хоча я робив дуже дурні вчинки, вони також потребували багато сміливості. Я знову і знову навчився діяти, незважаючи на страх. І ця обумовленість залишилася зі мною. Оскільки я вже зіткнувся з перспективою потрапити до в’язниці, будь-яка невдача, яка мала б менші негативні наслідки, ніж ув’язнення, не призвела б до мене. До цього дня страх перед невдачею дуже мало владний наді мною. Я просто кажу собі: «Гей, якщо це не приведе мене до в’язниці, то наскільки це може бути погано?»</p>
-
-<p>Звичайно, мені довелося навчитися пом’якшувати цю мужність почуттям моралі та здоровим глуздом. Тож протягом цього року тихих роздумів я поступово змінив свій контекст, щоб створити новий особистий етичний кодекс, який би мені керував. Але замість того, щоб бути вкоріненим у релігії, я побудував її в більш гуманістичний спосіб, об’єднавши такі цінності, як честь, чесність, чесність, смирення та справедливість. Це був дуже продуманий і свідомий процес відновлення, який триватиме принаймні ще кілька років. Але навіть у 1991-92 роках, коли я тільки починав, це дало мені певну стабільність і поступово стало тим, що мене найбільше зміцнювало. Мені не знадобилося багато часу, щоб усвідомити, що сміливість, яку я розвинув, може стати для мене потужним надбанням, якщо я навчусь використовувати її розумно.</p>
-
-<p>Я був готовий до нового виклику.</p>
-
-<h2 id="нічого-страшного">Нічого страшного</h2>
-<p>Восени 1992 року я вирішив повернутися до коледжу, почавши спочатку, будучи першокурсником. Цього разу я пішов до Каліфорнійського державного університету, Нортрідж (CSUN). На програму з інформатики це не вплинуло, тому все, що мені потрібно було зробити, щоб мене прийняли, це подати заявку. Я переїхав до гуртожитку у 21 рік. Але я вже не був тією людиною, якою був у 18 років. Я все ще був релігійним атеїстом, але тепер у мене була сильна колекція особистих цінностей, якими я керувався. Я хотів побачити, на що я здатний і що ці нові цінності можуть зробити для мене, особливо цінність чесності. Не було б ні обману, ні крадіжки, ні пияцтва. Для мене все полягало в тому, щоб поставити цілі, вжити заходів і підштовхнути себе зробити все можливе. Моя сміливість була як нове джерело енергії, але тепер я мав на ній міцну смугу. Мої друзі з Берклі сказали мені:</p>
-
-<p>Але я знав, що зможу отримати прямий As. Я робив це в середній школі, відвідуючи класи з відзнакою. Це було недостатньо великим викликом. Тому я підвищив планку свого першого семестру, вирішивши взяти 31 одиницю (10 занять). Середній студент вивчає 12-15 одиниць за семестр. На жаль, декан факультету інформатики не затвердив мої додаткові одиниці. Вона була воротарем і думала, що я або жартую, або божевільний. Я переговорив її з 18 одиниць до 25 одиниць, але вона була непохитною, і навіть тоді все ще думала, що я, мабуть, жартую. Тож я взяв 25 одиниць у CSUN і записався на ще шість одиниць поза кампусом, загалом 31 одиницю. Це суперечило правилам, оскільки схвалення додаткового підрозділу технічно включало також підрозділи за межами університету, але я не збирався дозволити безглуздій бюрократії зупинити мене.</p>
-
-<p>Я присвятив себе вивченню управління часом і навчився використовувати свій час дуже ефективно. Я успішно провів усі свої заняття та відніс свої успішні табельки з обох шкіл назад декану, тепер просячи 39 одиниць за другий семестр. Цього разу було не важко отримати її схвалення, але я думаю, що вона трохи злякалася мене, коли я пішов. У цьому семестрі я теж успішно навчався. Тоді влітку 1993 року я працював за контрактом на повний робочий день розробником ігор і також став вегетаріанцем. Немає літньої школи. У своєму третьому й останньому семестрі я додав подвійну спеціальність з математики (яку було досить легко отримати, оскільки було так багато спільних курсів з інформатикою), і я взяв 37 одиниць, продовжуючи працювати повний робочий день. Я закінчив школу з середнім балом 3,94 і щороку отримував нагороду кращого студента з інформатики. Два дипломи за три семестри.</p>
-
-<p>Цей досвід дав мені змогу глибше зрозуміти силу контексту. Я навіть не намагався б такого, як католик. Я б ніколи не ставив перед собою ті цілі, які ставив. Я не впевнений, що хтось може справді зрозуміти, наскільки різною виглядає реальність з точки зору різних контекстів, якщо ви ніколи не міняли контексти. Якщо ви погоджуєтеся з контекстом, що позбавляє вас можливостей, ви можете бути абсолютно скаліченими у своїй здатності ефективно вирішувати певні виклики, незалежно від того, скільки ви намагаєтеся (якщо ви взагалі намагаєтеся).</p>
-
-<p>У рік після випуску я заснував програмне забезпечення Dexterity, зустрів свою майбутню дружину та продовжив досліджувати різні системи переконань. Але тепер я робив це дуже свідомо. Я керувався ідеєю, що якщо один контекст може відкрити двері до раніше невикористаного потенціалу, то що можуть зробити інші контексти? Чи може бути кращий контекст, ніж мій поточний? Мій досвід у Берклі та CSUN був абсолютно протилежним, і я знав, що це через мої різні системи переконань. Одна «релігія» мало не відправила мене до в’язниці; інший дозволив мені успішно використати потенціал, про який я навіть не підозрював. Мені абсолютно необхідно було дізнатися про це більше.</p>
-
-<p>Протягом наступного десятиліття я експериментував з агностицизмом, різними системами вірувань нового віку, буддизмом, об’єктивізмом тощо. Я навіть спробував саєнтологію кілька місяців, щоб побачити, що це таке. Я хотів засвоїти різні контексти, відчути їх зсередини, а потім відступити та порівняти їхні сильні та слабкі сторони. Це спричинило багато нестабільності в моєму житті, але також привело до величезного зростання.</p>
-
-<p>Я був схожим на шеф-кухаря, який пробує різні інгредієнти, щоб дізнатися, який рецепт переконань приведе до найкращого життя. І знову ж таки, визначення «найкращий» є частиною самого рецепту, тому моє розуміння сенсу життя також змінювалося.</p>
-
-<p>Багато разів я виявляв, що новий контекст повертав мене назад, і мої результати починали падати. Іншими разами мій новий контекст давав більше можливостей, і я знову починав рватися вперед. У довгостроковій перспективі, коли я об’єднав нові вірування, що надають сили, і позбувся тих, що позбавляють сили, моє життя почало покращуватися в усіх напрямках. Минулого року вони були досить стабільними, і 2005 рік став моїм найкращим роком за всю історію.</p>
-
-<h2 id="гнучкий">Гнучкий</h2>
-<p>Наші переконання діють як лінзи. Ці лінзи можуть допомогти нам побачити те, що ми інакше не можемо побачити, але вони також можуть заблокувати нам бачення частин реальності. Я бачу величезну частину особистого розвитку як вивчення цих лінз — цих систем переконань. Існує нескінченна кількість лінз, тому квест ніколи не закінчується, але чим більше лінз ви досліджуєте особисто, тим більше розумієте природу реальності та свою роль у ній.</p>
-
-<p>Я не стикався з жодною організованою системою переконань, яка б певним чином не позбавляла влади. Проблема в тому, що всі вони мають фіксовану перспективу. Якщо ви дивитеся на реальність з будь-якої окремої точки зору, ви сприймаєте лише проекцію реальності на вашу систему переконань, а не саму реальність. Чим жорсткіша ваша перспектива, тим більше деталей ви пропускаєте (деталі, які не стосуються вашої проекції, але потрапляють на інші), і тим менше свого справжнього потенціалу ви можете використати.</p>
-
-<p>Кілька років я б описав свою релігію як поле, а не фіксовану точку. Це було багатоконтекстно. Я тримав контекст плаваючим і намагався побачити реальність з різних точок зору. Спочатку це викликало занепокоєння та ускладнювало встановлення цілей і вжиття заходів, але я вважав, що це варте того, оскільки це дало мені набагато більше ясності. Я почав бачити закономірності, куди приведуть певні перспективи як для себе, так і для інших. Подібно до того, як ви можете уявити, куди зрештою приведе злочинне життя, ви також можете отримати більш тонке розуміння того, куди приведе віра в певного типу Бога та як цей шлях порівнюється з іншими виборами. Це складно, тому що ми не маємо справу з фіксованими точками ні для відправної точки, ні для кінцевої точки. Йдеться про поля можливостей, що ведуть до полів потенціалу. Наприклад, Злочинне життя може починатися і закінчуватися багатьма способами, але ви все одно можете побачити деякі загальні закономірності на шляху від початку до кінця. Ви можете зробити деякі узагальнення, які будуть досить точними.</p>
-
-<p>У результаті цього самоаналізу я зміг позбутися певних переконань і зміцнити інші. Деякі переконання постійно позбавляли мене можливостей, а це означає, що, якщо я їх прийму, я позбавлю себе доступу до цінного потенціалу. До них належала віра в рай/пекло та віра у вищу силу. Це друге може здатися дивовижним, але я вирішив відмовитися від нього, тому що постійно вважав, що воно надає менше сил, ніж віра в нижчу силу. Прикладом вищої сили може бути свідомо усвідомлюваний Бог або боги, такі як у християнстві чи грецькій міфології. Нижча сила буде схожа на поле, яке здатне реагувати на ваші наміри, щось на кшталт «сили» у «Зоряних війнах» або того, що деякі люди називають «джерелом». Ви можете молитися будь-якому типу сили, але в першому випадку ви просите, а в другому випадку ви проголошуєте. Багато людей, я в тому числі зауважив, що декларативна молитва діє краще, ніж відсутність молитви і краще, ніж просіння молитви. Я сприймаю це переважно як виявлення наміру.</p>
-
-<p>Тому, вирішуючи, які переконання прийняти, а які відмовитися, я постійно повертаюся до понять розширення можливостей і потенціалу. Я прагну позбутися переконань, які обмежують мою здатність отримати доступ до свого потенціалу, зміцнюючи переконання, які розкривають більше потенціалу. Якщо одна форма молитви, здається, взагалі не працює, але інша спрацьовує часто, я збираюся прийняти більше останнього контексту.</p>
-
-<h2 id="світ-у-моїх-очах">Світ у моїх очах</h2>
-<p>Моя загальна релігія фактично стала релігією особистісного зростання. Щороку я продовжую коригувати свої переконання, щоб спробувати привести їх у відповідність із моїм найкращим розумінням того, як насправді працює реальність. Чим краще ми розуміємо реальність, тим більше потенціалу ми відкриваємо. Подібно до того, як розуміння нового закону фізики може дозволити нам робити те, що ми ніколи не могли робити раніше, переконання щодо реальності працюють так само. Якщо ви застрягли на вірі в плоску землю, це обмежить ваші потенційні дії та результати. Подібним чином, якщо ваші релігійні переконання надто сильно розходяться з реальною реальністю, ви будете приречені витратити своє життя лише на частку свого справжнього потенціалу. У моїй «релігії» свідомо залишати свій потенціал невикористаним є гріхом. Особиста оптимізація глибоко вкорінена в моє почуття моралі. Для мене не рости морально неправильно — це суперечить моєму розумінню мети життя.</p>
-
-<p>Єдиний надійний спосіб, який я знайшов для виявлення того, які переконання надають силу, це перевірити їх і порівняти з іншими переконаннями. Це те, у що я спочатку впав несвідомо і в дуже деструктивний спосіб. Але якщо робити це свідомо й розумно, це може дати вам абсолютно новий погляд на життя. Подібно до того, як люди, які багато подорожують, повідомляють, що їх змінив досвід інших культур, ви також можете очікувати, що вас змінить досвід різних систем переконань.</p>
-
-<p>Я, звичайно, не очікую, що всі інші підпишуться на мою релігію. Це був мій дуже особистий вибір і, безсумнівно, сформований моїм унікальним досвідом. Проте свідомий вибір своїх переконань дозволив мені отримати доступ до тих частин мого потенціалу, які я ніколи не зміг би використати за допомогою інших систем переконань. У більшості випадків я б застряг, будучи надто пасивним, і не зміг би змусити себе. Я був би більш схильний прийняти свою долю в житті, замість того, щоб свідомо її створювати. Оскільки моя релігія базується на активній роботі над особистим зростанням і допомозі іншим робити те саме, я змушений діяти. Добрих думок чи намірів недостатньо.</p>
-
-<p>Ще одна частина моєї релігії полягає в тому, щоб прагнути стати найкращим я, ким я можу стати, а не копією Ісуса, чи Будди, чи когось іншого. Це означає витрачати багато часу на те, щоб дізнатися про власні сильні та слабкі сторони та з’ясувати, куди я можу розвиватися і що мені, можливо, доведеться просто прийняти.</p>
-
-<h2 id="все-має-значення">Все має значення</h2>
-<p>Ваші теперішні переконання дають вам змогу бути найкращим, чи вони прирікають вас жити лише тінню того, ким ви могли б бути? Чи можете ви чесно сказати, що ви робите все можливе або дуже близькі до цього? Чи живете ви відповідно до своїх найглибших переконань? Незалежно від ваших релігійних або духовних переконань, наскільки добре ви їх дотримуєтеся? Ви говорите?</p>
-
-<p>У понеділок, коли я гуляв Лас-Вегас-Стрип, я побачив пригніченого бездомного чоловіка, який сидів на одному з доріжок і просив грошей. Оскільки щохвилини повз нього проходило понад сто людей, ніхто навіть не зупинився, щоб подарувати йому добрі слова чи посмішку. Я подумав: «Де всі християни?» Якщо Ісус є зразком християнської поведінки, що Ісус зробив би в такій ситуації? Що б зробили інші приклади для наслідування? Що б ти зробив?</p>
-
-<p>З їхніх слів я чую, що більшість американців християни. За їхніми діями я бачу, що більшість – ні.</p>
-
-<p>Якщо ви справді у щось вірите, ви діятимете відповідно до цієї віри — завжди. Якщо ви вірите в гравітацію, ви ніколи не спробуєте їй кинути виклик. Якщо ви стверджуєте, що дотримуєтеся певних переконань, але дієте неконгруентно, тоді ви насправді в це не вірите. Ти жартуєш. Випадкова віра – ні.</p>
-
-<p>Переконання виявляють дії, а не слова. Якщо ви хочете зрозуміти, у що ви справді вірите, спостерігайте за своїми діями. Для цього може знадобитися певна сміливість, але якщо ви стежите за своїми діями, це приведе вас до більш конгруентної системи переконань. І опинившись там, ви можете почати свідомо рухатися до нових переконань, які надають вам сили, у той час як ваші дії та переконання залишаються відповідними на цьому шляху. Але ви не досягнете прогресу, доки стверджуєте, що вірите в щось одне, але постійно порушуєте це. Більшість людей у ​​такій ситуації витрачатимуть час, намагаючись змусити свої дії краще відображати їхні так звані переконання… і зустрінуть лише розчарування. Я кажу, що спочатку узгоджуйте свої переконання зі своїми діями і досягніть того, щоб бути абсолютно чесним із самим собою, сумнівами та іншим. Тоді вам буде набагато легше рухатися вперед. Не бійтеся робити це — жодна божественна істота не вразить вас за чесність із собою. І якщо хтось раптом з’явиться, ти завжди матимеш мене як цапа відпущення.😉</p>
-
-<p>Хоча це може бути непростою поїздкою (це, звичайно, було для мене), ви вийдете з іншого кінця набагато більш інтегрованою та наділеною людиною. Внутрішні невідповідності абсолютно калічать нас, змушуючи жити лише на частку нашого потенціалу. Коли наші дії та переконання суперечать, ми не можемо добре мислити. Ми стаємо менш розумними та винахідливими — іншими легко маніпулювати. У нас зовсім немає ясності, і ми, здається, не можемо рухатися в послідовному напрямку. Ми схожі на корабель без керма, якого кидають хвилі.</p>
-
-<p>Конгруентність — це ясність. Коли ви чітко усвідомлюєте, у що ви справді вірите щодо реальності, спостерігаючи за своїми діями та визнаючи собі найглибші, найтемніші істини, з якими ви ніколи не хотіли стикатися, ви встанете на шлях зростання, який присоромить усі ваші попередні досягнення. . Ви відкриєте доступ до ресурсів, які раніше були бездіяльними — більшого розуму, більшої обізнаності, більшого сумління. І ви нарешті почнете жити відповідно до величі, яка надто довго була похована під купою заперечень.</p>
-
-<p>Не бійтеся зіткнутися з тим, ким ви є насправді. Ти набагато сильніший, ніж ти думаєш.</p>
-
-<h2 id="і-потім">І потім…</h2>
-<p>Завтра ми дізнаємося, як ви можете прийняти найважливіше рішення: як ви будете жити і за що?</p>
-
-<p><em>Цей пост є другою частиною серії із шести частин про сенс життя:</em></p>
-
-<ul>
-  <li><a href="./"><em>Частина 1: Вступ</em></a></li>
-  <li><a href="../how-shall-we-live/"><em>Частина 2: Як нам жити?</em></a></li>
-  <li><a href="../discover-your-purpose/"><em>Частина 3: Розкрийте свою мету</em></a></li>
-  <li><a href="../from-purpose-to-action/"><em>Частина 4: Від мети до дії</em></a></li>
-  <li><a href="../transitioning/"><em>Частина 5: Перехід</em></a></li>
-  <li><a href="../conscious-evolution/"><em>Частина 6: Свідома еволюція</em></a></li>
-</ul>
-
-<p><br /><br />
-<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-intro/">The Meaning of Life: Intro</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="blog" /><category term="translation" /><summary type="html"><![CDATA[У чому сенс життя? Чому ми тут? Є Бог чи його немає, і якщо Бог є, то яка його природа? Яка з усіх релігій світу є найбільш правильною? Чи існує загробне життя? Ми переважно фізичні чи духовні істоти? Люди тисячоліттями намагалися вирішити ці питання. Через них точилися війни. Але незважаючи на те, що ці питання змушують людей втрачати голову (іноді в переносному значенні, іноді в прямому сенсі), суть полягає в тому, що це дуже практичні запитання.]]></summary></entry></feed>
+<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-discover-your-purpose/">The Meaning of Life: Discover Your Purpose</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="blog" /><category term="translation" /><summary type="html"><![CDATA[Чи є у вас заздалегідь закодована мета? Здається, у багатьох книгах, які я читав, припускається, що ми або генетично, або божественно закодовані з якоюсь вбудованою метою, і все, що нам потрібно зробити, це знайти час, щоб відкрити це через приватну інтроспекцію. Ви просто сідаєте одного разу, пишете заяву про місію та вірите, що те, що вийде з вас, буде керівною силою на все ваше життя. Можливо, кожні 6-12 місяців ви оновлюєте його.]]></summary></entry></feed>

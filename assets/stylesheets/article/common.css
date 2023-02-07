@@ -184,10 +184,6 @@ article.article .zippy-content::before {
 
 
 
-article.article .next-li-no-style + ul > li {
-    /*list-style-type: '✅\ ';*/
-    list-style-type:    none;
-}
 
 article.article {
     --tab-space:        5rem;
