@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://pryjmak.local/feed.xml" rel="self" type="application/atom+xml" /><link href="http://pryjmak.local/" rel="alternate" type="text/html" /><updated>2023-02-07T03:04:24+02:00</updated><id>http://pryjmak.local/feed.xml</id><title type="html">Nazar Pryjmak’s Blog</title><author><name>Nazar Primac</name></author><entry><title type="html">SEO – Developer Content Creation Workflow with Git | Git in Context of Search Engine Optimization | Use of Git in SEO | Nazar Primac</title><link href="http://pryjmak.local/seo/" rel="alternate" type="text/html" title="SEO – Developer Content Creation Workflow with Git | Git in Context of Search Engine Optimization | Use of Git in SEO | Nazar Primac" /><published>2023-02-07T03:04:24+02:00</published><updated>2023-02-07T03:04:24+02:00</updated><id>http://pryjmak.local/seo</id><content type="html" xml:base="http://pryjmak.local/seo/"><![CDATA[<p>This tutorial explains how to use git for effective collaboration between SEO specialist (particularly, the person, who is optimizing content for search engines by making suggestive changes to the content, such as links placements, etc.) and Web developer (the person, who is reviewing, implementing and deploying these changes). The last one often is CMS operator (content manager), rather than developer, depending on site’s implementation.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://pryjmak.local/feed.xml" rel="self" type="application/atom+xml" /><link href="http://pryjmak.local/" rel="alternate" type="text/html" /><updated>2023-02-07T17:13:00+02:00</updated><id>http://pryjmak.local/feed.xml</id><title type="html">Nazar Pryjmak’s Blog</title><author><name>Nazar Primac</name></author><entry><title type="html">SEO – Developer Content Creation Workflow with Git | Git in Context of Search Engine Optimization | Use of Git in SEO | Nazar Primac</title><link href="http://pryjmak.local/seo-developer-content-creation-workflow-with-git/" rel="alternate" type="text/html" title="SEO – Developer Content Creation Workflow with Git | Git in Context of Search Engine Optimization | Use of Git in SEO | Nazar Primac" /><published>2023-02-07T00:00:00+02:00</published><updated>2023-02-07T00:00:00+02:00</updated><id>http://pryjmak.local/seo-developer-content-creation-workflow-with-git</id><content type="html" xml:base="http://pryjmak.local/seo-developer-content-creation-workflow-with-git/"><![CDATA[<p>This tutorial explains how to use git for effective collaboration between SEO specialist (particularly, the person, who is optimizing content for search engines by making suggestive changes to the content, such as links placements, etc.) and web-developer (the person, who is reviewing, implementing and deploying these changes). The last one often is CMS operator (content manager), rather than developer, depending on website implementation.</p>
 
-<p>In other words this tutorial is going to be useful if the roles described are executed by different people.</p>
+<p>In other words, this tutorial is going to be useful if the roles described are executed by different people.</p>
 
 <!--more-->
 <div id="continuing"></div>
 <p>The tutorial gives a look at the exact steps each side has to take in order for the effective collaboration to work out as well as giving broader explanation of these actions.</p>
 
-<p>Obviously, in order to make this work, you need a repository of a text based (simple text, not html) version of the content of your site. Your SEO is unlikely to do an effective and productive work working with the source code itself.</p>
+<p>Obviously, in order to make this work, you need a repository of a text based (simple text, not html) version of the content of your site. Your SEO is unlikely to do an effective and productive work, working with the source code itself.</p>
 
-<p>Markdown is a special language that was invented for exactly that – representing content of a web page in a simple text format. There are CLI tools, extension for text editors and online converters for converting Html into Markdown. SEO can simply add Markdown version of a page to a repository, before they are going to optimized it. Simply commit created file, so that git can start tracking it, then use another commit for your optimization changes.</p>
+<p>Markdown is a special language that was invented for exactly that – representing content of a web page in a simple text format. There are CLI tools, extension for text editors and online converters for converting HTML into Markdown. SEO can simply add markdown version of a page to a repository, before they are going to optimized it. Simply commit created file, so that git can start tracking it, then use another commit for your optimization changes.</p>
 
 <p>There should be at least two branches. You can call them whatever you want; I’m going to be using <code class="language-plaintext highlighter-rouge">live</code> and <code class="language-plaintext highlighter-rouge">pre-live</code> branches. <code class="language-plaintext highlighter-rouge">live</code> branch serves for representing the actually live state of site’s content. <code class="language-plaintext highlighter-rouge">pre-live</code> is the branch, SEO commits changes to and pushes to remote for developer’s further use.</p>
 
 <p>Further go instructions for developers (content managers).</p>
 
-<p>Developer should start by fetching the origin (<code class="language-plaintext highlighter-rouge">git fetch origin</code>, rather than <code class="language-plaintext highlighter-rouge">git pull</code>). If there ware optimization changes made by SEO, <code class="language-plaintext highlighter-rouge">pre-live</code> remote tracking branch will appear with new commits, further referred as <em>needed commits</em>.</p>
+<p>Developer should start by fetching the origin (<code class="language-plaintext highlighter-rouge">git fetch origin</code>, rather than <code class="language-plaintext highlighter-rouge">git pull</code>). If there were optimization changes made by SEO, <code class="language-plaintext highlighter-rouge">pre-live</code> remote tracking branch will appear with new commits, further referred as <em>needed commits</em>.</p>
 
 <h2 id="1-review-and-deployment-of-changes-into-websites-source-code-by-developer">1. Review and Deployment of Changes into Website’s Source Code by Developer</h2>
 
@@ -25,8 +25,8 @@
 <ol>
   <li>Make sure you’re checked to the last commit of <em>needed commits</em>.</li>
   <li>Do mixed reset to commit that goes before <em>needed commits</em>, you’ll get all changes of <em>needed commits</em> as modifications in your working directory. Command: <code class="language-plaintext highlighter-rouge">git reset &lt;commit hash&gt;</code>.</li>
-  <li>For each modified file/modification <strong>review</strong> modifications and if needed, make corrective changes from your standpoint; <strong>deploy modifications</strong>, then  <strong>stage</strong> them. Claster modifications to do these steps on, in order of your convenience.</li>
-  <li>Make a commit with an appropriate message on the corrective changes you’ve made. If you haven’t made any corrective changes at the previous step, you can either make a commit with any message (the commit will be ‘dropped’ after rebase from the next step). Or you can just checkout the commit where you ware after the first step and skip the next step. Command: <code class="language-plaintext highlighter-rouge">git checkout &lt;commit hash&gt;</code>; you can lookup the hash using <code class="language-plaintext highlighter-rouge">git reflog</code> command.</li>
+  <li>For each modified file/modification <strong>review</strong> modifications and if needed, make corrective changes from your standpoint; <strong>deploy modifications</strong>, then  <strong>stage</strong> them. Claster modifications to do these steps on, in a way that is convenient for you.</li>
+  <li>Make a commit with an appropriate message on the corrective changes you’ve made. If you haven’t made any corrective changes at the previous step, you can either make a commit with any message (the commit will be dropped after rebase from the next step). Or you can just checkout the commit where you were after the first step and skip the next step. Command: <code class="language-plaintext highlighter-rouge">git checkout &lt;commit hash&gt;</code>; you can lookup the hash using <code class="language-plaintext highlighter-rouge">git reflog</code> command.</li>
   <li>Rebase the commit on <em>needed commits</em> (after rebase, this commit becomes one of  <em>needed commits</em>). If you’ve made the corrective changes, more than likely, you’ll have to resolve merge conflict; resolve the conflict keeping changes from the commit you’re rebasing; you can do that by running <code class="language-plaintext highlighter-rouge">git checkout --theirs &lt;list of conflicting files&gt;</code>; stage resolved modifications and continue rebase.</li>
 </ol>
 
@@ -47,7 +47,7 @@
   </li>
   <li><span>Rebase</span>:
     <ul>
-      <li>Use <strong>only</strong> in case of <strong>no conflicts</strong> with originally fetched <em>needed commits</em> from <code class="language-plaintext highlighter-rouge">origin/pre-live</code>, because it will be very hard to go back later and tell what exactly the original proposed changes ware where.  You can try to rebase and abort (<code class="language-plaintext highlighter-rouge">git rebase --abort</code>) in case of a conflict with these commits. If conflicts, do <strong>merge</strong> instead.</li>
+      <li>Use <strong>only</strong> in case of <strong>no conflicts</strong> with originally fetched <em>needed commits</em> from <code class="language-plaintext highlighter-rouge">origin/pre-live</code>, because it will be very hard to go back later and tell what exactly the original proposed changes were where.  You can try to rebase and abort (<code class="language-plaintext highlighter-rouge">git rebase --abort</code>) in case of a conflict with these commits. If conflicts, do <strong>merge</strong> instead.</li>
       <li>In case of a merge conflict with the <em>last commit</em> of <em>needed commits</em> (one, you possibly created earlier) don’t forget to <strong>deploy</strong> resolved modifications before you <strong>stage</strong> them for commit.</li>
       <li>You can do <strong>review</strong> and <strong>deployment</strong> after <strong>rebase</strong>, if you wish so; the <code class="language-plaintext highlighter-rouge">live</code> branch pointer should be updated to the last commit at last (when changes are <strong>reviewed</strong> and <strong>deployed</strong>) anyway.</li>
     </ul>
@@ -70,157 +70,7 @@
 
 <h2 id="additional-notes">Additional notes</h2>
 
-<p>As you probably noticed, you should always <strong>stage</strong> each file/modification, <strong>only after</strong> you <strong>reviewed</strong> and <strong>deployed</strong> them; that way, you’re less likely to miss <strong>deploying</strong> some changes. Same thing with updating <code class="language-plaintext highlighter-rouge">live</code> branch pointer or performing final <strong>merge</strong> (creating commit, rather than staging for the commit): <strong>only after</strong> all changes from <em>needed commits</em> <strong>are live</strong>.</p>]]></content><author><name>Nazar Primac</name></author><category term="search-engine-optimization" /><category term="blog" /><summary type="html"><![CDATA[This tutorial explains how to use git for effective collaboration between SEO specialist (particularly, the person, who is optimizing content for search engines by making suggestive changes to the content, such as links placements, etc.) and Web developer (the person, who is reviewing, implementing and deploying these changes). The last one often is CMS operator (content manager), rather than developer, depending on site’s implementation. In other words this tutorial is going to be useful if the roles described are executed by different people.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://pryjmak.local/placeholder-name/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2023-02-07T02:00:25+02:00</published><updated>2023-02-07T02:00:25+02:00</updated><id>http://pryjmak.local/placeholder-name</id><content type="html" xml:base="http://pryjmak.local/placeholder-name/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
-
-<p>Jekyll requires blog post files to be named according to the following format:</p>
-
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
-
-<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
-
-<!--more-->
-<div id="continuing"></div>
-
-<p>Jekyll also offers powerful support for code snippets:</p>
-
-<h2 id="stretched-items">Stretched items</h2>
-
-<div><img src="" alt="" style="height: 100px !important" /></div>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
-</code></pre></div></div>
-
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
-
-<p>This is a sample document so you can preview the color schemes.</p>
-
-<h2 id="text-formatting">Text Formatting</h2>
-
-<p>Markdown supports <em>italics</em>, <strong>bold</strong>, and <strong><em>bold italics</em></strong> style using underscores.</p>
-
-<p>Markdown supports <em>italics</em>, <strong>bold</strong>, and <strong><em>bold italics</em></strong> style using asterisks.</p>
-
-<p>There are also inline styles like <code class="language-plaintext highlighter-rouge">inline code in monospace font</code> and <del>strikethrough style</del>.</p>
-
-<p><strong>There may be <del>strikethroughed text</del> or <code class="language-plaintext highlighter-rouge">code text</code> inside bold text.</strong></p>
-
-<p><em>And There may be <del>strikethroughed text</del> or <code class="language-plaintext highlighter-rouge">code text</code> inside italic text.</em></p>
-
-<blockquote>
-  <p><strong>Here is some quotation</strong>. Lorem <del>ipsum</del> dolor sit amet, consectetur<br />
-adipisicing elit, <em>sed</em> do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim <b>ad</b> minim <kbd>veniam</kbd>, quis nostrud exercitation.</p>
-
-  <p><code>
-  code block
-</code></p>
-</blockquote>
-
-<p>Inline <kbd>key</kbd> or <del><kbd>key</kbd></del> other <b>bold html</b> tags.</p>
-
-<table align="center">
-    <tr width="85%">
-        <td>column&nbsp;text</td>
-    </tr>
-</table>
-
-<h2 id="links-and-references">Links and References</h2>
-
-<p>To reference something from a URL, <a href="https://example.com/index.html">Named Links</a>,
-<a href="https://example.com/index.html" title="Description">Inline links</a> and direct link like <a href="https://example.com/">https://example.com/</a>
-are of great help. Sometimes <img src="https://example.com/sample.png" alt="A picture" /> is worth a thousand words.</p>
-
-<hr />
-
-<p>This [[SamplePage]] is a wiki link.</p>
-
-<h2 id="lists">Lists</h2>
-
-<p>There are two types of lists, ordered and unordered.</p>
-
-<ol>
-  <li>Item 1 
-<kbd>key</kbd></li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-</ol>
-
-<p>1) Item 1
-2) Item 2
-3) Item 3</p>
-
-<ul>
-  <li>Item A
-    <ul>
-      <li>Sub list
-        <ul>
-          <li>Sub sub list</li>
-          <li>Sub sub list 2</li>
-        </ul>
-      </li>
-      <li>Sub list 2</li>
-    </ul>
-  </li>
-  <li>Item B</li>
-  <li>Item C</li>
-</ul>
-
-<h2 id="tables">Tables</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: right">Col 1</th>
-      <th>Col 2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: right">what</td>
-      <td>else</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="code-blocks">Code Blocks</h2>
-
-<p>Anything indented more than 3 characters is treated as raw code block.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function fibo(n) {
-    fibo.mem = fibo.mem || []; // I am some comment
-    return fibo.mem[n] || fibo.mem[n] = n &lt;= 1 ? 1 : fibo(n - 1) + fibo(n - 2);
-</code></pre></div></div>
-
-<p>Fenced code blocks support syntax highlighting and are wrapped in triple backticks.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fibo</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">fibo</span><span class="p">.</span><span class="nx">mem</span> <span class="o">=</span> <span class="nx">fibo</span><span class="p">.</span><span class="nx">mem</span> <span class="o">||</span> <span class="p">[];</span> <span class="c1">// I am some comment</span>
-    <span class="k">return</span> <span class="nx">fibo</span><span class="p">.</span><span class="nx">mem</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">||</span> <span class="nx">fibo</span><span class="p">.</span><span class="nx">mem</span><span class="p">[</span><span class="nx">n</span><span class="p">]</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="nx">fibo</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">fibo</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">diff --git a/schemes/Preview.md b/schemes/Preview.md
-index 3d4b1fe..a85a22a 100644
-</span><span class="gd">--- a/schemes/Preview.md
-</span><span class="gi">+++ b/schemes/Preview.md
-</span><span class="p">@@ -89,6 +89,12 @@</span> function fibo(n) {
- 
-<span class="gd">-## Deleted
-</span><span class="gi">+## Inserted
-</span></code></pre></div></div>
-
-<h2 id="criticmarkup">CriticMarkup</h2>
-
-<p>This is {++ inserted ++} and {– deleted –} or {== highlighted ==}{» comment «} text.</p>
-
-<p>We can also {~~ substitute ~&gt; something ~~}.</p>
-
-<!-- ## Reference Definitions -->]]></content><author><name>Nazar Primac</name></author><category term="physiology" /><category term="blog" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><category term="new&amp;#x202F;tag" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated. Jekyll requires blog post files to be named according to the following format: YEAR-MONTH-DAY-title.MARKUP Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and MARKUP is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.]]></summary></entry><entry><title type="html">Більше Про Планування – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/more-on-planning/" rel="alternate" type="text/html" title="Більше Про Планування – Стів Павліна" /><published>2023-01-31T00:12:00+02:00</published><updated>2023-01-31T00:12:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/more-on-planning</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/more-on-planning/"><![CDATA[<p>Я отримав кілька запитань (як публічно, так і приватно) щодо запису про планування від 11 жовтня, тож я думаю, що для того, щоб відповісти на них, слід доповнюватись…</p>
+<p>As you probably noticed, you should always <strong>stage</strong> each file/modification, <strong>only after</strong> you <strong>reviewed</strong> and <strong>deployed</strong> them; that way, you’re less likely to miss <strong>deploying</strong> some changes. Same thing with updating <code class="language-plaintext highlighter-rouge">live</code> branch pointer or performing final <strong>merge</strong> (creating commit, rather than staging for the commit): <strong>only after</strong> all changes from <em>needed commits</em> <strong>are live</strong>.</p>]]></content><author><name>Nazar Primac</name></author><category term="search-engine-optimization" /><category term="blog" /><category term="SEO" /><category term="content&amp;#x202F;creation" /><category term="Git" /><summary type="html"><![CDATA[This tutorial explains how to use git for effective collaboration between SEO specialist (particularly, the person, who is optimizing content for search engines by making suggestive changes to the content, such as links placements, etc.) and web-developer (the person, who is reviewing, implementing and deploying these changes). The last one often is CMS operator (content manager), rather than developer, depending on website implementation. In other words, this tutorial is going to be useful if the roles described are executed by different people.]]></summary></entry><entry><title type="html">Більше Про Планування – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/more-on-planning/" rel="alternate" type="text/html" title="Більше Про Планування – Стів Павліна" /><published>2023-01-31T00:12:00+02:00</published><updated>2023-01-31T00:12:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/more-on-planning</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/more-on-planning/"><![CDATA[<p>Я отримав кілька запитань (як публічно, так і приватно) щодо запису про планування від 11 жовтня, тож я думаю, що для того, щоб відповісти на них, слід доповнюватись…</p>
 
 <!--more-->
 <div id="continuing"></div>
@@ -503,7 +353,7 @@ index 3d4b1fe..a85a22a 100644
 </ul>
 
 <p><br /><br />
-<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-conscious-evolution/">The Meaning of Life: Conscious Evolution</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="blog" /><category term="translation" /><summary type="html"><![CDATA[У цьому останньому дописі серії «Сенс життя» я спробую представити ширший погляд на те, чому особистий розвиток такий важливий і чому я вважаю, що інвестиції у власний розвиток є найкращою інвестицією, яку ви можете зробити.]]></summary></entry><entry><title type="html">Сенс життя: перехід – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/transitioning/" rel="alternate" type="text/html" title="Сенс життя: перехід – Стів Павліна" /><published>2023-01-27T00:00:00+02:00</published><updated>2023-01-27T00:00:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/transitioning</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/transitioning/"><![CDATA[<p>Після того, як ви визначите свою мету та визначите деякі цілі та проекти на основі цієї мети, швидше за все, ви виявите, що вам доведеться рухатися в зовсім іншому напрямку. Можливо, ви роками йшли поточним шляхом, а тепер вибрали абсолютно новий напрямок. Цілком можливо, що майже кожна частина вашого життя повинна буде змінитися — ваші звички щодо здоров’я, соціальні стосунки, робота/кар’єра і навіть ваші духовні практики.</p>
+<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-conscious-evolution/">The Meaning of Life: Conscious Evolution</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="translation" /><summary type="html"><![CDATA[У цьому останньому дописі серії «Сенс життя» я спробую представити ширший погляд на те, чому особистий розвиток такий важливий і чому я вважаю, що інвестиції у власний розвиток є найкращою інвестицією, яку ви можете зробити.]]></summary></entry><entry><title type="html">Сенс життя: перехід – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/transitioning/" rel="alternate" type="text/html" title="Сенс життя: перехід – Стів Павліна" /><published>2023-01-27T00:00:00+02:00</published><updated>2023-01-27T00:00:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/transitioning</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/transitioning/"><![CDATA[<p>Після того, як ви визначите свою мету та визначите деякі цілі та проекти на основі цієї мети, швидше за все, ви виявите, що вам доведеться рухатися в зовсім іншому напрямку. Можливо, ви роками йшли поточним шляхом, а тепер вибрали абсолютно новий напрямок. Цілком можливо, що майже кожна частина вашого життя повинна буде змінитися — ваші звички щодо здоров’я, соціальні стосунки, робота/кар’єра і навіть ваші духовні практики.</p>
 
 <p>Я сам проходив через такий перехід кілька разів (зазвичай за свідомим рішенням), і я хочу поділитися кількома порадами щодо здійснення такого переходу, які можуть бути корисними.</p>
 
@@ -570,7 +420,7 @@ index 3d4b1fe..a85a22a 100644
 </ul>
 
 <p><br /><br />
-<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-transitioning/">The Meaning of Life: Transitioning</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="blog" /><category term="translation" /><summary type="html"><![CDATA[Після того, як ви визначите свою мету та визначите деякі цілі та проекти на основі цієї мети, швидше за все, ви виявите, що вам доведеться рухатися в зовсім іншому напрямку. Можливо, ви роками йшли поточним шляхом, а тепер вибрали абсолютно новий напрямок. Цілком можливо, що майже кожна частина вашого життя повинна буде змінитися — ваші звички щодо здоров’я, соціальні стосунки, робота/кар’єра і навіть ваші духовні практики. Я сам проходив через такий перехід кілька разів (зазвичай за свідомим рішенням), і я хочу поділитися кількома порадами щодо здійснення такого переходу, які можуть бути корисними.]]></summary></entry><entry><title type="html">Сенс життя: від мети до дії – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/from-purpose-to-action/" rel="alternate" type="text/html" title="Сенс життя: від мети до дії – Стів Павліна" /><published>2023-01-26T00:00:00+02:00</published><updated>2023-01-26T00:00:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/from-purpose-to-action</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/from-purpose-to-action/"><![CDATA[<p>Коли ви визначите свою загальну мету/місію, наступним кроком стане перетворення цієї мети на досяжні цілі, проекти та дії.</p>
+<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-transitioning/">The Meaning of Life: Transitioning</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="translation" /><summary type="html"><![CDATA[Після того, як ви визначите свою мету та визначите деякі цілі та проекти на основі цієї мети, швидше за все, ви виявите, що вам доведеться рухатися в зовсім іншому напрямку. Можливо, ви роками йшли поточним шляхом, а тепер вибрали абсолютно новий напрямок. Цілком можливо, що майже кожна частина вашого життя повинна буде змінитися — ваші звички щодо здоров’я, соціальні стосунки, робота/кар’єра і навіть ваші духовні практики. Я сам проходив через такий перехід кілька разів (зазвичай за свідомим рішенням), і я хочу поділитися кількома порадами щодо здійснення такого переходу, які можуть бути корисними.]]></summary></entry><entry><title type="html">Сенс життя: від мети до дії – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/from-purpose-to-action/" rel="alternate" type="text/html" title="Сенс життя: від мети до дії – Стів Павліна" /><published>2023-01-26T00:00:00+02:00</published><updated>2023-01-26T00:00:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/from-purpose-to-action</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/from-purpose-to-action/"><![CDATA[<p>Коли ви визначите свою загальну мету/місію, наступним кроком стане перетворення цієї мети на досяжні цілі, проекти та дії.</p>
 
 <p>Я вже багато писав про цю тему, тому в рамках цієї серії «Сенс життя» у мене немає чим поділитися кардинально новим. Цей запис здебільшого міститиме посилання на попередній вміст.</p>
 
@@ -601,7 +451,7 @@ index 3d4b1fe..a85a22a 100644
 </ul>
 
 <p><br /><br />
-<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-from-purpose-to-action/">The Meaning of Life: From Purpose to Action</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="blog" /><category term="translation" /><summary type="html"><![CDATA[Коли ви визначите свою загальну мету/місію, наступним кроком стане перетворення цієї мети на досяжні цілі, проекти та дії. Я вже багато писав про цю тему, тому в рамках цієї серії «Сенс життя» у мене немає чим поділитися кардинально новим. Цей запис здебільшого міститиме посилання на попередній вміст.]]></summary></entry><entry><title type="html">Сенс життя: розкрийте свою мету – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/discover-your-purpose/" rel="alternate" type="text/html" title="Сенс життя: розкрийте свою мету – Стів Павліна" /><published>2023-01-25T00:00:00+02:00</published><updated>2023-01-25T00:00:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/discover-your-purpose</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/discover-your-purpose/"><![CDATA[<h2 id="чи-є-у-вас-заздалегідь-закодована-мета">Чи є у вас заздалегідь закодована мета?</h2>
+<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-from-purpose-to-action/">The Meaning of Life: From Purpose to Action</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="translation" /><summary type="html"><![CDATA[Коли ви визначите свою загальну мету/місію, наступним кроком стане перетворення цієї мети на досяжні цілі, проекти та дії. Я вже багато писав про цю тему, тому в рамках цієї серії «Сенс життя» у мене немає чим поділитися кардинально новим. Цей запис здебільшого міститиме посилання на попередній вміст.]]></summary></entry><entry><title type="html">Сенс життя: розкрийте свою мету – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/discover-your-purpose/" rel="alternate" type="text/html" title="Сенс життя: розкрийте свою мету – Стів Павліна" /><published>2023-01-25T00:00:00+02:00</published><updated>2023-01-25T00:00:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/discover-your-purpose</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/discover-your-purpose/"><![CDATA[<h2 id="чи-є-у-вас-заздалегідь-закодована-мета">Чи є у вас заздалегідь закодована мета?</h2>
 <p>Здається, у багатьох книгах, які я читав, припускається, що ми або генетично, або божественно закодовані з якоюсь вбудованою метою, і все, що нам потрібно зробити, це знайти час, щоб відкрити це через приватну інтроспекцію. Ви просто сідаєте одного разу, пишете заяву про місію та вірите, що те, що вийде з вас, буде керівною силою на все ваше життя. Можливо, кожні 6-12 місяців ви оновлюєте його.</p>
 
 <!--more-->
@@ -702,4 +552,172 @@ index 3d4b1fe..a85a22a 100644
 </ul>
 
 <p><br /><br />
-<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-discover-your-purpose/">The Meaning of Life: Discover Your Purpose</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="blog" /><category term="translation" /><summary type="html"><![CDATA[Чи є у вас заздалегідь закодована мета? Здається, у багатьох книгах, які я читав, припускається, що ми або генетично, або божественно закодовані з якоюсь вбудованою метою, і все, що нам потрібно зробити, це знайти час, щоб відкрити це через приватну інтроспекцію. Ви просто сідаєте одного разу, пишете заяву про місію та вірите, що те, що вийде з вас, буде керівною силою на все ваше життя. Можливо, кожні 6-12 місяців ви оновлюєте його.]]></summary></entry></feed>
+<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-discover-your-purpose/">The Meaning of Life: Discover Your Purpose</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="translation" /><summary type="html"><![CDATA[Чи є у вас заздалегідь закодована мета? Здається, у багатьох книгах, які я читав, припускається, що ми або генетично, або божественно закодовані з якоюсь вбудованою метою, і все, що нам потрібно зробити, це знайти час, щоб відкрити це через приватну інтроспекцію. Ви просто сідаєте одного разу, пишете заяву про місію та вірите, що те, що вийде з вас, буде керівною силою на все ваше життя. Можливо, кожні 6-12 місяців ви оновлюєте його.]]></summary></entry><entry><title type="html">Сенс життя: як нам жити? – Стів Павліна</title><link href="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/how-shall-we-live/" rel="alternate" type="text/html" title="Сенс життя: як нам жити? – Стів Павліна" /><published>2023-01-24T00:00:00+02:00</published><updated>2023-01-24T00:00:00+02:00</updated><id>http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/how-shall-we-live</id><content type="html" xml:base="http://pryjmak.local/steve-pavlina/the-meaning-of-life-series/how-shall-we-live/"><![CDATA[<p>Як будемо жити? Для чого нам жити, якщо взагалі? Як ми можемо відрізнити правильне від неправильного? Чи є якийсь розумний спосіб відповісти на ці запитання, який не вимагає від нас сліпої віри?</p>
+
+<!--more-->
+<div id="continuing"></div>
+
+<h2 id="давайте-запитаємо-старих-греків">Давайте запитаємо старих греків</h2>
+<p>Відповісти на ці питання люди шукали буквально тисячі років. Це спробував Сократ (469-399 рр. до н. е.). Одним із його найпотужніших проривів стала ідея ретельного вивчення своїх переконань за допомогою типу перехресного допиту, який став відомий як діалектика. Це включало запитання та відповіді на пробні запитання, щоб дійти до чогось, що можна вважати істинним. По суті, він грав роль адвоката диявола і закликав людей виправдати те, що вони стверджували, що знають.</p>
+
+<p>Наприклад, є історія про те, як Сократ зустрів юнака, який збирався до суду звинуватити свого батька в безбожництві. Коли Сократ дізнався про це, він визнав цього чоловіка передбачуваним знавцем благочестя, заявивши, що потрібно бути знавцем благочестя, щоб звинувачувати власного батька в нечестності. Тоді Сократ смиренно попросив чоловіка дати йому визначення благочестя, поняття якого, за словами Сократа, він не знає. Чоловік неодноразово марно намагався дати йому визначення, а Сократ запропонував просте й незаперечне пояснення, чому кожна запропонована відповідь не може бути дійсною. Легко зрозуміти, що Сократ зрештою розсердив істеблішмент і отримав би смертний вирок. Він міг би втекти, але вирішив залишитися в Афінах і прийняти отруту. Сократ надзвичайно поважав закон, навіть коли це означало пожертвувати життям, щоб залишитися вірним своїм принципам. Коли я читав про його життя, я не міг не розвинути величезну повагу до нього та його життєвої філософії.</p>
+
+<p>Іншим філософом, який зробив значний прорив у питанні про те, як жити, був Арістотель (384-322 до н. е.), який навчався у Платона (Платон навчався у Сократа). Молодий Арістотель розширив ідеї Платона щодо природи реальності (світу форм), але з часом Арістотель почав рухатися в новому напрямку і вирішив проблему того, як потрібно жити.</p>
+
+<p>Найкращою відповіддю Аристотеля на те, як слід жити, була концепція евдемонії. На жаль, це слово було важко перекласти англійською, тому я знаю два улюблені переклади. Перше — «щастя», а друге — «людський розквіт». Більшість інших перекладів, які я бачив, є варіаціями одного з них. Особисто я міг би перекласти цей термін як «виконання», хоча це теж не зовсім точно. Евдемонія — це процес доброчесного життя, а не фіксований стан буття. Насправді це не така емоція, як «щастя». Аристотель придумав цю відповідь, оскільки він виявив, що евдемонія була єдиною потенційною метою життя, яку можна вважати самоціллю, а не засобом для досягнення іншої мети. Я думаю, що це причина того, що щастя є, мабуть, найпопулярнішим перекладом, оскільки щастя є самоціллю, а не засобом для чогось іншого.</p>
+
+<p>Аристотеля цікавив пошук правильного способу життя, якщо можна сказати, що такий існує. Його відповідь на евдемонію складається з двох основних компонентів: доброчесної дії та споглядання. Головна проблема полягає в тому, що спосіб виявити чесноти полягав у тому, щоб поглянути на людей, які, здавалося, процвітали і жили доброчесно, і звернути увагу на те, як вони жили. Як виявилося, такі люди, як правило, поводилися б із певним ступенем чесності, честі, мужності, чесності, раціональності, справедливості тощо. Це не просто внутрішнє спостереження, яке людина оцінює в собі — такі цінності можна спостерігати ззовні в , тож Аристотель досягає тут певного прогресу у спробі створити напівоб’єктивний стандарт правильного життя. Як і Сократ, Арістотель також був засуджений до страти, але він вирішив втекти з Афін і жити у вигнанні. (Я кажу вам, що я безмежно вдячний за те, що живу в суспільстві, де філософствування зараз не тягне за собою смертну кару.)</p>
+
+<p>Основна проблема, яку я бачу в проникливій спробі Арістотеля відповісти на це питання, полягає в тому, що його рішення є дещо круговим. Щоб жити добре, нам потрібно жити доброчесно і витрачати час на саморефлексію та навчання, але як ми знаємо, які критерії використовувати при виборі чеснот або у виборі того, що вивчати? По суті, ми повинні знайти людей, які, здається, живуть добре і процвітають — або за часів Аристотеля було запропоновано, що ми також можемо прагнути наслідувати богів, оскільки вони, безперечно, здавалося, що добре. Це мало чим відрізняється від деяких релігій сьогодні, які пропонують взірець чесноти для наслідування. Аристотель не дає відповіді на одне ключове питання: яке найкраще життя, яке можна прожити? Евдемонія пропонує спосіб знайти відповідь на це запитання, але це все ще залишає деякі прогалини.</p>
+
+<p>Після Аристотеля багато інших зверталися до питання про те, як жити. Кожна релігія має свою відповідь. Деякі люди кажуть, що відповіді немає, що відповідь не має значення, що відповідь неможлива для нас тепер, або що відповідь є суто питанням особистого вибору. Але найгіршою відповіддю з усіх є те, що робить більшість людей — повністю ігнорувати запитання.</p>
+
+<h2 id="вибір-власного-контексту">Вибір власного контексту</h2>
+<p>Для чого треба жити? Багатство? Потужність? Служба? довголіття? причина? любов? Віра? Сім’я? Бог? Чеснота? щастя? Виконання? Комфорт? Задоволення? Цілісність? Подивіться на цей список значень. Є сотні на вибір.</p>
+
+<p>Важливо зробити глобальний вибір щодо того, як жити нашим життям, оскільки це рішення визначає контекст для всього іншого, що ми робимо. Якщо ви не виберете свій контекст, ви отримаєте стандартний/середній контекст, що означає, що ви фактично дозволяєте іншим диктувати ваш контекст. Якщо зробити грубе узагальнення, то в США це переважно комерційний/матеріалістичний контекст. Там сказано: влаштуватися на роботу, створити сім’ю, відкладати трохи грошей і вийти на пенсію. Будьте хорошим громадянином і не впадайте в зайві проблеми. Але це також не має значення. Будь хорошим гвинтиком. Інші культури мають власні контексти за замовчуванням. Більшість людей просто підписуються на стандартний контекст своєї культури з незначними індивідуальними варіаціями.</p>
+
+<p>Дотримуватися стандартного контексту вашої культури — один із найгірших варіантів. Давайте розглянемо прості випадки демократії проти диктатури. У демократії ніхто насправді не відповідає за культурний контекст у цілому, тому найпоширеніші контексти в кінцевому підсумку перетворюються на мішанину шматочків і частинок, яким бракує загальної конгруентності. Загалом це призведе до плутанини та посередності. Таке суспільство забезпечить лише дуже розпливчасте уявлення про те, як ви повинні жити, наприклад, отримати роботу, мати сім’ю, триматися подалі від проблем і спокійно вийти на пенсію. Запитайте американця, що означає жити найкращим із можливих, і ви отримаєте багато різних відповідей, і більшість із них будуть досить нечіткими та нецілеспрямованими — такими відповідями, якими Сократ застрелив би повні діри.</p>
+
+<p>Тепер, якщо ви живете в культурі, де контекст свідомо керується, вам доведеться турбуватися про те, хто ним керує, які їхні мотиви та чи можете ви їм довіряти чи ні. Там, де ви знаходите сильну диктатуру, ви зазвичай бачите більш зосереджений контекст, ніж у демократії. Якби ви запитали когось із нацистської Німеччини, що означає жити найкращим із можливих, відповіді були б більш однорідними та зосередженими. Але проблема, звісно, полягає в тому, що такі контексти часто розроблені для того, щоб підтримувати контекст у владі. Існує більше тиску, щоб відповідати такому контексту. У довгостроковій перспективі такий тип контексту зазвичай призводить до розчарування, заціпеніння або фанатизму.</p>
+
+<p>Отже, якщо ви дозволите суспільству диктувати ваш контекст (а саме те, що відбувається за замовчуванням за відсутності свідомого вибору), ви, швидше за все, отримаєте дуже нечіткий і несфокусований контекст або такий, який зосереджений не на тому місці. Не чудовий вибір у будь-якому випадку. Звичайно, не оптимальний вибір. Такий контекст не дасть вам достатньо вказівок, як правильно жити. Ви витратите багато часу на те, щоб здогадуватися про свій шлях у житті, або робити багато помилок, які повертатимуться, щоб переслідувати вас пізніше.</p>
+
+<p>Зрештою, якщо ви хочете наблизитися до «найкращого можливого життя» для вас, ви повинні вибрати власний контекст. Ви не можете просто успадкувати стандартний контекст вашого суспільства та жити відповідно до того, що очікують від вас інші. Якщо ви намагаєтеся відповідати, ви змарнуєте своє життя порівняно з тим, що ви могли б зробити, якби вибрали кращий контекст.</p>
+
+<p>Тож як, чорт візьми, ми маємо зрозуміти, як жити? Чи ми просто гадаємо і сподіваємося на краще? Чи є якийсь раціональний, розумний спосіб прийняти таке важке рішення?</p>
+
+<p>Я не можу прийняти це рішення за вас, але я можу пояснити, як я прийняв це рішення для себе, що зрештою дало мені відповідь, яка мене дуже задовольнила. Я вважаю, що частина моєї відповіді є особистою, але я також бачу частину її універсальною для всіх нас.</p>
+
+<h2 id="життя-чеснотами">Життя чеснотами</h2>
+<p>Коли я досяг повноліття і почав серйозно замислюватися над питанням про те, як жити, першою важливою точкою зупинки було, по суті, місце, де зупинився Аристотель. Коли мені було близько 20 років, я витрачав багато часу на те, щоб жити доброчесно. Я сприймав найкраще можливе життя як те, щоб стати людиною чесноти: жити з честю, цілісністю, мужністю, співчуттям тощо. Я перерахував чесноти, яких хотів досягти, і навіть почав винаходити вправи, щоб допомогти собі їх розвинути. Бенджамін Франклін робив щось дуже подібне, як я читав у його автобіографії, і щотижня він вирішував зосередитися на одній конкретній чесноті, щоб розвивати свій характер.</p>
+
+<p>Як не дивно, була особлива комп’ютерна гра, в яку я просто закохався за цей час — Ultima IV. На сьогоднішній день я б сказав, що це моя улюблена гра всіх часів. У цій рольовій грі ви — Аватар, шукач правди, і ваша мета — не знищити якогось ворога, а скоріше досягти того, що називається Кодексом Найвищої Мудрості. Щоб досягти цієї мети, ви повинні розвинути свій характер у восьми чеснотах. Усі ці переваги випливають із восьми можливих комбінацій правди, любові та мужності:</p>
+
+<p>Правда = <em>Чесність</em><br />
+Любов = <em>Співчуття</em><br />
+Мужність = <em>Доблесть</em><br />
+Правда + Любов = <em>Справедливість</em><br />
+Правда + Мужність = <em>Честь</em><br />
+Любов + Мужність = <em>Жертовність</em><br />
+Правда + Любов + Мужність = <em>Духовність</em><br />
+Відсутність Істини, Любові та Мужності - це Гордість, протилежністю якої є <em>Смирення</em>.</p>
+
+<p>Я вважаю цю систему чеснот абсолютно блискучою, особливо в грі. Через багато років, коли я нарешті зустрів Річарда Гарріотта, дизайнера серії Ultima, на виставці Electronics Entertainment Expo (E3), я запитав його, як він придумав цю систему і як він зрештою вибрав ці переваги. Він сказав мені, що це почалося з мозкового штурму довгого списку та помічання моделей у тому, як чесноти співвідносяться одна з одною.</p>
+
+<p>Хоч як дивно, що я отримав ці ідеї в грі, я все ще думаю про доброчесне життя майже так само сьогодні, де ці вісім чеснот з’являються через перекриваючі набори правди, любові та мужності. Щодо поєднання всіх трьох чеснот, я вважаю, що «цілісність» краще підходить, ніж «духовність». Ultima V продовжила досліджувати протилежність цим, пороки, які можуть бути отримані від брехні, ненависті та боягузтва. На жаль, я відчуваю, що з тих пір серія Ultima дійсно пішла на спад і повністю втратила свою душу — я хотів би побачити, як ідея чесноти просувається ще далі.</p>
+
+<p>Коли я створював Dexterity Software у 1994 році, я багато думав про це. Я робив усе можливе, щоб зберегти ці чесноти та інтегрував їх у компанію, наскільки міг. Наприклад, приблизно за шість років, протягом яких Dexterity надсилає щомісячні виплати роялті (загалом багато сотень платежів), жодного разу жоден чек не вийшов із запізненням, навіть із запізненням на день. Я не знаю жодного іншого видавця ігор, який би міг претендувати на те саме, звичайно, з жодним, з яким я працював. Зобов’язання зробити це було для мене справою особистої честі, і моє особисте уявлення про чесноти було інтегровано в те, як я керував бізнесом. Честь завжди була для мене важливішою за прибуток… і досі є.</p>
+
+<p>Недоліком спроб жити доброчесно було те, що мене часто підкидали люди, які явно не жили доброчесно. На жаль, ігрова індустрія рясніє такими людьми, особливо коли йдеться про великі суми грошей. Я був добре підготовлений мати справу з іншими людьми, які високо цінували честь, але мені було прикро, що я мав можливість мати справу з такою небагатьма людьми. Дуже багато людей ставили гроші вищою цінністю, ніж особиста честь. Тож я плив проти течії. Незважаючи на це, я все одно віддаю перевагу цьому вибору порівняно з альтернативою.</p>
+
+<p>Я також почав мати багато внутрішніх конфліктів, намагаючись жити доброчесно. Хоча я не звинувачую в цьому чесноти, а радше свою обмежену здатність жити в повній відповідності з ними. Я жив своїм повсякденним життям досить доброчесно, але як щодо загальної картини? А як щодо самого поняття ведення ігрової компанії з метою розваги людей? Чи це було достатньо доброчесно? Я почав змушувати себе робити більше, прагнути до вищого ідеалу. Я добровільно став офіцером Асоціації професіоналів умовно-безкоштовного програмного забезпечення протягом двох років (нульова оплата). Я написав багато статей безкоштовно. Я давав багато порад і навчав багатьох людей безкоштовно. Я виступав на конференціях безкоштовно. Я змушував себе жертвувати більшим заради інших. Я обійшов деякі можливості заробити більше грошей і натомість шукав можливості надавати більше послуг.</p>
+
+<p>Я відчував, що це покращення для мене, але все одно цього було недостатньо. Я все ще не відчував себе близьким до оптимального з точки зору моєї здатності жити доброчесно. Спочатку я подумав, що це просто природа життя, що це буде боротьба протягом усього життя. Але незабаром я почав відчувати неспокій, розуміючи, що щось не так. Роками я не міг зрозуміти, що це таке, тож за замовчуванням залишився з тим, що знав. Я зіткнувся з тим самим блокпостом, з яким, можливо, зіткнувся Арістотель, тим, що завадило йому дійти до моменту відповіді на запитання: «Яке найкраще життя?» Я знав, що це десь інше, ніж я, але не знав, де шукати.</p>
+
+<h2 id="яке-найкраще-можливе-життя">Яке найкраще можливе життя?</h2>
+<p>Згодом я знайшов інший спосіб підходу до цієї проблеми, як жити. Я запитав себе: чому це таке складне запитання? Що в цьому такого важкого? Це спонукало мене по-новому задуматися, яке незабаром привело мене до запитання: що потрібно змінити, щоб на це запитання було легше відповісти?</p>
+
+<p>Бінго.</p>
+
+<p>Раптом стало зрозуміло, чому на це питання так важко відповісти. Щоб відповісти на нього точно, я мав би знати все. Я мав би бути Богом.</p>
+
+<p>Давайте дивитися правді в очі. Наш людський інтелект обмежений. Наша технологія тому підтвердження. Мій комп’ютер кращий за мене в арифметиці. Цей крихітний ЦП може виконувати різноманітні завдання, які мій набагато більший мозок не може. Мій жорсткий диск містить більше даних, ніж я міг запам’ятати за все життя. Звичайно, мій мозок випереджає процесор у багатьох областях, але наголошується на тому, що існують чіткі інтелектуальні обмеження того, що може робити наш squishware.</p>
+
+<p>Я поставив собі багато цікавих запитань, щоб спробувати отримати новий погляд на це. Чи може розум осягнути власні межі? Що, якби надрозумний інопланетний вид прийшов на землю — які б вони бачили межі людського інтелекту і де б вони бачили наші кордони? Чого мій мозок явно НЕ може робити?</p>
+
+<p>Що якби я був розумнішим, ніж зараз? Як я можу жити інакше? Які частини мого життя більш розумна істота вважала б дурними, непотрібними чи шкідливими? Якби більш розумна істота спробувала оптимізувати моє життя, маючи можливість чітко усвідомити мої інтелектуальні межі, що б це змінило? Як би я оптимізував життя горили чи миші, якби міг з ними спілкуватися? Що я сприймаю як їхні інтелектуальні межі? Яким було б найкраще життя для інших видів?</p>
+
+<p>І ще багато-багато запитань такого характеру.</p>
+
+<p>Згодом мій контекст змінився. Уперше я відчув, що насправді виходжу з меж власного інтелекту. Я міг почати сприймати, де були стіни. Деякі з цих обмежень були очевидними, як-от обмеження моєї здатності до обчислення цифр, пам’яті та швидкості. Але я почав тестувати й інші обмеження. Скільки різних понять я можу тримати в голові одночасно? Наскільки точно я можу сприймати час, температуру чи вагу без вимірювального приладу? Скільки технік вирішення проблем я справді знаю, і які їхні сильні та слабкі сторони?</p>
+
+<p>Я почав вивчати мозок трохи детальніше та порівнювати свої розумові межі з тим, що було відомо про фізичну структуру мозку. Найновіші дослідження в цій галузі абсолютно захоплюючі. Вводячи наркотики в мозок, можна позбавити когось свідомості. Електрично стимулюючи кластер нейронів, ви можете викликати досвід, який суб’єкт описав би як духовний (духовність кнопок?). Ви можете хірургічним шляхом позбавити людину здатності грати на піаніно.</p>
+
+<p>Розвиваючи глибше розуміння людського інтелекту, я зрозумів, що найбільша проблема з питанням про те, як жити, полягає в тому, що для відповіді на нього потрібен вищий інтелект, ніж ми маємо зараз. Щоб знати, яке найкраще можливе життя, що математично є проблемою оптимізації, ви повинні знати, які всі можливі життя. А для цього потрібна кількість даних, якою ми зараз не можемо керувати.</p>
+
+<p>Уявіть собі, що існує лише мільйон різних варіантів того, як ви можете прожити своє життя. Для того, щоб вибрати найкращий, ви повинні переглянути всі мільйони, застосувати якісь критерії для їх оцінки, а потім вибрати той, який має найвищий бал. З цим є три великі проблеми. Перша проблема полягає в тому, що є надто багато варіантів, щоб розумно розглянути їх. Друга проблема полягає в тому, що ви повинні мати можливість точно передбачити майбутнє, щоб знати, як складеться кожне життя. І третя проблема полягає в тому, що ви повинні придумати критерії оцінки. Перші два зараз явно неможливі, а як щодо третього?</p>
+
+<p>Третя проблема — це, по суті, те, з чим намагався розв’язати Аристотель — критерії оцінки. Жити доброчесно — одна з можливих відповідей, але вона все ще трохи розпливчаста.</p>
+
+<p>Отже, у нас тут серйозні проблеми. По-перше, у нас є простір пошуку можливих рішень, який занадто великий, щоб повністю дослідити його. Це настільки велике, що ми навіть не можемо зрозуміти все це. А по-друге, нам потрібно визначити критерії оцінки, щоб розумно порівнювати один варіант з іншим, критерії, які не надто сильно залежать від непізнаного майбутнього.</p>
+
+<h2 id="пошук">Пошук…</h2>
+<p>Давайте розберемося з першою проблемою — гігантським простором пошуку. По-перше, знайти доведено оптимальне рішення неможливо. Тож найправдивішою відповіддю на питання про найкращий спосіб життя є те, що він непізнаваний. Ми ще недостатньо розумні, щоб зрозуміти це. Це не дуже тішить, але насправді трохи допомагає. Тепер у нас залишилося таке запитання: як ми можемо наблизитися до оптимального рішення?</p>
+
+<p>На щастя, у математики є відповідь на це питання: евристика. Евристика — це правило для дослідження простору пошуку, яке може допомогти вам наблизитися до оптимального рішення, коли ви не можете дослідити весь простір пошуку. Прикладом евристики може бути підйом на пагорб. Уявіть, що у вас є велика тривимірна карта для дослідження, і ви хочете знайти найвищу точку. З підйомом на пагорб ви починаєте з випадкової точки на карті та просто переконаєтеся, що кожен крок, який ви робите, йде в гору. Коли ви більше не можете йти в гору, ви досягли вершини — локального максимуму. Не досліджуючи більше частини карти, ви не можете бути впевнені, що ваш останній пагорб був найвищим на карті, тож ви можете продовжувати дослідження, починаючи з інших точок на карті та використовуючи ту саму евристику сходження на пагорб. Якщо ви не дослідите всю карту, ви ніколи не зможете бути впевнені, що знайшли глобальний максимум, але чим більше ви досліджуєте, тим більшу впевненість ви отримуєте.</p>
+
+<p>То що ж це означає для життя людини? Це натякає на альпіністський підхід до життя. Деякий час ви пробуєте один спосіб життя, а потім продовжуєте намагатися вдосконалити його, беручи його «в гору». Ви налаштовуєте деякі параметри, щоб зробити його кращим. Наприклад, ви можете спробувати схуднути, заробити більше грошей або покращити стосунки — будь-яке або все це можна вважати кроком у гору. І ви просто продовжуєте підніматися в гору, поки не зможете піднятися вище.</p>
+
+<p>Звичайно, проблема з цим підходом пов’язана з природою евристики — ви можете застрягти в локальному максимумі, який набагато нижчий за можливий глобальний максимум. Вершина, якої ви прагнете досягти, може бути лише кротовим горбом у великій схемі речей. Інша проблема полягає в тому, що вам може знадобитися більше, ніж усе життя, щоб піднятися на один пагорб. Ви можете померти, не досягнувши такого підходу.</p>
+
+<p>Ах, але ми, як люди, маємо на своєму боці потужну перевагу, яка робить цю проблему трохи легшою — це уява. Нам не потрібно перевіряти ці перестановки фізично. Ми можемо перевірити їх у своєму розумі. Але це буде працювати добре, лише якщо наша ментальна карта реальності є близьким наближенням до реальної реальності. Іншими словами, наше моделювання має бути дуже близьким до реального, інакше наші наближення будуть далекими, а наші результати будуть марними. Пам’ятайте про самодисципліну: прийняття? Для того, щоб мати шанс досягти успіху в цьому, ми повинні прийняти реальність такою, якою вона є насправді, незалежно від того, з чим ми повинні зіткнутися в собі і наскільки ми не хочемо з цим зіткнутися. Інакше наша симуляція буде повна збоїв. Те, що, здається, працює в нашій уяві, не працюватиме в реальному світі.</p>
+
+<p>Чим точніша ваша ментальна модель реальності, тим більша ваша здатність розумно оцінювати можливі способи життя. Це означає, що ви повинні пізнати себе у всій вашій наготі, і в хорошому, і в поганому, і в потворному. Ви повинні розвинути глибоке розуміння власної природи, якою ви є насправді. Це стосується вчорашнього допису про приведення ваших переконань у відповідність зі своїми діями. Ви повинні бути внутрішньо конгруентними, інакше ваші симуляції викинуть лише сміття, якому ви не зможете довіряти.</p>
+
+<p>Я не впевнений, що всі здатні робити це дуже добре. Це вимагає високого рівня інтелекту та зосередженості, щоб уявити, як би було жити іншим життям, і об’єктивно оцінити його. Але це все, з чим ми повинні мати справу. Ми можемо зробити все можливе.</p>
+
+<p>Я вважаю, що оптимальним рішенням буде розглянути різні способи життя, яскраво уявити кожен з них у своїй уяві, оцінити його сильні та слабкі сторони. Після того, як ви охопили певну кількість із них (і я не знаю, скільки достатньо — чим більше, тим краще), ви вибираєте одне й починаєте жити таким чином. Тим часом ви продовжуєте залишатися відкритими для уявлення про інші можливості, і якщо ви коли-небудь відчуєте ту, яка є кращою за ваш поточний спосіб життя, ви переходите до нового «вищого» життя.</p>
+
+<h2 id="як-порівняти-одне-життя-з-іншим">Як порівняти одне життя з іншим?</h2>
+<p>Тепер ми маємо розглянути критерії оцінювання. Що таке гора? Як ми порівнюємо одне життя з іншим?</p>
+
+<p>Багато людей намагалися дати відповідь на це питання. Однією з найпопулярніших відповідей у питаннях самодопомоги сьогодні є щастя. Нам кажуть робити те, що робить нас найбільше щасливими. Шукайте задоволення. Уникайте болю. Майже все, що я читав про особистий розвиток, використовує певний варіант щастя як кінцеву мету життя.</p>
+
+<p>Але я вважаю, що щастя — це відповідь, що не відповідає. Щастя - це лише емоція. І ставити все своє життя на службу досягненню та підтримці певного емоційного стану явно неоптимально. По-перше, я дуже емоційно стійкий, і не потрібно багато, щоб зробити мене щасливим і задоволеним. Щастя та благополуччя можна підтримувати в основному за допомогою дуже здорової дієти та великої кількості фізичних вправ. Я вже добре вмію керувати своїми емоціями та бути щасливим, тому я впевнений, що зможу зробити це краще.</p>
+
+<p>Навіть якщо ми розповсюджуємо щастя на сферу задоволення чи процвітання, це все одно шкода. Даючи таку відповідь на питання, як жити, ми лише перекладаємо це питання на свій емоційний інтелект. Ми говоримо, що відповідь на те, як жити, полягає в тому, що говорять наші емоції. Припущення полягає в тому, що якщо ми відчуваємо себе заповненими, ми повинні жити оптимально. Я не бачу логічної причини, чому ця відповідь була б правильною, враховуючи те, що я знаю про те, як працюють емоції. Недостатньо добре.</p>
+
+<p>З цих причин я відкидав будь-які відповіді, які припускали, що оптимальний спосіб життя слід шукати в якомусь емоційному стані чи почутті. Я можу свідомо вибрати відчувати все, що хочу, просто змінивши свою увагу. Немає жодного конкретного способу дій, який би викликав у мене відчуття, якого я не зможу досягти, просто керуючи своєю уявою. Я можу самоемоції. 🙂</p>
+
+<p>Крім того, у нас є ціла низка інших гуру самодопомоги, які, здається, визначають мету життя в термінах досягнення успіху, заможності, повноцінних стосунків тощо.</p>
+
+<p>Як ви мабуть підозрюєте, це просто маркетинговий пух без жодної реальної суті. Більшість цих книг спрямовані на те, щоб показати вам, як досягти оптимальних результатів у існуючому соціальному контексті, але, як ми вже бачили, навіть якщо вам вдасться досягти передбачуваної вершини, ви все одно будете жити неоптимально. Ви лише витратите все своє життя, намагаючись піднятися на кротову гору, і залишите більшу частину своєї потенційної величі невикористаною.</p>
+
+<p>Спосіб вирішення цього питання — поглянути на своє життя в контексті загальної картини мого найчіткішого розуміння реальності. Це означало поглянути на історію життя, наскільки ми її розуміємо, на можливе майбутнє життя та куди воно може привести, а також на теперішній стан життя. Я відчув, що розгляд найкращого можливого людського життя слід помістити в рамки всього життя, минулого, теперішнього та прогнозованого майбутнього. Коли я дивлюся на те, як розвивалося життя на землі, я бачу цю силу еволюції як щось набагато більше, ніж моє особисте існування. Я бачу, що життя продовжує вдосконалювати свою складність, свій інтелект і свої загальні шанси на виживання. Коли я ставлю себе в цей контекст, я бачу, що маю три основні варіанти. Я можу працювати, щоб співпрацювати з еволюцією, я можу працювати проти неї, або я можу ігнорувати її. Моя людська свідомість дає мені можливість зробити цей вибір свідомо.</p>
+
+<h2 id="як-найближче-до-оптимуму">Як найближче до оптимуму</h2>
+<p>Я вирішив, що найкраще можливе життя має лежати в межах співпраці з еволюцією, а не проти неї. Тож для мене це означає дві речі: 1) працювати над тим, щоб розвиватися як особистість у найвищому можливому ступені, і 2) працювати над тим, щоб допомогти самому життю розвиватися до найвищого можливого ступеня. Виявляється, ці цілі дуже сумісні, оскільки існує позитивний зворотний зв’язок між саморозвитком і розвитком вашого оточення. Якщо ви працюєте лише над собою, ваше оточення зрештою стримає вас. Ти будеш як Тарзан, що живе серед мавп. І якщо ви працюєте лише для того, щоб допомагати іншим, це також буде неоптимальним, оскільки ви зможете навчити їх лише тому, що знаєте зараз, але ви ніколи не покращите свої знання та не розвинете свою здатність навчати. Тому потрібен баланс обох.</p>
+
+<p>Для мене це зводиться до роботи над власним особистим зростанням і допомоги іншим розвиватися. Це стало моїм способом оцінити найкраще можливе життя, на яке я міг сподіватися.</p>
+
+<p>Отже, що означає рости? Для мене це означає постійно прагнути вдосконалювати свої найпотужніші еволюційні активи, які я сприймаю як мій інтелект, мою свідомість і моє знання реальності. І щоб допомогти іншим розвиватися, я повинен продовжувати вдосконалювати свої навички спілкування.</p>
+
+<p>Головною метою свого життя я бачу служіння процесу еволюції. Це важливіше для мене, ніж усе інше. Усе інше в моєму житті є другорядним порівняно з цим і повинно виправдати свою придатність для цього порядку денного. Хто дбає про те, щоб отримати роботу та заробляти гроші, коли у вас є можливість свідомо брати участь в еволюції самого життя? Для мене всі інші потенційні способи життя — не що інше, як бліді тіні порівняно з цим.</p>
+
+<p>Давайте знову зв’яжемо це з концепцією евристики. Це дає наступну загальну стратегію:</p>
+
+<ol>
+  <li>Спробуйте уявити собі найкраще можливе життя, яке ви можете прожити, керуючись критеріями оцінки служіння самому процесу еволюції.</li>
+  <li>Живи — відчуй.</li>
+  <li>Щоразу, коли ви переконаєтеся, що для вас є кращий спосіб служити процесу еволюції, ніж те, що ви робите зараз, переходьте до нього.</li>
+</ol>
+
+<p>Це моя відповідь на питання про те, як жити: вкладати більшу частину свого життя в гонитву за зростанням. Для мене це має сенс. Якщо ми не можемо зрозуміти, як жити оптимально, тоді найкращим рішенням буде розвинути більшу здатність робити це. Якщо ваш комп’ютер не в змозі робити те, що вам потрібно, вам слід витратити час на оновлення комп’ютера.</p>
+
+<p>Я вважаю, що ця відповідь також добре поєднується з концепцією чесноти Арістотеля. Розум підказує напрямок, а чеснота допомагає формувати шлях. Я вважаю, що обидва важливі для найкращого життя. Однак я вважаю, що розум є сильнішим із цих двох, оскільки самі чесноти походять від нашого людського інтелекту. Один із способів уявлення про чесноти — як про інтелектуальні скорочення. Якщо даних забагато, щоб прийняти справді розумне рішення, ви можете повернутися до переваг і повірити, що вони принаймні навряд чи будуть дурними. Якщо сумніваєтеся, будьте чесними, чесними, сміливими.</p>
+
+<h2 id="squishware-20">Squishware 2.0</h2>
+<p>Якщо ви раптом виявите, що живете як мавпа, ви можете прийняти життя мавпи і присвятити себе харчуванню бананами цілий день і спробувати бути хорошою мавпою, або ви можете спробувати стати чимось більшим, ніж мавпа, і еволюціонувати в людину. Як тільки ви це зробите, усі ваші мавпячі цілі та досягнення здадуться абсолютно безглуздими порівняно з вашими новими людськими можливостями. Наскільки безглуздими будуть такі цілі, як створення бізнесу, чи стати хорошим у маркетингу здаються більш розвиненим видам?</p>
+
+<p>На еволюційній драбині ми зараз просто зграя мавп. Але якщо ми продовжимо рости, незабаром нас стане набагато більше. Цілком імовірно, що комп’ютерні технології тісніше з’єднаються з нашим власним squishware, щоб зробити нас ще розумнішими та здібнішими. Але навіть до того, як це станеться, ми можемо продовжувати вивчати наше програмне забезпечення для squish і розширити його можливості. Давайте перестанемо жити на 3% наших розумових можливостей і наблизимо їх до 100%.</p>
+
+<p>Існує багато способів свідомо сприяти процесу еволюції, і наша здатність робити це зараз, звичайно, обмежена (хоча з кожним роком ці межі руйнуються все більше). Я вважаю, що протягом усього життя одна людина, яка живе сьогодні, яка присвятить своє життя допомозі в еволюції нашого виду, може мати драматичний ефект. Ми все ще пам’ятаємо Аристотеля за його внесок. Що ще ми могли б досягти, якби тисячі з нас, які живуть сьогодні, присвятили своє життя подібній меті?</p>
+
+<p>У мене немає способу вам це довести, але, здається, я відкриваю, що чим більше я працюю, щоб узгодити своє життя з процесом еволюції, тим більше моє життя тече майже без зусиль, ніби мене тягне за собою магніт. Минулий рік моє життя складалося надзвичайно добре, і я відчуваю, що можу мислити чіткіше, ніж будь-коли. Це було нещодавнє перемикання контексту для мене, лише протягом минулого року, але я відчуваю, ніби воно стає сильнішим з кожним місяцем. Це відчуття ясності, що це саме те, що я маю робити у своєму житті. Самодисципліна все ще потрібна, але я сильніший і можу застосовувати її постійно. Я думаю, причина в тому, що я нарешті відчуваю, що справді живу найкращим життям, на яке я здатний, враховуючи те, що я знаю прямо зараз. Коли я намагаюся уявити щось краще, це лише збільшення моєї здатності робити те саме, а не зміна суті того, що я роблю. Однак дійти до цього моменту було нелегко, і я впевнений, що попереду ще більше змін. Така природа зростання — старі цілі постійно застарівають.</p>
+
+<p>Завтра ми дослідимо, як перетворити це високопоставлене уявлення про те, як жити, на особисту мету, яка насправді досяжна. А наступного дня ми розповімо, як розбити цю мету на цілі, проекти та дії та рухатися до неї.</p>
+
+<p><em>Цей пост є другою частиною серії із шести частин про сенс життя:</em></p>
+
+<ul>
+  <li><a href="../intro/"><em>Частина 1: Вступ</em></a></li>
+  <li><a href="./"><em>Частина 2: Як нам жити?</em></a></li>
+  <li><a href="../discover-your-purpose/"><em>Частина 3: Розкрийте свою мету</em></a></li>
+  <li><a href="../from-purpose-to-action/"><em>Частина 4: Від мети до дії</em></a></li>
+  <li><a href="../transitioning/"><em>Частина 5: Перехід</em></a></li>
+  <li><a href="../conscious-evolution/"><em>Частина 6: Свідома еволюція</em></a></li>
+</ul>
+
+<p><br /><br />
+<em>Даний текст являється перекладом статті Стіва Павліни <a href="https://stevepavlina.com/blog/2005/06/the-meaning-of-life-how-shall-we-live/">The Meaning of Life: How Shall We Live?</a></em></p>]]></content><author><name>Nazar Primac</name></author><category term="steve-pavlina" /><category term="translations" /><category term="translation" /><summary type="html"><![CDATA[Як будемо жити? Для чого нам жити, якщо взагалі? Як ми можемо відрізнити правильне від неправильного? Чи є якийсь розумний спосіб відповісти на ці запитання, який не вимагає від нас сліпої віри?]]></summary></entry></feed>

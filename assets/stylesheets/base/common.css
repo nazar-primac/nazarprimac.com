@@ -1640,24 +1640,25 @@ p:has(> a[href$='#continuing']:visited) {
 
 
 
-.article li {
-    font-weight:        var(--article-font-weight);
-    font-family:        var(--article-font-family);
-    color:              var(--main-fontColor);
-}
+
 
 .article ol > li {
     list-style-type: decimal;
 }
 
-.article ul > li {
+.article > ul > li {
     list-style:     disc outside;
 /*    list-style:     '-\ ' outside;*/
 /*    list-style-type: disc;*/
 }
-    .article ul ul > li {
+    .article > ul > li > ul > li {
         list-style-type: circle;
     }
+        .article > ul > li > ul > li > ul > li {
+            list-style-type: square;
+        }
+
+
 
 .article ul > li::before {
     /*display: inline;*/
@@ -1665,11 +1666,9 @@ p:has(> a[href$='#continuing']:visited) {
     /*content: '•\ ';*/
 }
 
-
-
 article.article .next-li-no-style + ul > li {
     /*list-style-type: '✅\ ';*/
-    list-style-type:    none;
+/*    list-style-type:    none;*/
 }
 
 /*.article > ul > li > span:first-child:has( + :is(ul, ol)) {
@@ -1678,7 +1677,11 @@ article.article .next-li-no-style + ul > li {
     color:              hsl(var(--decorative-theme-color));
 }*/
 
-
+/*.article li {
+    font-weight:        var(--article-font-weight);
+    font-family:        var(--article-font-family);
+    color:              var(--main-fontColor);
+}*/
 
 
 
