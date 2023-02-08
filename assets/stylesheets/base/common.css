@@ -570,13 +570,13 @@ table {
     --article-font-family:     'Georgia';
     --article-font-family:     'Charter';
     --article-font-family:     'Georgia';
-    --article-font-family:     'Montserrat';
     --article-font-family:     'Verdana Pro';
+    --article-font-family:     'Montserrat';
 /*    --article-font-family:     'Charter';*/
 /*    --article-font-size:       1.5rem;*/
-    --article-font-size:       1.35rem;
 /*    --article-font-size:       1.3rem;*/
-/*    --article-font-size:       1.4rem;*/
+/*    --article-font-size:       1.35rem;*/
+    --article-font-size:       1.4rem;
 /*    --article-font-size:       24px;*/
     --article-line-height:     1.5;
     --article-font-weight:     400;
@@ -1446,9 +1446,12 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 
 
 
-       main > .article,
-li.apreview > .article {
+main > .article {
     margin-top:     1em;
+}
+
+li.apreview > .article {
+    margin-top:     0.5em;
 }
 
 
