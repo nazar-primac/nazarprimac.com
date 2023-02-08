@@ -352,7 +352,7 @@ Steve&nbsp;Pavlina</h3>&nbsp;&nbsp;<span class="note">(stevepavlina.com)</span>
 
 <p>Now you can <strong>integrate</strong> all those changes into <code class="language-plaintext highlighter-rouge">live</code> branch.</p>
 
-<h2 id="2-integration-of-changes-into-live-branch">2. Integration of Changes into <code class="language-plaintext highlighter-rouge">live</code> branch</h2>
+<h2 id="2-integration-of-changes-into-live-branch">2. Integration of Changes into <code class="language-plaintext highlighter-rouge">live</code> Branch</h2>
 
 <p>If there <strong>are no new</strong> commits on <code class="language-plaintext highlighter-rouge">live</code> after common predecessor commit of <code class="language-plaintext highlighter-rouge">live</code> and <code class="language-plaintext highlighter-rouge">origin/pre-live</code>, just update the <code class="language-plaintext highlighter-rouge">live</code> branch pointer to the last commit of <em>needed commits</em> (the same as performing fast-forward <strong>merge</strong> of these commits to <code class="language-plaintext highlighter-rouge">live</code>).</p>
 
@@ -374,7 +374,7 @@ Steve&nbsp;Pavlina</h3>&nbsp;&nbsp;<span class="note">(stevepavlina.com)</span>
   </li>
 </ul>
 
-<h2 id="review-deployment-and-integration-of-changes-into-live-branch-handled-together">Review, Deployment and Integration of changes into live branch handled together</h2>
+<h2 id="review-deployment-and-integration-of-changes-into-live-branch-handled-together">Review, Deployment and Integration of Changes into live Branch Handled Together</h2>
 
 <p>You can do it with help of this command: <code class="language-plaintext highlighter-rouge">git merge --no-ff --no-commit origin/pre-live</code>; It ultimately creates merge commit even if fast-forward merge is possible, but it doesn’t actually commit yet, just stages files for commit, except for files with merge conflicts, they are presented in form of modifications as usual.</p>
 
@@ -388,7 +388,7 @@ Steve&nbsp;Pavlina</h3>&nbsp;&nbsp;<span class="note">(stevepavlina.com)</span>
 
 <p>After you <strong>reviewed</strong>, <strong>deployed</strong> and <strong>integrated</strong> changes into <code class="language-plaintext highlighter-rouge">live</code>, push live branch to remote.</p>
 
-<h2 id="additional-notes">Additional notes</h2>
+<h2 id="additional-notes">Additional Notes</h2>
 
 <p>As you probably noticed, you should always <strong>stage</strong> each file/modification, <strong>only after</strong> you <strong>reviewed</strong> and <strong>deployed</strong> them; that way, you’re less likely to miss <strong>deploying</strong> some changes. Same thing with updating <code class="language-plaintext highlighter-rouge">live</code> branch pointer or performing final <strong>merge</strong> (creating commit, rather than staging for the commit): <strong>only after</strong> all changes from <em>needed commits</em> <strong>are live</strong>.</p>
 
@@ -400,7 +400,7 @@ Steve&nbsp;Pavlina</h3>&nbsp;&nbsp;<span class="note">(stevepavlina.com)</span>
     <nav class="pagination">
 
     
-        <li class="prev-page"><a href="/steve-pavlina/more-on-planning/" title="Previous by date published">[&nbsp;Prev&nbsp;]</a></li>
+        <li class="prev-page"><a href="/steve-pavlina/more-on-planning//" title="Previous by date published">[&nbsp;Prev&nbsp;]</a></li>
     
 
     
