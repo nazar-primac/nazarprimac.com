@@ -161,6 +161,14 @@ end;
     font-family:    'Verdana Pro';
     font-display:   fallback;
     src:
+                    url("/assets/fonts/Verdana Pro/VerdanaPro-SemiBold.ttf") format("truetype");
+    font-weight:    600;
+    font-style:     normal;
+}
+@font-face {
+    font-family:    'Verdana Pro';
+    font-display:   fallback;
+    src:
                     url("/assets/fonts/Verdana Pro/VerdanaPro-Bold.ttf") format("truetype");
     font-weight:    700;
     font-style:     normal;
@@ -180,6 +188,14 @@ end;
     src:
                     url("/assets/fonts/Verdana Pro/VerdanaPro-RegularItalic.ttf") format("truetype");
     font-weight:    400;
+    font-style:     italic;
+}
+@font-face {
+    font-family:    'Verdana Pro';
+    font-display:   fallback;
+    src:
+                    url("/assets/fonts/Verdana Pro/VerdanaPro-SemiBoldItalic.ttf") format("truetype");
+    font-weight:    700;
     font-style:     italic;
 }
 @font-face {
@@ -552,15 +568,15 @@ table {
 
 /*    --article-font-family: 'Verdana Pro Cond';*/
     --article-font-family:     'Georgia';
-    --article-font-family:     'Verdana Pro';
     --article-font-family:     'Charter';
     --article-font-family:     'Georgia';
     --article-font-family:     'Montserrat';
+    --article-font-family:     'Verdana Pro';
 /*    --article-font-family:     'Charter';*/
 /*    --article-font-size:       1.5rem;*/
-/*    --article-font-size:       1.35rem;*/
+    --article-font-size:       1.35rem;
 /*    --article-font-size:       1.3rem;*/
-    --article-font-size:       1.4rem;
+/*    --article-font-size:       1.4rem;*/
 /*    --article-font-size:       24px;*/
     --article-line-height:     1.5;
     --article-font-weight:     400;
@@ -709,7 +725,7 @@ nav li {
     list-style:     none !important;
 }
 strong, b {
-    font-weight:    700;
+    font-weight:    600;
 }
 em {
     font-style:     italic;
