@@ -1317,69 +1317,66 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
  }
 @layer aheader.base             { 
 
+
+
+
 .aheader {
-    width: 100%;
+  width: 100%;
 
-    position: relative; z-index: 0;
+  position: relative; z-index: 0;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.aheader a.meta.author {
-    font-size:      1.2em;
-/*    letter-spacing: 0.1em;*/
-    letter-spacing: 0.05em;
-    font-weight:    700;
-}
-
-.aheader a.meta.author:hover {
-    color: black !important;
-}
-
-
-
-.aheader span.meta.tags {
-    display: inline-flex;
-    flex-wrap: wrap;
-
-/*    justify-content: center;*/
-
-    column-gap: 1ch;
-    row-gap: 0.1em;
-
-    font-style: italic;
-}
-
-.aheader span.meta.tags > span.meta.tag::before {
-    display: inline;
-
-    content: '\0023';
-    margin-right: 0.1ch;
-    font-style: normal;
-}
-
-
-.aheader span.meta {
-    /*font-weight: 400;*/
-
-
-    /*font-family: 'Comfortaa', cursive;*/
-    /*font-family: 'Rajdhani', sans-serif;*/
-
-    /*color: hsl(0, 0%, 0%);*/
-    /*color: hsl(0, 0%, 30%);*/
-}
-
-
-
-.aheader > .bg-elem {
+  .aheader > .bg-elem {
     background-size: cover;
     background-position: 0 50%;
-}
+  }
+
+    .aheader span.meta {
+      /*font-weight: 400;*/
+
+
+      /*font-family: 'Comfortaa', cursive;*/
+      /*font-family: 'Rajdhani', sans-serif;*/
+
+      /*color: hsl(0, 0%, 0%);*/
+      /*color: hsl(0, 0%, 30%);*/
+    }
+
+    .aheader a.meta.author {
+      font-size:      1.2em;
+    /*    letter-spacing: 0.1em;*/
+      letter-spacing: 0.05em;
+      font-weight:    700;
+    }
+
+      .aheader a.meta.author:hover {
+        color: black !important;
+      }
+
+    .aheader span.meta.tags {
+      display: inline-flex;
+      flex-wrap: wrap;
+
+    /*    justify-content: center;*/
+
+      column-gap: 1ch;
+      row-gap: 0.1em;
+
+      font-style: italic;
+    }
+
+      .aheader span.meta.tag::before {
+        display: inline;
+
+        content: '\0023';
+        margin-right: 0.1ch;
+        font-style: normal;
+      }
  }
 @layer article.base             { 
 

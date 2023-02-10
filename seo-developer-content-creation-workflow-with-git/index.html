@@ -367,7 +367,7 @@ Steve&nbsp;Pavlina</h3>&nbsp;&nbsp;<span class="note">(stevepavlina.com)</span>
   </li>
   <li><span>Rebase</span>:
     <ul>
-      <li>Use <strong>only</strong> in case of <strong>no conflicts</strong> with originally fetched <em>needed commits</em> from <code class="language-plaintext highlighter-rouge">origin/pre-live</code>, because it will be very hard to go back later and tell what exactly the original proposed changes were where.  You can try to rebase and abort (<code class="language-plaintext highlighter-rouge">git rebase --abort</code>) in case of a conflict with these commits. If conflicts, do <strong>merge</strong> instead.</li>
+      <li>Use <strong>only</strong> in case of <strong>no conflicts</strong> with originally fetched <em>needed commits</em> from <code class="language-plaintext highlighter-rouge">origin/pre-live</code>, because it will be very hard to go back later and tell what exactly the original proposed changes were.  You can try to rebase and abort (<code class="language-plaintext highlighter-rouge">git rebase --abort</code>) in case of a conflict with these commits. If conflicts, do <strong>merge</strong> instead.</li>
       <li>In case of a merge conflict with the <em>last commit</em> of <em>needed commits</em> (one, you possibly created earlier) don’t forget to <strong>deploy</strong> resolved modifications before you <strong>stage</strong> them for commit.</li>
       <li>You can do <strong>review</strong> and <strong>deployment</strong> after <strong>rebase</strong>, if you wish so; the <code class="language-plaintext highlighter-rouge">live</code> branch pointer should be updated to the last commit at last (when changes are <strong>reviewed</strong> and <strong>deployed</strong>) anyway.</li>
     </ul>
@@ -383,10 +383,10 @@ Steve&nbsp;Pavlina</h3>&nbsp;&nbsp;<span class="note">(stevepavlina.com)</span>
 <ol>
   <li>Unstage all files that are being staged.</li>
   <li>For each modified file/modification: <strong>review</strong> modification(s), resolve merge conflicts and if needed, make corrective changes from your standpoint; <strong>deploy modifications</strong>, then  <strong>stage</strong> them.</li>
-  <li>Make a commit with appropriate message on what corrective changes you did, if you haven’t done any corrective changes at previous step, leave default message.</li>
+  <li>Make a commit with appropriate message on what corrective changes you’ve made, if you haven’t made any corrective changes at the previous step, leave default message.</li>
 </ol>
 
-<p>After you <strong>reviewed</strong>, <strong>deployed</strong> and <strong>integrated</strong> changes into <code class="language-plaintext highlighter-rouge">live</code>, push live branch to remote.</p>
+<p>After you <strong>reviewed</strong>, <strong>deployed</strong> and <strong>integrated</strong> changes into <code class="language-plaintext highlighter-rouge">live</code>, push it to remote.</p>
 
 <h2 id="additional-notes">Additional Notes</h2>
 
