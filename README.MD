@@ -1,1 +1,1 @@
-My personal website: www.pryjmak.com (© 2022 Nazar Pryjmak)
+My personal website: www.primac.dev (© 2022 Nazar Pryjmak)
