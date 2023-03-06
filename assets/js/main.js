@@ -101,15 +101,17 @@
                                             ? true : false
 
                 // has side effect of unpredictable scrolling
-                ;(previewSwitch.checked)
-                    ? articlesPreviews.classList.add('preview-mode')
-                    : articlesPreviews.classList.remove('preview-mode')
+                if (previewSwitch.checked)
+                     articlesPreviews.classList.add('preview-mode')
+                else articlesPreviews.classList.remove('preview-mode')
+
+
+                if (!focusPREVIEW) return;
 
                 // scrolling back to the Article Preview
-                ;(focusPREVIEW &&
-                  focusPREVIEW == articlesPreviews.firstElementChild)
-                    ? document.body.scrollTo(0,0)
-                    : focusPREVIEW.scrollIntoView()
+                if(focusPREVIEW == articlesPreviews.firstElementChild)
+                     document.body.scrollTo(0,0)
+                else focusPREVIEW.scrollIntoView()
                     // console.log('scrolled to the Top');
                     // console.log('scrolled into focusPREVIEW');
             }
