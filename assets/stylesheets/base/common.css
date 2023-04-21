@@ -1,210 +1,173 @@
-@layer reset,
-defaults,
-
-
-
-components,
-    in-dev-cover,
-    side-nav,
-    preview-switch,
-    primary-menu,
-    burger,
-    roll-paper,
-    primary-header,
-    pagination,
-
-
-    alist,
-
-        aheader,
-            category-identifier,
-
-        article,
-
-
-    primary-footer,
-
-
-
-
-    zippy,
-    bg,
-
-
-
-
-PAGE-ABOUT.article,
-end;
                                   @font-face {
-    font-family:    'Montserrat';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Montserrat/static/Montserrat-Light.ttf") format("truetype");
-    font-weight:    300;
-    font-style:     normal;
+  font-family:    'Montserrat';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Montserrat/static/Montserrat-Light.ttf") format("truetype");
+  font-weight:    300;
+  font-style:     normal;
 }
 @font-face {
-    font-family:    'Montserrat';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Montserrat/static/Montserrat-Regular.ttf") format("truetype");
-    font-weight:    400;
-    font-style:     normal;
+  font-family:    'Montserrat';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Montserrat/static/Montserrat-Regular.ttf") format("truetype");
+  font-weight:    400;
+  font-style:     normal;
 }
 @font-face {
-    font-family:    'Montserrat';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Montserrat/static/Montserrat-Medium.ttf") format("truetype");
-    font-weight:    500;
-    font-style:     normal;
+  font-family:    'Montserrat';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Montserrat/static/Montserrat-Medium.ttf") format("truetype");
+  font-weight:    500;
+  font-style:     normal;
 }
 @font-face {
-    font-family:    'Montserrat';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Montserrat/static/Montserrat-Bold.ttf") format("truetype");
-    font-weight:    700;
-    font-style:     normal;
-}
-
-@font-face {
-    font-family:    'Montserrat';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Montserrat/static/Montserrat-LightItalic.ttf") format("truetype");
-    font-weight:    300;
-    font-style:     italic;
-}
-@font-face {
-    font-family:    'Montserrat';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Montserrat/static/Montserrat-RegularItalic.ttf") format("truetype");
-    font-weight:    400;
-    font-style:     italic;
-}
-@font-face {
-    font-family:    'Montserrat';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Montserrat/static/Montserrat-MediumItalic.ttf") format("truetype");
-    font-weight:    500;
-    font-style:     italic;
-}
-@font-face {
-    font-family:    'Montserrat';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Montserrat/static/Montserrat-BoldItalic.ttf") format("truetype");
-    font-weight:    700;
-    font-style:     italic;
-}
-@font-face {
-    font-family:    'Comfortaa';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Comfortaa/static/Comfortaa-Light.ttf") format("truetype");
-    font-weight:    300;
-    font-style:     normal;
-}
-@font-face {
-    font-family:    'Comfortaa';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Comfortaa/static/Comfortaa-Regular.ttf") format("truetype");
-    font-weight:    400;
-    font-style:     normal;
-}
-@font-face {
-    font-family:    'Comfortaa';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Comfortaa/static/Comfortaa-Medium.ttf") format("truetype");
-    font-weight:    500;
-    font-style:     normal;
-}
-@font-face {
-    font-family:    'Comfortaa';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Comfortaa/static/Comfortaa-SemiBold.ttf") format("truetype");
-    font-weight:    600;
-    font-style:     normal;
-}
-@font-face {
-    font-family:    'Comfortaa';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Comfortaa/static/Comfortaa-Bold.ttf") format("truetype");
-    font-weight:    700;
-    font-style:     normal;
+  font-family:    'Montserrat';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Montserrat/static/Montserrat-Bold.ttf") format("truetype");
+  font-weight:    700;
+  font-style:     normal;
 }
 
 @font-face {
-    font-family:    'Verdana Pro';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Verdana Pro/VerdanaPro-Light.ttf") format("truetype");
-    font-weight:    300;
-    font-style:     normal;
+  font-family:    'Montserrat';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Montserrat/static/Montserrat-LightItalic.ttf") format("truetype");
+  font-weight:    300;
+  font-style:     italic;
 }
 @font-face {
-    font-family:    'Verdana Pro';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Verdana Pro/VerdanaPro-Regular.ttf") format("truetype");
-    font-weight:    400;
-    font-style:     normal;
+  font-family:    'Montserrat';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Montserrat/static/Montserrat-RegularItalic.ttf") format("truetype");
+  font-weight:    400;
+  font-style:     italic;
 }
 @font-face {
-    font-family:    'Verdana Pro';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Verdana Pro/VerdanaPro-SemiBold.ttf") format("truetype");
-    font-weight:    600;
-    font-style:     normal;
+  font-family:    'Montserrat';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Montserrat/static/Montserrat-MediumItalic.ttf") format("truetype");
+  font-weight:    500;
+  font-style:     italic;
 }
 @font-face {
-    font-family:    'Verdana Pro';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Verdana Pro/VerdanaPro-Bold.ttf") format("truetype");
-    font-weight:    700;
-    font-style:     normal;
+  font-family:    'Montserrat';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Montserrat/static/Montserrat-BoldItalic.ttf") format("truetype");
+  font-weight:    700;
+  font-style:     italic;
+}
+@font-face {
+  font-family:    'Comfortaa';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Comfortaa/static/Comfortaa-Light.ttf") format("truetype");
+  font-weight:    300;
+  font-style:     normal;
+}
+@font-face {
+  font-family:    'Comfortaa';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Comfortaa/static/Comfortaa-Regular.ttf") format("truetype");
+  font-weight:    400;
+  font-style:     normal;
+}
+@font-face {
+  font-family:    'Comfortaa';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Comfortaa/static/Comfortaa-Medium.ttf") format("truetype");
+  font-weight:    500;
+  font-style:     normal;
+}
+@font-face {
+  font-family:    'Comfortaa';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Comfortaa/static/Comfortaa-SemiBold.ttf") format("truetype");
+  font-weight:    600;
+  font-style:     normal;
+}
+@font-face {
+  font-family:    'Comfortaa';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Comfortaa/static/Comfortaa-Bold.ttf") format("truetype");
+  font-weight:    700;
+  font-style:     normal;
 }
 
 @font-face {
-    font-family:    'Verdana Pro';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Verdana Pro/VerdanaPro-LightItalic.ttf") format("truetype");
-    font-weight:    300;
-    font-style:     italic;
+  font-family:    'Verdana Pro';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Verdana Pro/VerdanaPro-Light.ttf") format("truetype");
+  font-weight:    300;
+  font-style:     normal;
 }
 @font-face {
-    font-family:    'Verdana Pro';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Verdana Pro/VerdanaPro-RegularItalic.ttf") format("truetype");
-    font-weight:    400;
-    font-style:     italic;
+  font-family:    'Verdana Pro';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Verdana Pro/VerdanaPro-Regular.ttf") format("truetype");
+  font-weight:    400;
+  font-style:     normal;
 }
 @font-face {
-    font-family:    'Verdana Pro';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Verdana Pro/VerdanaPro-SemiBoldItalic.ttf") format("truetype");
-    font-weight:    700;
-    font-style:     italic;
+  font-family:    'Verdana Pro';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Verdana Pro/VerdanaPro-SemiBold.ttf") format("truetype");
+  font-weight:    600;
+  font-style:     normal;
 }
 @font-face {
-    font-family:    'Verdana Pro';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Verdana Pro/VerdanaPro-BoldItalic.ttf") format("truetype");
-    font-weight:    700;
-    font-style:     italic;
+  font-family:    'Verdana Pro';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Verdana Pro/VerdanaPro-Bold.ttf") format("truetype");
+  font-weight:    700;
+  font-style:     normal;
+}
+
+@font-face {
+  font-family:    'Verdana Pro';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Verdana Pro/VerdanaPro-LightItalic.ttf") format("truetype");
+  font-weight:    300;
+  font-style:     italic;
+}
+@font-face {
+  font-family:    'Verdana Pro';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Verdana Pro/VerdanaPro-RegularItalic.ttf") format("truetype");
+  font-weight:    400;
+  font-style:     italic;
+}
+@font-face {
+  font-family:    'Verdana Pro';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Verdana Pro/VerdanaPro-SemiBoldItalic.ttf") format("truetype");
+  font-weight:    700;
+  font-style:     italic;
+}
+@font-face {
+  font-family:    'Verdana Pro';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Verdana Pro/VerdanaPro-BoldItalic.ttf") format("truetype");
+  font-weight:    700;
+  font-style:     italic;
 }
 @font-face {
     font-family:    'Verdana Pro Cond';
@@ -309,110 +272,110 @@ end;
                     url("/assets/fonts/IBM_Plex_Sans/IBMPlexSans-BoldItalic.ttf") format("truetype");
 }*/
 @font-face {
-    font-family:    'Courier Prime';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Courier_Prime/CourierPrime-Regular.ttf") format("truetype");
-    font-weight:    400;
+  font-family:    'Courier Prime';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Courier_Prime/CourierPrime-Regular.ttf") format("truetype");
+  font-weight:    400;
 }
 @font-face {
-    font-family:    'Courier Prime';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Courier_Prime/CourierPrime-Bold.ttf") format("truetype");
-    font-weight:    700;
+  font-family:    'Courier Prime';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Courier_Prime/CourierPrime-Bold.ttf") format("truetype");
+  font-weight:    700;
 }
 @font-face {
-    font-family:    'Courier Prime';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Courier_Prime/CourierPrime-RegularItalic.ttf") format("truetype");
-    font-weight:    400;
-    font-style:     italic;
+  font-family:    'Courier Prime';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Courier_Prime/CourierPrime-RegularItalic.ttf") format("truetype");
+  font-weight:    400;
+  font-style:     italic;
 }
 @font-face {
-    font-family:    'Courier Prime';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Courier_Prime/CourierPrime-BoldItalic.ttf") format("truetype");
-    font-weight:    700;
-    font-style:     italic;
+  font-family:    'Courier Prime';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Courier_Prime/CourierPrime-BoldItalic.ttf") format("truetype");
+  font-weight:    700;
+  font-style:     italic;
 }
 @font-face {
-    font-family:    'Rajdhani';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Rajdhani/Rajdhani-Light.ttf") format("truetype");
-    font-weight:    300;
+  font-family:    'Rajdhani';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Rajdhani/Rajdhani-Light.ttf") format("truetype");
+  font-weight:    300;
 }
 @font-face {
-    font-family:    'Rajdhani';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Rajdhani/Rajdhani-Regular.ttf") format("truetype");
-    font-weight:    400;
+  font-family:    'Rajdhani';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Rajdhani/Rajdhani-Regular.ttf") format("truetype");
+  font-weight:    400;
 }
 @font-face {
-    font-family:    'Rajdhani';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
-    font-weight:    700;
+  font-family:    'Rajdhani';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Rajdhani/Rajdhani-Bold.ttf") format("truetype");
+  font-weight:    700;
 }
 /*@font-face {
-    font-family:    'Rajdhani';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Rajdhani/Rajdhani-Medium.ttf") format("truetype"),
-                    url("/assets/fonts/Rajdhani/Rajdhani-SemiBold.ttf") format("truetype"),
+  font-family:    'Rajdhani';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Rajdhani/Rajdhani-Medium.ttf") format("truetype"),
+          url("/assets/fonts/Rajdhani/Rajdhani-SemiBold.ttf") format("truetype"),
 }*/
 
 @font-face {
-    font-family:    'Charter';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/charter/ttf/Charter-Regular.ttf") format("truetype");
-    font-weight:    400;
-    font-style:     normal;
+  font-family:    'Charter';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/charter/ttf/Charter-Regular.ttf") format("truetype");
+  font-weight:    400;
+  font-style:     normal;
 }
 @font-face {
-    font-family:    'Charter';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/charter/ttf/Charter-Bold.ttf") format("truetype");
-    font-weight:    700;
-    font-style:     normal;
+  font-family:    'Charter';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/charter/ttf/Charter-Bold.ttf") format("truetype");
+  font-weight:    700;
+  font-style:     normal;
 }
 @font-face {
-    font-family:    'Charter';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/charter/ttf/Charter-Regular-Italic.ttf") format("truetype");
-    font-weight:    400;
-    font-style:     italic;
+  font-family:    'Charter';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/charter/ttf/Charter-Regular-Italic.ttf") format("truetype");
+  font-weight:    400;
+  font-style:     italic;
 }
 @font-face {
-    font-family:    'Charter';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/charter/ttf/Charter-Bold-Italic.ttf") format("truetype");
-    font-weight:    700;
-    font-style:     italic;
+  font-family:    'Charter';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/charter/ttf/Charter-Bold-Italic.ttf") format("truetype");
+  font-weight:    700;
+  font-style:     italic;
 }
 
 
 
 @font-face {
-    /*font-family: "Foro Extra Bold";*/
-    font-family:    "Foro W03 ExtraBold";
-    font-display:   fallback;
-    /*src: url("/assets/fonts/b7a3e250c06495eeff3d8d9fb0714e65.eot");*/ /* IE9*/
-    src:
-                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.woff2") format("woff2"), /* chrome、firefox */
-                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.woff") format("woff"), /* chrome、firefox */
-                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-                    url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.svg#Foro W03 ExtraBold") format("svg"); /* iOS 4.1- */
-    text-rendering: optimizeLegibility;
+  /*font-family: "Foro Extra Bold";*/
+  font-family:    "Foro W03 ExtraBold";
+  font-display:   fallback;
+  /*src: url("/assets/fonts/b7a3e250c06495eeff3d8d9fb0714e65.eot");*/ /* IE9*/
+  src:
+          url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.woff2") format("woff2"), /* chrome、firefox */
+          url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.woff") format("woff"), /* chrome、firefox */
+          url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+          url("/assets/fonts/Foro_W03_ExtraBold/b7a3e250c06495eeff3d8d9fb0714e65.svg#Foro W03 ExtraBold") format("svg"); /* iOS 4.1- */
+  text-rendering: optimizeLegibility;
 -webkit-font-smoothing: antialiased;
 -webkit-text-stroke-width: 0.2px;
 -moz-osx-font-smoothing: grayscale;
@@ -421,41 +384,91 @@ end;
 
 
 @font-face {
-    font-family:    'Bebas Neue';
-    font-display:   fallback;
-    src:            url("/assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
+  font-family:    'Bebas Neue';
+  font-display:   fallback;
+  src:            url("/assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
 }
 
 
 
 @font-face {
-    font-family:    'Alfa Slab One';
-    font-display:   fallback;
-    src:            url("/assets/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf") format("truetype");
-    font-weight:    400;
+  font-family:    'Alfa Slab One';
+  font-display:   fallback;
+  src:            url("/assets/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf") format("truetype");
+  font-weight:    400;
 }
 
 
 /*@font-face {
-    font-family:    'Roboto';
-    font-display:   fallback;
-    src:
-                    url("/assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-Light.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-Black.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-ThinItalic.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-LightItalic.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-RegularItalic.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-MediumItalic.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-BoldItalic.ttf") format("truetype"),
-                    url("/assets/fonts/Roboto/Roboto-BlackItalic.ttf") format("truetype");
+  font-family:    'Roboto';
+  font-display:   fallback;
+  src:
+          url("/assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-Light.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-Black.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-ThinItalic.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-LightItalic.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-RegularItalic.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-MediumItalic.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-BoldItalic.ttf") format("truetype"),
+          url("/assets/fonts/Roboto/Roboto-BlackItalic.ttf") format("truetype");
 }*/
 
 
 
+                                  
+/*@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap');*/
+
+/*@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');*/
+
+
+
+
+@layer                          reset,
+defaults,
+
+
+
+components,
+  in-dev-cover,
+  side-nav,
+  preview-switch,
+  primary-menu,
+  burger,
+  roll-paper,
+  primary-header,
+  pagination,
+
+
+  alist,
+
+    aheader,
+      category-identifier,
+
+    article,
+
+
+  primary-footer,
+
+
+
+
+  zippy,
+  bg,
+
+
+
+
+PAGE-ABOUT.article,
+end;
 
 @layer reset                    { /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
@@ -519,10 +532,6 @@ table {
 *, *:before, *:after {
     box-sizing: border-box;
 } }
-
-
-
-
 
 @layer defaults.base            { :root {
     --scrollbar-width: 10px;
@@ -1384,8 +1393,8 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 
 
 .preview-mode li.apreview .article {
-    /*display: flex;*/
-    display: grid !important;
+  /*display: flex;*/
+  display: grid !important;
 }
 
 
@@ -1396,8 +1405,8 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 /*    display:        grid;*/
 
 /*   grid: 's text-content'
-          / minmax(0, calc(100% - (var(--text-content-max-width))))
-             1fr;*/
+      / minmax(0, calc(100% - (var(--text-content-max-width))))
+       1fr;*/
 
 /*    grid-template-columns: minmax(0, calc(100% - (var(--text-content-max-width)))) [text-content-start] 1fr [text-content-end];*/
 
@@ -1405,8 +1414,8 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 
 
 /*   grid: 's text-content'
-          / minmax(0, auto)
-             minmax(100px, calc(75ch + var(--text-content-margin-left) + var(--text-content-margin-right)));*/
+      / minmax(0, auto)
+       minmax(100px, calc(75ch + var(--text-content-margin-left) + var(--text-content-margin-right)));*/
 /*}*/
 
 /*.article > *              { grid-column: 1 /-1 }*/
@@ -1423,14 +1432,14 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 
 /*.article > :is(h2, h3, h4, h5, h6),*/
 .article > :is(p, ul, ol, hr) {
-        width:      100%;
-    max-width:      calc(var(--text-content-max-width));
+    width:      100%;
+  max-width:      calc(var(--text-content-max-width));
 
-    justify-self:   end;
+  justify-self:   end;
 }
 
 /*.article > :is(.stretched, .zippy, div:has( > img, > div > pre), figure:has( > pre), h2, h3, h4, h5, h6){
-    grid-column: full;
+  grid-column: full;
 }*/
 
 
@@ -1444,25 +1453,25 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 
 
 main > .article {
-    margin-top:     1em;
+  margin-top:     1em;
 }
 
 li.apreview > .article {
-    margin-top:     0.5em;
+  margin-top:     0.5em;
 }
 
 
 main > section:has(> article.article.description) + section:has(> nav > ul.alist) {
-    margin-top:     1em;
+  margin-top:     1em;
 }
 
 
 
 .article {
 
-    font:           var(--article-font);
-    letter-spacing: var(--article-letter-spacing);
-    word-spacing:   var(--article-word-spacing);
+  font:           var(--article-font);
+  letter-spacing: var(--article-letter-spacing);
+  word-spacing:   var(--article-word-spacing);
 
 /*    hyphens: auto;*/
 }
@@ -1470,22 +1479,22 @@ main > section:has(> article.article.description) + section:has(> nav > ul.alist
 
 
 .article a:hover {
-    text-decoration-line: underline;
-    text-decoration-thickness: 0.2em;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.2em;
 }
 
 .article a:visited,
 p:has(> a[href$='#continuing']:visited) {
-    color:          hsl(271, 68%, 32%);
-    color:          hsl(212, 38%, 52%);
+  color:          hsl(271, 68%, 32%);
+  color:          hsl(212, 38%, 52%);
 }
 
 
 .article pre > code > span::selection,
 .article code::selection {
 
-    background-color:   hsl(0, 0%, 100%);
-    color:              hsl(0, 0%, 0%);
+  background-color:   hsl(0, 0%, 100%);
+  color:              hsl(0, 0%, 0%);
 }
 
 
@@ -1495,30 +1504,30 @@ p:has(> a[href$='#continuing']:visited) {
 
 /*.article
 :is(
-    nav,
-    div:not(#continuing, .highlight, :has( > img)),
-    figure,
-    blockquote,
-    p,
-    ul,
-    ol
+  nav,
+  div:not(#continuing, .highlight, :has( > img)),
+  figure,
+  blockquote,
+  p,
+  ul,
+  ol
 )*/
 /*ul.categories h3,*/
 .article
 :where(:not(
-    div:is(#continuing, :has( > img)),
-    img,
-    div[class^='language'][class*='highlighter'] *
+  div:is(#continuing, :has( > img)),
+  img,
+  div[class^='language'][class*='highlighter'] *
 )) {
-    margin-top:         0.5em;
-    margin-bottom:      0.5em;
+  margin-top:         0.5em;
+  margin-bottom:      0.5em;
 }
 
 /*margin-top: 1em;*/
 /*margin-bottom: 1em;*/
 /*.article blockquote {
-    padding-top:        0.5em;
-    padding-bottom:     0.5em;
+  padding-top:        0.5em;
+  padding-bottom:     0.5em;
 
 }*/
 
@@ -1526,18 +1535,18 @@ p:has(> a[href$='#continuing']:visited) {
 
 .article :is(h2, h3, h4, h5, h6) {
 
-    /*--font-color-headers: #648880;*/
-    --font-color-headers: hsl(167, 15%, 70%);
-    --font-color-headers: hsl(167, 15%, 46%);
-    --font-color-headers: hsl(0, 0%, 0%);
+  /*--font-color-headers: #648880;*/
+  --font-color-headers: hsl(167, 15%, 70%);
+  --font-color-headers: hsl(167, 15%, 46%);
+  --font-color-headers: hsl(0, 0%, 0%);
 
-    margin-top:     1.5em;
+  margin-top:     1.5em;
 
-    /*line-height: 2;*/
-    /*line-height: 1;*/
+  /*line-height: 2;*/
+  /*line-height: 1;*/
 
-    font-weight:    700;
-    font-size:      1.2em;
+  font-weight:    700;
+  font-size:      1.2em;
 
 /*    font-family:    'Alfa Slab One';*/
 /*    font-family:    'Rajdhani';*/
@@ -1548,27 +1557,27 @@ p:has(> a[href$='#continuing']:visited) {
 /*    font-family:    'Montserrat';*/
 /*    font-family:    'Comfortaa', cursive;*/
 /*    font-family:    serif;*/
-    font-family:    cursive;
+  font-family:    cursive;
 
-    letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
 
-    color:          var(--font-color-headers);
+  color:          var(--font-color-headers);
 
-    text-align:     left;
-    padding-left:    0.5em;
-    border-left-style: solid;
-    border-left-color: var(--orange);
+  text-align:     left;
+  padding-left:    0.5em;
+  border-left-style: solid;
+  border-left-color: var(--orange);
 }
 
 
 
 
 .article h2 {
-    /*letter-spacing: 0.5em;*/
-    margin-left:        -2px;
+  /*letter-spacing: 0.5em;*/
+  margin-left:        -2px;
 /*    margin-right:       0;*/
 
-    border-left-width:  10px;
+  border-left-width:  10px;
 
 /*    text-transform:     uppercase;*/
 }
@@ -1579,75 +1588,75 @@ p:has(> a[href$='#continuing']:visited) {
 
 /*.article > div,*/
 .article p {
-    padding-left:       var(--text-content-margin-left);
+  padding-left:       var(--text-content-margin-left);
 }
 
 
 .article ul:not(:first-child),
 .article ol:not(:first-child) {
-    padding-left:       var(--tab-space);
+  padding-left:       var(--tab-space);
 }
 
 .article > ul:not(:first-child),
 .article > ol:not(:first-child) {
-    padding-left:       calc(var(--text-content-margin-left) + var(--tab-space)) !important;
+  padding-left:       calc(var(--text-content-margin-left) + var(--tab-space)) !important;
 }
 
 
 /*article > div,*/
 .article > :is(p, ul, ol) {
-    padding-right:      var(--text-content-margin-right);
+  padding-right:      var(--text-content-margin-right);
 }
 
 
 
 .article :is(
-    a[href$='#continuing'],
-    p > code,
-    :is(ul, ol) code
+  a[href$='#continuing'],
+  p > code,
+  :is(ul, ol) code
 ) {
-    font-family:    var(--main-font-family);
+  font-family:    var(--main-font-family);
 }
 
 
 .article pre {
-    padding-top:        0.65em;
-    padding-bottom:     0.65em;
+  padding-top:        0.65em;
+  padding-bottom:     0.65em;
 
-    border-left:        1em solid hsl(0, 0%, 10%);
-    padding-left:       0.2em;
-    padding-right:      var(--text-content-margin-right);
+  border-left:        1em solid hsl(0, 0%, 10%);
+  padding-left:       0.2em;
+  padding-right:      var(--text-content-margin-right);
 
 
 
-    background-color: hsl(0, 0%, 5%);
-    color: hsl(0, 0%, 95%);
+  background-color: hsl(0, 0%, 5%);
+  color: hsl(0, 0%, 95%);
 
 /*    font-size: 0.9em;*/
-    font-family:    Consolas, monospace;
-    line-height:        1.2;
+  font-family:    Consolas, monospace;
+  line-height:        1.2;
 
-    overflow:           auto;
+  overflow:           auto;
 }
 
 
 .article :is(
-    p > code,
-    :is(ul, ol) code
+  p > code,
+  :is(ul, ol) code
 ) {
-    border-radius:      2px;
+  border-radius:      2px;
 
-    padding-top:        3px;
-    padding-bottom:     1px;
+  padding-top:        3px;
+  padding-bottom:     1px;
 
-    padding-left:       5px;
-    padding-right:      5px;
+  padding-left:       5px;
+  padding-right:      5px;
 
 
-    /*background-color: hsl(0, 0%, 30%);*/
-    background-color:   hsla(204, 10%, 86%, 0.7);
-    /*color: hsl(0, 0%, 100%);*/
-    color:              hsl(122, 94%, 21%);
+  /*background-color: hsl(0, 0%, 30%);*/
+  background-color:   hsla(204, 10%, 86%, 0.7);
+  /*color: hsl(0, 0%, 100%);*/
+  color:              hsl(122, 94%, 21%);
 }
 
 
@@ -1659,75 +1668,75 @@ p:has(> a[href$='#continuing']:visited) {
 
 
 .article ol > li {
-    list-style-type: decimal;
+  list-style-type: decimal;
 }
 
 .article > ul > li {
-    list-style:     disc outside;
+  list-style:     disc outside;
 /*    list-style:     '-\ ' outside;*/
 /*    list-style-type: disc;*/
 }
-    .article > ul > li > ul > li {
-        list-style-type: circle;
+  .article > ul > li > ul > li {
+    list-style-type: circle;
+  }
+    .article > ul > li > ul > li > ul > li {
+      list-style-type: square;
     }
-        .article > ul > li > ul > li > ul > li {
-            list-style-type: square;
-        }
 
 
 
 .article ul > li::before {
-    /*display: inline;*/
-    /*content: '\2022\ ';*/
-    /*content: '•\ ';*/
+  /*display: inline;*/
+  /*content: '\2022\ ';*/
+  /*content: '•\ ';*/
 }
 
 article.article .next-li-no-style + ul > li {
-    /*list-style-type: '✅\ ';*/
+  /*list-style-type: '✅\ ';*/
 /*    list-style-type:    none;*/
 }
 
 /*.article > ul > li > span:first-child:has( + :is(ul, ol)) {
-    font-weight:        500;
-    font-family:        var(--sub-font-family);
-    color:              hsl(var(--decorative-theme-color));
+  font-weight:        500;
+  font-family:        var(--sub-font-family);
+  color:              hsl(var(--decorative-theme-color));
 }*/
 
 /*.article li {
-    font-weight:        var(--article-font-weight);
-    font-family:        var(--article-font-family);
-    color:              var(--main-fontColor);
+  font-weight:        var(--article-font-weight);
+  font-family:        var(--article-font-family);
+  color:              var(--main-fontColor);
 }*/
 
 
 
 .article blockquote {
-    color: hsl(0, 0%, 50%);
+  color: hsl(0, 0%, 50%);
 }
 
 .article > :first-child {
-    margin-top:         0 !important;
+  margin-top:         0 !important;
 }
 
 .article blockquote > :first-child {
-    margin-top:         0 !important;
+  margin-top:         0 !important;
 }
 
 .article :last-child {
-    margin-bottom:      0 !important;
+  margin-bottom:      0 !important;
 }
 
 /*.article > *:last-child {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 */
 
 .article hr {
-    width: 100%;
-    margin: 0;
+  width: 100%;
+  margin: 0;
 
-    border-width:   0;
-    border-top: 1px solid hsl(0, 0%, 80%);
+  border-width:   0;
+  border-top: 1px solid hsl(0, 0%, 80%);
 } }
 @layer primary-footer.base      { 
 
@@ -1940,37 +1949,37 @@ footer.primary-footer) {
 
 
 
-@layer in-dev-cover.base            { 
+@layer in-dev-cover.base        { 
 
 
 
 
 #in-dev-cover {
-    display: grid;
-    display: none;
-    position: fixed;
+  display: grid;
+  display: none;
+  position: fixed;
 
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 
-    background-color: #fff;
+  background-color: #fff;
 
 -webkit-user-select:    none;  /* Chrome all / Safari all */
    -moz-user-select:    none;  /* Firefox all */
-    -ms-user-select:    none;  /* IE 10+ */
-        user-select:    none;  /* Likely future */
+  -ms-user-select:    none;  /* IE 10+ */
+    user-select:    none;  /* Likely future */
 }
-    #in-dev-cover > div {
-        text-align: center;
-        align-self: center;
-        transform: rotate(-45deg);
+  #in-dev-cover > div {
+    text-align: center;
+    align-self: center;
+    transform: rotate(-45deg);
 
-        font: 10rem 'Bebas Neue', cursive;
-        color: red;
-    }
-        #in-dev-cover > div > span {
-            background-color: #000;
-            color: #fff;
-        } }
+    font: 10rem 'Bebas Neue', cursive;
+    color: red;
+  }
+    #in-dev-cover > div > span {
+      background-color: #000;
+      color: #fff;
+    } }

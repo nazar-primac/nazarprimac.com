@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /assets/decorative/
-Disallow: /notforsearch/
+Disallow: /notforbots/
 
 Sitemap: https://www.primac.dev/sitemap.xml

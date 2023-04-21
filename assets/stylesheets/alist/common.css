@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 @layer defaults.alist           { 
 /*
     ========================================
@@ -86,16 +77,16 @@ main {
       letter-spacing:     0.1em;
       /*color: hsl(var(--decorative-theme-color));*/
       color:              hsl(0, 0%, 0%);
-      font-weight:        700;
+/*      font-weight:        700;*/
       /*font-size: 2em;*/
       font-size:          1.3em;
       font-size:          1.3em;
       line-height:        1.3;
       /*font-family: 'Rajdhani', sans-serif;*/
-    /*    font-family:        "Foro W03 ExtraBold";*/
     /*    font-family:    cursive;*/
     /*    font-family:    'Comfortaa', cursive;*/
-      font-family:    'Georgia', serif;
+/*      font-family: 'Georgia', serif;*/
+        font-family: "Foro W03 ExtraBold";
       /*text-align: center;*/
       text-align:         left;
       text-transform:     none;
