@@ -1375,8 +1375,6 @@ nav.primary-nav li:nth-child(even) .zippy .zippy-content {
 
       column-gap: 1ch;
       row-gap: 0.1em;
-
-      font-style: italic;
     }
 
       .aheader span.meta.tag::before {
