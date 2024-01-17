@@ -537,7 +537,7 @@ table {
     --scrollbar-width: 10px;
     --scrollbar-width-formoz: thin;
 
-    --decorative-background-container: 0, 0%, 100%;
+    --decorative-background-container: 0, 0%, 93%;
     --decorative-background-container-transparency: 1;
 
 /*    --decorative-theme-color: 246, 100%, 50%;*/
@@ -545,11 +545,11 @@ table {
 /*    --decorative-theme-color: 0, 0%, 0%;*/
 /*    --decorative-theme-color: 221, 100%, 44%;*/
 /*    --decorative-theme-color: 197, 31%, 75%;*/
-    --decorative-theme-color: 207, 47%, 59%;
+/*    --decorative-theme-color: 207, 47%, 59%;*/
     --decorative-theme-color: 0, 0%, 0%;
     --decorative-background-body-transparency: 0.3;
 
-    --main-fontColor:    #000000;
+    --main-fontColor: #555555;
 
     --black: hsl(0, 0%, 0%);
     --white: hsl(0, 0%, 100%);
@@ -1758,7 +1758,7 @@ footer.primary-footer {
 
     margin-bottom: 2em;
 
-    background-color: hsl(0, 0%, 97%);
+    background-color: hsl(0, 0%, 90%);
 }
 
 
@@ -1769,7 +1769,7 @@ footer.primary-footer > .copyright {
 /*    width: max-content;*/
     width: min-content;
 
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 93%);
     color: hsl(0, 0%, 50%);
 
 /*    font-size:      1.2em;*/

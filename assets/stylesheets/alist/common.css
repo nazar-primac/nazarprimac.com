@@ -352,7 +352,7 @@ header.primary-header {
 
     transition: padding-left 0.5s ease 0.1s;
 
-    background-color: hsl(0, 0%, 97%);
+    background-color: hsl(0, 0%, 90%);
 }
 
 header.primary-header h1 {
@@ -375,8 +375,7 @@ header.primary-header h1 {
 /*    font-family: var(--sub-font-family);*/
     font-family:    'Rajdhani', sans-serif;
 
-    color:          hsl(0, 0%, 90%);
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 93%);
 
     margin:         0;
 /*    margin-bottom:  -0.22em;*/
