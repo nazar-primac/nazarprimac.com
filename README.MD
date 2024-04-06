@@ -1,1 +1,1 @@
-www.nazarprimac.com (© 2024 Nazar Pryjmak)
+www.nazarprimac.com (© 2024 Nazar Primac)
