@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /assets/decorative/
 Disallow: /notforbots/
 
-Sitemap: https://www.primac.dev/sitemap.xml
+Sitemap: https://www.nazarprimac.com/sitemap.xml
