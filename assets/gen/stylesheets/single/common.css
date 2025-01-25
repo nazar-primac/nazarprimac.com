@@ -1,0 +1,143 @@
+@layer defaults.common         { 
+/*
+    ========================================
+    Utilities
+    ========================================
+*/
+
+
+
+
+
+/*
+    ========================================
+    Defaults
+    ========================================
+*/
+
+
+main {
+    margin-top:     0;
+}
+
+/*----------------------------------------
+  Typography
+  ----------------------------------------*/
+
+
+ }
+
+@layer components.common       {  }
+/* components */
+@layer aheader.common          { 
+
+
+
+
+header.aheader {
+  height:           550px;
+
+  padding-top:      68px;
+  padding-bottom:   68px;
+
+  background-color: hsl(0, 0%, 100%);
+
+  align-items: stretch;
+}
+
+  header.aheader div:has(> a > h1) {
+/*    width: 100%;*/
+  }
+
+    header.aheader h1 {
+      letter-spacing: 0.1em;
+      position:       relative;
+      right:          -0.05em;
+
+      /*margin-left: 2em;*/
+      /*margin-right: 2em;*/
+
+      line-height:    1.3;
+
+      text-align:     center;
+
+      /*color: hsl(var(--decorative-theme-color));*/
+      color: hsl(0, 0%, 0%);
+
+      font-size:      2em;
+/*      font-weight:    700;*/
+
+/*      font-family:  cursive;*/
+/*      font-family:  'Comfortaa', cursive;*/
+/*      font-family:  'Georgia', serif;*/
+      font-family:  'Foro W03 ExtraBold';
+    }
+
+      header.aheader a > h1:hover {
+/*        color:      var(--decorative-theme-color);*/
+      }
+
+    header.aheader .meta-terms.pos__in-rel {
+      top:          100%;
+      margin-top:   1em;
+      width:        100%;
+    }
+
+      .aheader .authors {
+        align-self:     center;
+      }
+
+  header.aheader .date {
+    /*margin-top: 1em;*/
+    line-height: 2;
+
+    /*text-shadow: 0 0 3px hsl(0, 0%, 0%);*/
+  }
+
+  header.aheader .category-id {
+    top: 15px;
+    right: 15px;
+  }
+
+    header.aheader .category-id:hover {
+      top: 14px;
+      right: 14px;
+    }
+
+  header.aheader > .bg-elem[style*='contained'] {
+    justify-content: flex-end;
+    padding-bottom: 2em;
+
+/*    background-size: auto calc(70% - 1em);*/
+    background-size: auto 70%;
+    background-position: 50% 1em;
+  }
+
+
+ }
+@layer article.common          { 
+
+/*  DECORATIVE  */
+.content .zippy-content::before {
+    display:        block       !important;
+    content:        ''          !important;
+
+    position:       absolute    !important;
+
+    background-color: #a9acaa   !important;
+
+    top:            0           !important;
+    left:           1rem        !important;
+
+    width:          0.1rem      !important;
+    height:         100%        !important;
+} }
+@layer pagination.common       { 
+
+
+.pagination {
+    column-gap: 3ch;
+}
+
+ }
+@layer PAGE-ABOUT.common       {  }

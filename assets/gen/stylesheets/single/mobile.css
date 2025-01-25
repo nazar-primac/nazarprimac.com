@@ -1,0 +1,67 @@
+@layer defaults.mobile         { 
+
+ }
+
+@layer components.mobile       { 
+
+
+
+
+ }
+/* components */
+@layer aheader.mobile          { 
+
+
+
+
+
+ }
+@layer article.mobile          { 
+
+
+
+
+
+ }
+@layer pagination.mobile       { 
+
+
+
+
+
+ }
+@layer PAGE-ABOUT.mobile       { 
+
+/*
+  ========================================
+  Decarative
+  ========================================
+*/
+
+body.PAGE-ABOUT
+h1 {
+    display: none;
+}
+
+
+body.PAGE-ABOUT
+header > .bg-elem {
+    /*background-color: hsl(var(--decorative-theme-color), var(--decorative-background-body-transparency));*/
+    background-color: hsl(0, 0%, 100%);
+
+    background-image: url(/assets/decorative/hero-background-pale-blue.png);
+
+    /*background-position: right 0 bottom 20%;*/
+    background-position: 100% 40%;
+    /*background-size: contain;*/
+    background-size: auto 110%;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+ }

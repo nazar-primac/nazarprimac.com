@@ -1,40 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>http://localhost:4000/seo-developer-content-creation-workflow-with-git/</loc>
-<lastmod>2023-02-06T23:00:00+01:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/3-things-for-happy-life/</loc>
-<lastmod>2024-02-11T00:17:06+01:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/2024/03/20/current.html</loc>
-<lastmod>2024-03-20T15:28:05+01:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/2024/03/26/untitled.html</loc>
-<lastmod>2024-03-26T19:12:46+01:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/about/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/business-and-marketing/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/computer-science-and-AI/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/economics-and-finance/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/health-class/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/phisics/</loc>
-</url>
-<url>
-<loc>http://localhost:4000/physiology-research/</loc>
-</url>
-</urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>/en/sitemap.xml</loc>
+    
+      <lastmod>2023-03-15T11:00:00-07:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>/de/sitemap.xml</loc>
+    
+      <lastmod>2023-03-15T11:00:00-07:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>

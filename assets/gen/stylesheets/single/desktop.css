@@ -1,0 +1,133 @@
+@layer defaults.desctop         { 
+
+
+
+
+
+
+
+header {
+    /*height: 50vh;*/
+} }
+
+@layer components.desctop       { 
+
+
+
+
+
+ }
+/* components */
+@layer aheader.desctop          { 
+
+
+
+ }
+@layer article.desctop          { 
+
+
+
+
+
+ }
+@layer pagination.desctop       { 
+
+
+
+
+
+ }
+@layer PAGE-ABOUT.desctop       { 
+
+
+
+
+
+
+body.PAGE-ABOUT
+header {
+    margin-top: 3em;
+
+
+    font-size: 1.33rem;
+
+    height: 1em;
+    min-height: unset;
+
+    padding-left: 1em;
+    padding-right: 1em;
+
+
+    flex-direction: row;
+
+    justify-content: flex-start;
+    align-items: flex-end;
+    /*align-items: center;*/
+    align-content: flex-start;
+
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+/*    margin-bottom: 2em;*/
+
+    background-color: hsl(0, 0%, 97%);
+}
+
+body.PAGE-ABOUT
+main {
+    margin-top:     3em;
+}
+body.PAGE-ABOUT
+main > .content {
+    margin-top:     0;
+}
+
+body.PAGE-ABOUT
+h1 {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+
+    letter-spacing: 0;
+
+    font-size: 3em;
+    line-height: 1;
+
+    color: hsl(0, 0%, 90%);
+
+    background-color: hsl(0, 0%, 100%);
+
+    margin: 0;
+/*    margin-bottom: -0.22em;*/
+    margin-bottom: -0.215em;
+
+    font-family: 'Rajdhani', sans-serif;
+}
+body.PAGE-ABOUT
+h1:hover {
+    color: var(--blue);
+}
+body.PAGE-ABOUT {
+    background: hsl(var(--decorative-theme-color), var(--decorative-background-body-transparency));
+}
+/*@media (min-width: 1250px) {*/
+@media (min-width: 1400px) {
+/*@media (min-width: 1400px) {*/
+    /*body:has(article.page-about) {*/
+    body.PAGE-ABOUT {
+        background-image: url(/assets/decorative/hero-background-pale-blue.png);
+
+        /*background-position: bottom 0 right -7%;*/
+        /*background-position: left 93% bottom 0;*/
+        background-position: 105% 100%;
+        background-repeat: no-repeat;
+
+        /*background: bottom 0 right -7% no-repeat url(/assets/decorative/hero-background-pale-blue.png), 0 0 / cover no-repeat fixed url(/assets/decorative/unsplash-Leon_Overweel.jpg);*/
+    }
+}
+body.PAGE-ABOUT
+header > .bg-elem {
+    display: none;
+}
+
+ }

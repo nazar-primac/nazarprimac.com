@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nazar-Primac on EN</title>
+    <link>/authors/nazar-primac/</link>
+    <description>Recent content in Nazar-Primac on EN</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 15 Mar 2023 11:00:00 -0700</lastBuildDate>
+    <atom:link href="/authors/nazar-primac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SEO Specialist and Developer Collaboration: Content Creation Workflow with Git</title>
+      <link>/seo-specialist-and-developer-collaboration-content-creation-workflow-with-git/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      <guid>/seo-specialist-and-developer-collaboration-content-creation-workflow-with-git/</guid>
+      <description>&lt;p&gt;This tutorial explains how to use git for effective collaboration between SEO specialist (particularly, the person, who is optimizing content for search engines by making suggestive changes to the content, such as links placements, etc.) and web-developer (the person, who is reviewing, implementing and deploying these changes). The last one often is CMS operator (content manager), rather than developer, depending on website implementation.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;/post-2/&#34;&gt;post-2&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;In other words, this tutorial is going to be useful if the roles described are executed by different people.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Post 2</title>
+      <link>/post-2/</link>
+      <pubDate>Wed, 15 Feb 2023 10:00:00 -0700</pubDate>
+      <guid>/post-2/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;English&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Anim eiusmod irure incididunt sint cupidatat. Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.&lt;/p&gt;&#xA;&lt;p&gt;Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Post 1</title>
+      <link>/post-1/</link>
+      <pubDate>Sun, 15 Jan 2023 09:00:00 -0700</pubDate>
+      <guid>/post-1/</guid>
+      <description>&lt;p&gt;Tempor proident minim aliquip reprehenderit dolor et ad anim Lorem duis sint eiusmod. Labore ut ea duis dolor. Incididunt consectetur proident qui occaecat incididunt do nisi Lorem. Tempor do laborum elit laboris excepteur eiusmod do. Eiusmod nisi excepteur ut amet pariatur adipisicing Lorem.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,276 @@
+@layer defaults.common{main {
+    margin-top:     2.5em;
+}
+
+
+
+ }@layer components.common{}@layer roll-paper.common{}@layer aheader.common{.aheader {
+  padding-top:      1.5em;
+  padding-bottom:   1.2em;
+
+  background-color: hsl(0, 0%, 100%);
+}
+
+    .aheader h2 {
+          width:      100%;
+      max-width:      60ch;
+
+      letter-spacing:     0.1em;
+      
+      color:              hsl(0, 0%, 0%);
+
+      
+      font-size:          1.6em;
+      line-height:        1.3;
+
+
+
+
+      font-family:  'Foro W03 ExtraBold';
+      
+      text-align:         center;
+      text-transform:     none;
+      padding:            0;
+      margin:             0;
+      border:             none;
+    }
+
+
+    .aheader .meta-wrapper {
+      
+
+
+
+
+
+
+    }
+
+
+
+        .aheader .date {
+          
+          
+
+          
+          
+          
+  
+        }
+
+    .aheader .category-id {
+      top: -2px;
+      right: 15px;
+    }
+
+    .aheader .category-id:hover {
+      top: -3px;
+      right: 14px;
+    } }@layer pagination.common{.pagination > li:not(.prev-page, .next-page) {
+    width: 2.2ch;
+
+    display: inline-flex;
+    justify-content: center;
+}
+
+.pagination > li:not(.prev-page, .next-page) > a {
+    
+    text-align: center;
+    flex-grow: 1;
+}
+
+
+.pagination > li.selected {
+    font-weight: bold;
+}
+
+
+
+
+
+
+.pagination > li.first-page,
+.pagination > li.last-page {
+    position: relative;
+}
+
+.pagination > li.first-page.tdl::after,
+.pagination > li.last-page.tdl::before {
+    display: inline;
+    position: absolute;
+
+    content: "\2025";
+
+    bottom: 0;
+    font-size: 0.9em;
+}
+
+.pagination > li.first-page.tdl::after {
+    left: 100%;
+    margin-left: -2px;
+}
+
+.pagination > li.last-page.tdl::before {
+    right: 100%;
+    margin-right: -2px;
+}
+ }@layer preview-switch.common{label:has(> input#preview-switch-desctop,
+          > input#preview-switch-mobile) {
+    
+    
+
+
+    border-style:   solid;
+    
+    border-radius:  3px;
+
+    
+
+    font-weight:    bold;
+    
+    
+    
+}
+
+
+label > :is(input#preview-switch-desctop,
+            input#preview-switch-mobile) {
+    display:        none;
+}
+
+
+
+
+ }@layer alist.common{ul.alist >
+  li:not(:last-child) {
+    margin-bottom:  1em;
+  }
+
+ul.alist.preview-mode >
+  li:not(:last-child) {
+    margin-bottom:  3em;
+  }
+
+
+
+
+
+
+
+
+
+
+ul.alist.preview-mode
+         .aheader h2 {
+    
+
+    
+    
+}
+
+ul.alist:not(.preview-mode)
+         .aheader a:has(h2) {
+    
+}
+
+
+
+
+
+
+
+
+
+ul.alist:not(.preview-mode)
+         .aheader > .bg-elem,
+ul.alist .aheader > .bg-elem[style*='contained'] {
+    background-image: none      !important;
+    opacity:        1           !important;
+    
+}
+
+
+
+
+
+ }@layer primary-header.common{header.primary-header {
+
+    
+
+    margin-top: 3em;
+    height: 1em;
+
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: flex-end;
+    
+    align-content: flex-start;
+
+    column-gap: 2ch;
+
+    transition: padding-left 0.5s ease 0.1s;
+
+    background-color: hsl(0, 0%, 90%);
+}
+
+header.primary-header h1 {
+    
+
+    position:       sticky;
+    top:            5px;
+
+    padding-left:   0.1rem;
+    padding-right:  0.1rem;
+
+    letter-spacing: 0;
+
+
+
+    font-size:      3em;
+    font-weight:    700;
+
+
+
+    font-family:    'Rajdhani', sans-serif;
+
+    background-color: hsl(0, 0%, 93%);
+
+    margin:         0;
+
+    margin-bottom: -0.215em;
+}
+
+header.primary-header h1.term {
+    font-weight: 300;
+}
+
+header.primary-header h2 {
+
+    align-self: flex-start;
+
+    color: hsl(0, 0%, 70%);
+    font-family: 'Comfortaa', cursive;
+
+
+
+
+
+
+
+}
+
+
+header.primary-header a > :is(h1, h2, h3, h4, h5, h6):hover {
+
+    color:          hsl(0, 0%, 0%) !important;
+}
+
+
+
+header.primary-header > .bg-elem {
+    display: none;
+}
+ }

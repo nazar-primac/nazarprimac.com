@@ -1,0 +1,401 @@
+@layer defaults.desctop            { 
+
+
+
+
+:root {
+  --container-width: calc((var(--text-max-width)) * var(--container-text--ratio));
+}
+
+.container-width {
+  max-width:        var(--container-width);
+}
+
+
+
+/*
+  ========================================
+  Utilities
+  ========================================
+*/
+
+
+.d-hidden {
+  display:        none        !important;
+}
+
+
+/*
+  ========================================
+  Defaults
+  ========================================
+*/
+
+
+
+@media (calc(1022px + 11px) < width) {
+  html {
+    overflow-y:     scroll;
+/*    scrollbar-gutter: stable;*/
+
+/*    scrollbar-color: hsl(var(--decorative-background-container)) hsl(30, 100%, 50%);*/
+/*    scrollbar-color: hsl(var(--decorative-background-container)) hsl(0, 0%, 6%);*/
+    scrollbar-color:  hsl(0, 0%, 20%) transparent;
+    background-color: hsl(232, 62%, 7%);
+  /*    background-color: hsla(var(--decorative-theme-color), var(--decorative-background-body-transparency));*/
+  /*  background-color: rgb(7, 10, 30);*/
+  /*  background-color: hsl(30, 100%, 50%);*/
+
+
+    background-image: -webkit-image-set(
+      url(/assets/decorative/body_background/paul-volkmer-qVotvbsuM_c-unsplash_small.jpg) 1x,
+      url(/assets/decorative/body_background/paul-volkmer-qVotvbsuM_c-unsplash_medium.jpg) 3x,
+      url(/assets/decorative/body_background/paul-volkmer-qVotvbsuM_c-unsplash_large.jpg) 3.75x
+    );
+
+  /*    background-image: url(/assets/decorative/services/spanner-3013129_3840-original_85-lightness.jpg);*/
+  /*    background-image: url(/assets/decorative/unsplash-Leon_Overweel_+50-lightness.jpg);*/
+
+  /*    background-image: url("/assets/decorative/body_background/moroccan-flower.png");*/
+  /*    background-image: url("/assets/decorative/body_background/unsplash-Leon Overweel.jpg");*/
+  /*    background-image: url("/assets/decorative/body_background/i981.jpg");*/
+  /*    background-image: url("/assets/decorative/body_background/food.webp");*/
+  /*    background-image: url("/assets/decorative/body_background/unsplash-Jacalyn Beales.jpg");*/
+  /*    background-image: url("/assets/decorative/body_background/unsplash-Diana Parkhouse.jpg");*/
+  /*    background-image: url("/assets/decorative/body_background/unsplash-Thomas Peham.jpg");*/
+  /*    background-image: url("/assets/decorative/body_background/unsplash-Christian Joudrey.jpg");*/
+
+    background-repeat: no-repeat;
+    background-size: cover;
+  /*    background-repeat: repeat;*/
+  /*    background-size: 20%;*/
+
+    background-position: 0 0;
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-origin: border-box;
+  }
+/*
+  html::-webkit-scrollbar-thumb {
+    background-color: hsl(0, 0%, 97%);
+  }
+  html::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(0, 0%, 87%);
+  }
+  html::-webkit-scrollbar {
+    background-color: hsl(0, 0%, 6%);
+    width: var(--scrollbar-width);
+    height: 0;
+  }
+*/
+}
+
+
+
+
+
+
+
+
+.container {
+/*    backdrop-filter: grayscale(100%);*/
+
+/*    filter: chrome(100%);*/
+/*    backdrop-filter: blur(10px);*/
+
+/*    backdrop-filter: blur(0.2em);*/
+
+} }
+
+@layer components.desctop          { 
+
+
+
+
+
+ }
+/* components */
+@layer side-nav.desctop            { 
+
+
+
+
+
+nav.side-nav {
+    height: 100%;
+    width: 68px;
+}
+
+ }
+@layer primary-nav.desctop        { 
+
+
+
+
+
+nav.primary-nav {
+  --menu-head-hight: calc(var(--main-font-size) * 3.25);
+/*  --menu-head-hight: 48px;*/
+}
+
+
+
+nav.primary-nav {
+/*  background-color: hsla(0, 0%, 5%, .8);*/
+  background-color: hsl(0, 0%, 25%);
+}
+
+nav.primary-nav > ul {
+  margin:         0 auto;
+} }
+@layer burger.desctop              { 
+
+
+
+
+
+.burger {
+    left:           0;
+
+/*    padding-bottom: 100px;*/
+}
+.burger > button {
+    font-size:      2.5rem;
+    font-weight:    100;
+    font-family:    'IBM Plex Sans', sans-serif;
+    color:          hsl(0, 0%, 80%);
+    color:          hsl(0, 0%, 50%);
+}
+.burger > button::before {
+    display:        block;
+    content:        "Esc";
+}
+ }
+@layer roll-paper.desctop          { 
+
+
+
+
+
+
+
+
+
+@media (calc(1022px + 11px) < width) {
+  .container::before,
+  .container::after {
+    display:        block;
+    content:        '';
+
+    z-index:        15;
+    position:       fixed;
+
+        width:      100%;
+    max-width:      calc(var(--container-width) + (var(--bigger) * 2));
+    margin-left:    calc(var(--bigger) * -1);
+
+    height:         25px;
+  }
+  .container::before {
+    top:            0;
+    box-shadow:     inset 0 31px 14px -30px hsl(0, 100%, 0%);
+  }
+  .container::after {
+    bottom:         0;
+    box-shadow:     inset 0 -31px 14px -30px hsl(0, 100%, 0%);
+  }
+}
+
+
+
+/*.upper-roll-top,
+.lower-roll-top,
+
+.upper-roll-bottom,
+.lower-roll-bottom {
+  display: block;
+  content: '';
+
+  height: 25px;
+
+  border-radius: 3px;
+  grid-area: paper;
+}
+.upper-roll-top,
+.lower-roll-top {
+  align-self: start;
+}
+.upper-roll-bottom,
+.lower-roll-bottom {
+  align-self: end;
+}
+.upper-roll-top,
+.upper-roll-bottom {
+  z-index: 1;
+}
+.lower-roll-top,
+.lower-roll-bottom {
+  z-index: -1;
+  background-color: hsl(var(--decorative-background-container));
+}
+.upper-roll-top {
+  box-shadow: inset 0 31px 14px -30px hsl(0, 0%, 0%);
+}
+.upper-roll-bottom {
+  box-shadow: inset 0 -31px 14px -30px hsl(0, 0%, 0%);
+}
+.lower-roll-top {
+  box-shadow: inset 0 -31px 7px -30px hsl(0, 0%, 0%);
+}
+.lower-roll-bottom {
+  box-shadow: inset 0 31px 7px -30px hsl(0, 0%, 0%);
+}*/ }
+@layer aheader.desctop             { 
+
+
+
+
+
+
+header.aheader {
+  padding-left: 3em;
+  padding-right: 3em;
+} }
+@layer article.desctop             { 
+
+
+
+
+
+
+
+
+
+  /*      transform: rotate(.5deg);*/
+  /*      --bigger:     .4%;*/
+  /*      --bigger:     2px;*/
+  @media (calc(1022px + 11px) < width) {
+    .content > :is(
+      p:has( > :is(
+        img,
+      ))
+    ) {
+
+        left:       calc((var(--bigger) + var(--container--text--left-difference)) * -1);
+        width:      calc((var(--bigger) * 2 + var(--container-width)));
+
+      }
+
+    .content > :is(
+      p:has( > :is(
+        img,
+      ))
+    )::before,
+    .content > :is(
+      p:has( > :is(
+        img,
+      ))
+    )::after {
+          display:  block;
+          content:  '';
+
+          z-index:  15;
+          position: absolute;
+          top:      0;
+
+          width:    25px;
+          height:   100%;
+        }
+    .content > :is(
+      p:has( > :is(
+        img,
+      ))
+    )::before {
+          left:     0;
+          box-shadow: inset 31px 0 5px -30px hsl(0, 100%, 0%);
+    }
+    .content > :is(
+      p:has( > :is(
+        img,
+      ))
+    )::after {
+          right:    0;
+          box-shadow: inset -31px 0 5px -30px hsl(0, 100%, 0%);
+    }
+  }
+
+
+
+
+.scrollbar-on-black,
+.content pre {
+  overflow-y: auto;
+
+  scrollbar-color: hsl(0, 0%, 30%) transparent;
+  scrollbar-width: thin;
+}
+
+.scrollbar-on-black,
+.content pre::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+
+  background-color: transparent;
+}
+.scrollbar-on-black,
+.content pre::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 30%);
+}
+.scrollbar-on-black,
+.content pre::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 40%);
+}
+ }
+@layer primary-footer.desctop      { 
+
+
+
+
+
+ }
+@layer zippy.desctop               { 
+
+
+
+.zippy .zippy-content::before {
+    left:           1rem;
+}
+
+
+
+
+
+ }
+@layer category-identifier.desctop { 
+
+
+
+
+
+ }
+@layer pagination.desctop          { 
+
+
+
+
+
+ }
+@layer bg.desctop                  { 
+
+
+
+
+
+ }
+@layer in-dev-cover.desctop        { 
+
+
+
+
+
+ }

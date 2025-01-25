@@ -1,0 +1,27 @@
+@layer defaults.mobile{}@layer components.mobile{}@layer aheader.mobile{}@layer article.mobile{}@layer pagination.mobile{}@layer PAGE-ABOUT.mobile{body.PAGE-ABOUT
+h1 {
+    display: none;
+}
+
+
+body.PAGE-ABOUT
+header > .bg-elem {
+    
+    background-color: hsl(0, 0%, 100%);
+
+    background-image: url(/assets/decorative/hero-background-pale-blue.png);
+
+    
+    background-position: 100% 40%;
+    
+    background-size: auto 110%;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+ }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mar Primac on EN</title>
+    <link>/authors/mar-primac/</link>
+    <description>Recent content in Mar Primac on EN</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 15 Mar 2023 11:00:00 -0700</lastBuildDate>
+    <atom:link href="/authors/mar-primac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SEO Specialist and Developer Collaboration: Content Creation Workflow with Git</title>
+      <link>/seo-specialist-and-developer-collaboration-content-creation-workflow-with-git/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      <guid>/seo-specialist-and-developer-collaboration-content-creation-workflow-with-git/</guid>
+      <description>&lt;p&gt;This tutorial explains how to use git for effective collaboration between SEO specialist (particularly, the person, who is optimizing content for search engines by making suggestive changes to the content, such as links placements, etc.) and web-developer (the person, who is reviewing, implementing and deploying these changes). The last one often is CMS operator (content manager), rather than developer, depending on website implementation.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;/post-2/&#34;&gt;post-2&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;In other words, this tutorial is going to be useful if the roles described are executed by different people.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

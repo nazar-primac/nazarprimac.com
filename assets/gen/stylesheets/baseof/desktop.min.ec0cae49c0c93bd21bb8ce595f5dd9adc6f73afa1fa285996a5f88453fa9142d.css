@@ -1,0 +1,232 @@
+@layer defaults.desctop{:root {
+  --container-width: calc((var(--text-max-width)) * var(--container-text--ratio));
+}
+
+.container-width {
+  max-width:        var(--container-width);
+}
+
+
+
+
+
+
+.d-hidden {
+  display:        none        !important;
+}
+
+
+
+
+
+
+@media (calc(1022px + 11px) < width) {
+  html {
+    overflow-y:     scroll;
+
+
+
+
+    scrollbar-color:  hsl(0, 0%, 20%) transparent;
+    background-color: hsl(232, 62%, 7%);
+  
+  
+  
+
+
+    background-image: -webkit-image-set(
+      url(/assets/decorative/body_background/paul-volkmer-qVotvbsuM_c-unsplash_small.jpg) 1x,
+      url(/assets/decorative/body_background/paul-volkmer-qVotvbsuM_c-unsplash_medium.jpg) 3x,
+      url(/assets/decorative/body_background/paul-volkmer-qVotvbsuM_c-unsplash_large.jpg) 3.75x
+    );
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  
+
+    background-position: 0 0;
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-origin: border-box;
+  }
+
+}
+
+
+
+
+
+
+
+
+.container {
+
+
+
+
+
+
+
+} }@layer components.desctop{}@layer side-nav.desctop{nav.side-nav {
+    height: 100%;
+    width: 68px;
+}
+
+ }@layer primary-nav.desctop{nav.primary-nav {
+  --menu-head-hight: calc(var(--main-font-size) * 3.25);
+
+}
+
+
+
+nav.primary-nav {
+
+  background-color: hsl(0, 0%, 25%);
+}
+
+nav.primary-nav > ul {
+  margin:         0 auto;
+} }@layer burger.desctop{.burger {
+    left:           0;
+
+
+}
+.burger > button {
+    font-size:      2.5rem;
+    font-weight:    100;
+    font-family:    'IBM Plex Sans', sans-serif;
+    color:          hsl(0, 0%, 80%);
+    color:          hsl(0, 0%, 50%);
+}
+.burger > button::before {
+    display:        block;
+    content:        "Esc";
+}
+ }@layer roll-paper.desctop{@media (calc(1022px + 11px) < width) {
+  .container::before,
+  .container::after {
+    display:        block;
+    content:        '';
+
+    z-index:        15;
+    position:       fixed;
+
+        width:      100%;
+    max-width:      calc(var(--container-width) + (var(--bigger) * 2));
+    margin-left:    calc(var(--bigger) * -1);
+
+    height:         25px;
+  }
+  .container::before {
+    top:            0;
+    box-shadow:     inset 0 31px 14px -30px hsl(0, 100%, 0%);
+  }
+  .container::after {
+    bottom:         0;
+    box-shadow:     inset 0 -31px 14px -30px hsl(0, 100%, 0%);
+  }
+}
+
+
+
+ }@layer aheader.desctop{header.aheader {
+  padding-left: 3em;
+  padding-right: 3em;
+} }@layer article.desctop{@media (calc(1022px + 11px) < width) {
+    .content > :is(
+      p:has( > :is(
+        img,
+      ))
+    ) {
+
+        left:       calc((var(--bigger) + var(--container--text--left-difference)) * -1);
+        width:      calc((var(--bigger) * 2 + var(--container-width)));
+
+      }
+
+    .content > :is(
+      p:has( > :is(
+        img,
+      ))
+    )::before,
+    .content > :is(
+      p:has( > :is(
+        img,
+      ))
+    )::after {
+          display:  block;
+          content:  '';
+
+          z-index:  15;
+          position: absolute;
+          top:      0;
+
+          width:    25px;
+          height:   100%;
+        }
+    .content > :is(
+      p:has( > :is(
+        img,
+      ))
+    )::before {
+          left:     0;
+          box-shadow: inset 31px 0 5px -30px hsl(0, 100%, 0%);
+    }
+    .content > :is(
+      p:has( > :is(
+        img,
+      ))
+    )::after {
+          right:    0;
+          box-shadow: inset -31px 0 5px -30px hsl(0, 100%, 0%);
+    }
+  }
+
+
+
+
+.scrollbar-on-black,
+.content pre {
+  overflow-y: auto;
+
+  scrollbar-color: hsl(0, 0%, 30%) transparent;
+  scrollbar-width: thin;
+}
+
+.scrollbar-on-black,
+.content pre::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+
+  background-color: transparent;
+}
+.scrollbar-on-black,
+.content pre::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 30%);
+}
+.scrollbar-on-black,
+.content pre::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 40%);
+}
+ }@layer primary-footer.desctop{}@layer zippy.desctop{.zippy .zippy-content::before {
+    left:           1rem;
+}
+
+
+
+
+
+ }@layer category-identifier.desctop{}@layer pagination.desctop{}@layer bg.desctop{}@layer in-dev-cover.desctop{}

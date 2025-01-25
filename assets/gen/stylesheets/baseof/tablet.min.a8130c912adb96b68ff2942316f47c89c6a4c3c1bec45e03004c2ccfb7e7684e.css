@@ -1,0 +1,157 @@
+@layer defaults.tablet{:root {
+
+}
+
+
+
+
+.m-hidden {
+  display: none !important;
+}
+
+
+
+
+
+header {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+header {
+    
+    
+
+    padding-left: 1em;
+    padding-right: 1em;
+}
+ }@layer components.tablet{}@layer side-nav.tablet{nav.side-nav {
+    height: 68px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+ }@layer primary-nav.tablet{@media (max-width: 540px) {
+nav.primary-nav > ul {
+  --menu-head-hight: calc(var(--main-font-size) * 2.5);
+
+  --gap:            3px;
+
+  flex-direction:   column;
+  gap:              var(--gap);
+
+
+}
+
+
+nav.primary-nav
+.zippy >
+  .zippy-overflow >
+    .zippy-content {
+      padding-top:  calc((var(--menu-head-hight) * var(--items)) + (var(--gap) * (var(--items) - 1)) + var(--menu-margin-top)) !important;
+
+      transition-delay: 250ms;
+    }
+
+nav.primary-nav
+.zippy:hover >
+  .zippy-overflow >
+    .zippy-content {
+      transition-delay: 250ms;
+    }
+
+
+nav.primary-nav
+.zippy >
+  .zippy-head
+  .o1 {
+    font-size:      1em;
+  }
+nav.primary-nav
+.zippy >
+  .zippy-overflow >
+    .zippy-content ul
+      .o2 {
+        font-size:      2rem;
+      }
+}
+
+
+
+
+
+
+
+
+
+
+nav.primary-nav {
+  --menu-head-hight: calc(var(--main-font-size) * 3.25);
+
+}
+ }@layer burger.tablet{.burger {
+    height: 68px;
+
+}
+.burger > button {
+    background-image: url("/assets/icons/menu_svg.svg");
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+.burger.burger-on-menu > button {
+    
+}
+
+
+
+
+
+
+
+
+
+ }@layer roll-paper.tablet{}@layer aheader.tablet{header.aheader {
+  padding-left:     var(--content-padding-left);
+  padding-right:    var(--content-padding-right);
+}
+
+
+
+
+
+
+
+
+ }@layer article.tablet{.alist .content {
+    margin-bottom: 1em;
+}
+
+ }@layer primary-footer.tablet{}@layer zippy.tablet{.zippy .zippy-content::before {
+    left:           1rem;
+}
+
+
+
+
+
+
+ }@layer category-identifier.tablet{}@layer pagination.tablet{}@layer bg.tablet{}@layer in-dev-cover.tablet{}
